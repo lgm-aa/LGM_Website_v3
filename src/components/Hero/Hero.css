@@ -1,30 +1,32 @@
+/* --- Hero Section ------------------------------------------------------ */
 .hero-section {
-  position: fixed;
-  inset: 0;
-  z-index: -10;
+  position: relative; /* was fixed */
+  min-height: 100vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* no z-index needed now */
 }
 
 /* dark overlay so white text is readable */
 .hero-overlay {
-  position: fixed;
+  position: absolute; /* was fixed */
   inset: 0;
   background: rgba(6, 24, 44, 0.45); /* bluish wash */
 }
 
 /* centers the content block */
 .hero-content {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
+  position: absolute; /* changed from relative */
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   padding: 0 1rem;
+  z-index: 1; /* above overlay */
 }
 
 /* typography */
@@ -37,6 +39,7 @@
   margin-bottom: 6rem;
 }
 
+/* buttons group */
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -44,14 +47,14 @@
   flex-wrap: wrap;
 }
 
-/* --- Bottom wave -------------------------------------------------------- */
+/* --- Bottom wave ------------------------------------------------------ */
 .hero-wave {
-  position: fixed;
+  position: absolute; /* was fixed */
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 1; /* above the dark overlay, below navbar/content */
-  pointer-events: none; /* don’t block clicks near the bottom */
+  bottom: -1px; /* tiny overlap to remove gap */
+  z-index: 1; /* above overlay, below content */
+  pointer-events: none;
 }
 
 .hero-wave svg {
@@ -62,18 +65,18 @@
 
 /* Match your page background color behind the wave */
 :root {
-  --page-bg: #ffffff;
-} /* adjust if your next section isn’t pure white */
+  --page-bg: #f4f6fa; /* light gray/blue tone */
+}
 .hero-wave path {
   fill: var(--page-bg);
 }
 
-/* --- Scroll indicator --------------------------------------------------- */
+/* --- Scroll indicator -------------------------------------------------- */
 .scroll-indicator {
-  position: fixed;
+  position: absolute; /* was fixed */
   left: 50%;
   transform: translateX(-50%);
-  bottom: 88px; /* sits just above the wave; tweak with wave height */
+  bottom: 88px; /* sits just above the wave */
   z-index: 2;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
