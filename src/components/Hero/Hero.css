@@ -1,0 +1,102 @@
+.hero-section {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* dark overlay so white text is readable */
+.hero-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 24, 44, 0.45); /* bluish wash */
+}
+
+/* centers the content block */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+/* typography */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Bottom wave -------------------------------------------------------- */
+.hero-wave {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* above the dark overlay, below navbar/content */
+  pointer-events: none; /* don’t block clicks near the bottom */
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 96px; /* tweak to taste */
+}
+
+/* Match your page background color behind the wave */
+:root {
+  --page-bg: #ffffff;
+} /* adjust if your next section isn’t pure white */
+.hero-wave path {
+  fill: var(--page-bg);
+}
+
+/* --- Scroll indicator --------------------------------------------------- */
+.scroll-indicator {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 88px; /* sits just above the wave; tweak with wave height */
+  z-index: 2;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.scroll-indicator .chevron {
+  width: 22px;
+  height: 22px;
+  margin: 6px auto 0;
+  animation: scroll-bounce 1.4s infinite ease-in-out;
+  opacity: 0.95;
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}

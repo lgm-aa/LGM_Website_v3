@@ -1,0 +1,45 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+  font-weight: 500;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Sizes */
+.btn-md {
+  font-size: 1rem;
+} /* text-base */
+.btn-lg {
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
+} /* text-lg, px-6 py-3 */
+
+/* Variants */
+.btn-primary {
+  background: rgba(148, 163, 184, 0.6); /* slate-400/60 like your mock */
+  color: white;
+  border-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+.btn-primary:hover {
+  background: rgba(148, 163, 184, 0.75);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
