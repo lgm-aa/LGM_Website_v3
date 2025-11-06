@@ -1,17 +1,55 @@
-# React + Vite
+<h1 align="center">Welcome to the LGM Website (v3)👋</h1>
+<!-- <p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/node-18.x-blue.svg" />
+</p> -->
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> This project is a modern overhaul of the Living Grace Ministry website, originally built over 10 years ago. The new site is built using React and Vite, with a focus on speed, responsiveness, and ease of maintenance. It integrates directly with external services like YouTube and Google Drive through client-side API calls to dynamically display sermon videos and weekly bulletins. The redesign simplifies content updates while providing a clean and accessible user experience across devices.
 
-Currently, two official plugins are available:
+### 🏠 [Homepage](livinggraceminsitry.org)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ✨ [Demo][Beta](https://lgm-website-v3.pages.dev)
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- node 18.x
 
-## Expanding the ESLint configuration
+## Contributers
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# LGM_Website_v3
+## 👥 Contributors
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/thkimsea43">
+        <img src="https://github.com/thkimsea43.png" width="80px;" alt="Tae Hoon Kim"/>
+        <br /><sub><b>Tae Hoon Kim</b></sub><br />
+        <sub>Team Lead / Full-Stack Engineer</sub>
+      </a>
+      <br />
+      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Joyceku1020">
+        <img src="https://github.com/Joyceku1020.png" width="80px;" alt="Joyce Ku"/>
+        <br /><sub><b>Joyce Ku</b></sub><br />
+        <sub>Full-Stack Engineer</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/0?v=4" width="80px;" alt="Rachael Kim"/>
+        <br /><sub><b>Rachael Kim</b></sub><br />
+        <sub>UX / UI Designer</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/joelps59">
+        <img src="https://github.com/joelps59.png" width="80px;" alt="Joel Kim"/>
+        <br /><sub><b>Joel Kim</b></sub><br />
+        <sub>Full-Stack Engineer</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+ 
