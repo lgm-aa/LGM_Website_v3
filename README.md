@@ -14,8 +14,6 @@
 
 - node 18.x
 
-## Contributers
-
 ## 👥 Contributors
 
 <table>
