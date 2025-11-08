@@ -1,0 +1,41 @@
+.community-section {
+  background-color: #f4f6fa; /* light gray/blue tone */
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.community-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.community-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.community-card {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  width: 250px;
+  height: 330px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+}
+
+.community-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
