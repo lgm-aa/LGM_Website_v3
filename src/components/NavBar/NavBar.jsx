@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import logo from "../../assets/lgm_logo.png";
+import logo from "../../assets/lgm_logo_white.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,11 +14,9 @@ export default function Navbar() {
             src={logo}
             alt="Living Grace Ministry"
             style={{
-              height: "2rem",
-              width: "2rem",
-              borderRadius: "0.375rem",
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              padding: "0.25rem",
+              height: "2.5rem",
+              width: "2.5rem",
+              padding: "0.3rem"
             }}
           />
           <span className="text-white font-medium tracking-wide">
