@@ -33,6 +33,8 @@
         <br /><sub><b>Joyce Ku</b></sub><br />
         <sub>Full-Stack Engineer</sub>
       </a>
+      <br />
+      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
     </td>
     <td align="center">
       <a href="#">
@@ -40,6 +42,8 @@
         <br /><sub><b>Rachael Kim</b></sub><br />
         <sub>UX / UI Designer</sub>
       </a>
+      <br />
+      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
     </td>
     <td align="center">
       <a href="https://github.com/joelps59">
@@ -47,6 +51,8 @@
         <br /><sub><b>Joel Kim</b></sub><br />
         <sub>Full-Stack Engineer</sub>
       </a>
+      <br />
+      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
     </td>
   </tr>
 </table>
