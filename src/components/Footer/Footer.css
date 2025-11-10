@@ -1,0 +1,127 @@
+.footer {
+  background: #1f2330;
+  color: #cbd5e1;
+  padding: 48px 20px 20px;
+}
+
+.footer__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 960px) {
+  .footer__grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Brand */
+.footer__logoRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.footer__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  /* background: #fff; */
+  padding: 6px;
+}
+.footer__name {
+  font-size: 22px;
+  line-height: 1.05;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.footer__tag {
+  margin: 8px 0 18px;
+  color: #d1d5db;
+}
+.footer__service {
+  color: #d1d5db;
+  margin-bottom: 18px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 14px;
+}
+.social {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #e2e8f0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.social:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Columns */
+.footer__col {
+  display: grid;
+  gap: 10px;
+}
+.footer__col h4 {
+  color: #e2e8f0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  margin: 4px 0 8px;
+}
+.footer__col a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 16px;
+}
+.footer__col a:hover {
+  color: #ffffff;
+}
+
+/* Contact rows */
+.footer__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+.i {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #cbd5e1;
+}
+.muted {
+  color: #9ca3af;
+}
+
+/* Divider + bar */
+.footer__bar {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Mobile order */
+@media (max-width: 959px) {
+  .footer__brand {
+    order: -1;
+  }
+}
