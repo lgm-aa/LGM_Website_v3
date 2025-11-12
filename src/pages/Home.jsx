@@ -5,6 +5,7 @@ import Community from "../components/Community/Community";
 import Welcome from "../components/Welcome/Welcome";
 import Plan from "../components/Plan/Plan";
 import Updates from "../components/Updates/Updates";
+import Ministries from "../components/Ministries/Ministries";
 import Footer from "../components/Footer/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Welcome />
       <Plan />
       <Updates />
+      <Ministries />
       <Footer />
     </>
   );
