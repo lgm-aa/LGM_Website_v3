@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import logo from "../../assets/lgm_logo_white.png";
+import logoWhite from "../../assets/lgm_logo_white.png"; // your light-on-dark logo
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -8,23 +8,17 @@ export default function Navbar() {
 
   return (
     <header className="navbar-header">
-      <nav className="navbar">
-        <a href="#home" className="flex items-center gap-3">
+      <nav className="navbar navbar--glass">
+        <a href="/" className="navbar__brand">
           <img
-            src={logo}
+            src={logoWhite}
             alt="Living Grace Ministry"
-            style={{
-              height: "2.5rem",
-              width: "2.5rem",
-              padding: "0.3rem"
-            }}
+            className="navbar-logo"
           />
-          <span className="text-white font-medium tracking-wide">
-            Living Grace Ministry
-          </span>
+          <span className="navbar-title">Living Grace Ministry</span>
         </a>
 
-        <div className="hidden md:flex gap-8">
+        <div className="navbar__links">
           {links.map((link) => (
             <a key={link} href={`#${link.toLowerCase()}`}>
               {link}
@@ -33,20 +27,21 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden text-white text-2xl"
+          className="navbar__menu"
           onClick={() => setOpen(!open)}
+          aria-label="Menu"
         >
           ☰
         </button>
       </nav>
 
       {open && (
-        <div className="navbar-mobile md:hidden text-white">
+        <div className="navbar-mobile navbar--glass">
           {links.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="block px-4 py-3"
+              className="navbar-mobile__item"
               onClick={() => setOpen(false)}
             >
               {link}
