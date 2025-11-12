@@ -1,0 +1,7 @@
+:root {
+  --nav-height: 72px;
+} /* adjust to your actual navbar height */
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 12px); /* 12px breathing room */
+}

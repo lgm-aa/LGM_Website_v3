@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 import Hero from "../components/Hero/Hero";
 import NavBar from "../components/NavBar/NavBar";
 import Community from "../components/Community/Community";
@@ -12,7 +13,9 @@ export default function Home() {
     <>
       <NavBar />
       <Hero />
-      <Community />
+      <section id="about" className="section-about">
+        <Community />
+      </section>
       <Welcome />
       <Plan />
       <Updates />

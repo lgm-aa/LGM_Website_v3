@@ -3,17 +3,16 @@
 @tailwind utilities;
 
 /* --- Minimal reset so the hero/navbar are truly edge-to-edge --- */
-html,
+html {
+  scroll-behavior: smooth;
+}
 body,
 #root {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-body {
   overflow-x: hidden;
-} /* avoids 100vw scrollbar hiccups */
-
+}
 /* --- Make links inherit color (so they aren’t blue by default) --- */
 @layer base {
   a {

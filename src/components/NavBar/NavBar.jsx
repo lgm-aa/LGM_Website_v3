@@ -4,7 +4,12 @@ import logoWhite from "../../assets/lgm_logo_white.png"; // your light-on-dark l
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const links = ["About", "Ministries", "Sermons", "Donate"];
+  const links = [
+    { label: "About", href: "#about" },
+    { label: "Ministries", href: "#ministries" }, // can leave as placeholder
+    { label: "Sermons", href: "#sermons" },
+    { label: "Donate", href: "#donate" },
+  ];
 
   return (
     <header className="navbar-header">
@@ -19,9 +24,9 @@ export default function Navbar() {
         </a>
 
         <div className="navbar__links">
-          {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`}>
-              {link}
+          {links.map(({ label, href }) => (
+            <a key={label} href={href}>
+              {label}
             </a>
           ))}
         </div>
@@ -37,14 +42,14 @@ export default function Navbar() {
 
       {open && (
         <div className="navbar-mobile navbar--glass">
-          {links.map((link) => (
+          {links.map(({ label, href }) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={label}
+              href={href}
               className="navbar-mobile__item"
               onClick={() => setOpen(false)}
             >
-              {link}
+              {label}
             </a>
           ))}
         </div>
