@@ -7,7 +7,7 @@ const sampleBulletin = {
   title: "This Week's Bulletin",
   date: "November 3, 2025",
   items: [
-    'Sermon: "Walking in Grace" – Pastor John Smith',
+    'Sermon: "Walking in Grace" - Pastor John Smith',
     "Fellowship lunch following service",
     "Youth group meeting at 6:00 PM",
   ],

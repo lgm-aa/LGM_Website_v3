@@ -1,0 +1,168 @@
+.plan-section {
+  background-color: #96AFCF;
+  padding: 4rem 1rem;
+  color: white;
+}
+
+.plan-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Main title */
+.plan-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Two columns */
+.plan-columns {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.plan-left {
+  flex: 1;
+}
+
+.plan-right {
+  flex: 1;
+}
+
+/* Left column - Image with quote */
+.image-container {
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  border-radius: 36px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.quote-overlay {
+  background-color: #2B3649;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-radius: 24px;
+  margin: 2rem;
+  width: calc(100% - 1rem);
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0 0 0.2rem 0;
+}
+
+.quote-subtext {
+  font-size: 1rem;
+  margin: 0;
+  color: #e8e8e8;
+  line-height: 1.5;
+}
+
+/* Right column content */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Updated info item with icon circles */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3); /* Light blue color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+}
+
+.info-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* CTA Button */
+.notify-button {
+  background-color: #2B3649;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 400;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.notify-button:hover {
+  background-color: #111827;
+}
+
+/* Weekly Bulletin */
+.weekly-bulletin {
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  color: #e8e8e8;
+  margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .plan-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .image-container {
+    height: 300px;
+  }
+  
+  .plan-title {
+    font-size: 2rem;
+  }
+}
