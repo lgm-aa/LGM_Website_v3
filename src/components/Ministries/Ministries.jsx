@@ -9,7 +9,7 @@ import campusImg from "../../assets/ministry_campus.jpg";
 
 export default function Ministries() {
   return (
-    <section id="ministries" className="ministries">
+    <section className="ministries">
       <div className="ministries__inner">
         <header className="ministries__header">
           <h2 className="ministries__title">

@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <NavBar />
       <Hero />
-      <section id="about" className="section-about">
+      <section id="about">
         <Community />
       </section>
       <Welcome />
