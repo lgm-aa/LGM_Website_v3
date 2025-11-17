@@ -1,7 +1,7 @@
 import React from "react";
 import "./Welcome.css";
-import Button from "../ui/Button/Button";
-import welcomePhoto from "../../assets/welcome.jpg";
+import Button from "@/components/ui/Button/Button";
+import welcomePhoto from "@/assets/welcome.jpg";
 
 export default function Welcome() {
   return (

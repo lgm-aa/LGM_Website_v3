@@ -3,9 +3,9 @@ import "./Ministries.css";
 import MinistryCard from "./MinistryCard";
 import Button from "@/components/ui/Button/Button";
 
-import campusImg from "../../assets/ministry_campus.jpg";
-// import postgradImg from "../../assets/ministry_postgrad.jpg";
-// import familyImg from "../../assets/ministry_family.jpg";
+import campusImg from "@/assets/ministry_campus.jpg";
+// import postgradImg from "@/../assets/ministry_postgrad.jpg";
+// import familyImg from "@/../assets/ministry_family.jpg";
 
 export default function Ministries() {
   return (
