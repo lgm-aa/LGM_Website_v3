@@ -18,25 +18,3 @@ export function youtubeSearchUrl(params) {
 
   return u.toString();
 }
-
-export function driveListUrl(params) {
-  const u = new URL("https://www.googleapis.com/drive/v3/files");
-  u.searchParams.set("key", API_KEY);
-  // basic fields so we don’t overfetch
-  if (!params.fields) {
-    u.searchParams.set(
-      "fields",
-      "files(id,name,mimeType,thumbnailLink,webViewLink,iconLink)"
-    );
-  }
-
-  Object.entries(params).forEach(([k, v]) => {
-    u.searchParams.set(k, v);
-  });
-
-  return u.toString();
-}
-
-export function driveFileMediaUrl(fileId) {
-  return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${API_KEY}`;
-}
