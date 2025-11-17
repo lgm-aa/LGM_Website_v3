@@ -1,6 +1,6 @@
 import React from "react";
 import "./Updates.css";
-import Button from "../ui/Button/Button";
+import Button from "@/components/ui/Button/Button";
 
 /* You can later feed these from an API / Google Drive */
 const sampleBulletin = {

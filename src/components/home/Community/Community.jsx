@@ -1,9 +1,9 @@
 import React from "react";
 import "./Community.css";
-import img1 from "../../assets/community1.jpg";
-import img2 from "../../assets/community2.jpg";
-import img3 from "../../assets/community3.jpg";
-import img4 from "../../assets/community4.jpg";
+import img1 from "@/assets/community1.jpg";
+import img2 from "@/assets/community2.jpg";
+import img3 from "@/assets/community3.jpg";
+import img4 from "@/assets/community4.jpg";
 
 export default function Community() {
   return (
