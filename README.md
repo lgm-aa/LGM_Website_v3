@@ -1,18 +1,53 @@
-<h1 align="center">Welcome to the LGM Website (v3)👋</h1>
-<!-- <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/node-18.x-blue.svg" />
-</p> -->
+<h1 align="center">Welcome to the LGM Website (v3) 👋</h1>
 
-> This project is a modern overhaul of the Living Grace Ministry website, originally built over 10 years ago. The new site is built using React and Vite, with a focus on speed, responsiveness, and ease of maintenance. It integrates directly with external services like YouTube and Google Drive through client-side API calls to dynamically display sermon videos and weekly bulletins. The redesign simplifies content updates while providing a clean and accessible user experience across devices.
+> A modern rebuild of the Living Grace Ministry website — redesigned for performance, responsiveness, and long-term maintainability.  
+> Built with **React**, **Vite**, **TailwindCSS**, and deployed through **Cloudflare Pages** with automatic branch previews.  
+> Integrates seamlessly with **YouTube** and **Google Drive** to dynamically display sermon videos and weekly bulletins without manual uploads.
 
-### 🏠 [Homepage](livinggraceminsitry.org)
+---
 
-### ✨ [Demo][Beta](https://lgm-website-v3.pages.dev)
+### 🏠 Live Site (Previous version | https://github.com/thkimsea43/LGM-Website)  
+https://livinggraceministry.org
 
-## Prerequisites
+### ✨ Preview Build (Beta)  
+https://lgm-website-v3.pages.dev
 
-- node 18.x
+---
+
+## 📌 Features
+
+- ⚡ **Fast, modern frontend** built with Vite + React 19  
+- 🎨 **Fully responsive UI** with TailwindCSS  
+- 🎥 **YouTube API integration** for sermons & ministry content  
+- 📄 **Google Drive API integration** for weekly bulletin PDFs  
+- 📂 **Clean file / folder structure** using feature-based organization  
+- 🔀 **Cloudflare Pages deployments** with preview URLs for every branch  
+- 🧩 Reusable UI components + page-level routing  
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- React 19  
+- Vite (Rolldown-Vite)  
+- TailwindCSS  
+- Swiper.js  
+- ES Modules  
+
+**Tooling**
+- ESLint + React Hooks Plugin  
+- PostCSS + Autoprefixer  
+- TypeScript support (optional, partial)  
+
+**Hosting**
+- Cloudflare Pages  
+- Automatic deploys from GitHub  
+- Production branch → `main`  
+- Preview branches → any feature branch  
+
+---
+
 
 ## 👥 Contributors
 
@@ -34,7 +69,7 @@
         <sub>Full-Stack Engineer</sub>
       </a>
       <br />
-      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/joyceku3k53">LinkedIn</a>
     </td>
     <td align="center">
       <a href="#">
@@ -43,7 +78,7 @@
         <sub>UX / UI Designer</sub>
       </a>
       <br />
-      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/raechael">LinkedIn</a>
     </td>
     <td align="center">
       <a href="https://github.com/joelps59">
@@ -52,7 +87,7 @@
         <sub>Full-Stack Engineer</sub>
       </a>
       <br />
-      <a href="https://linkedin.com/in/kimtaeh">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/joelps-kim">LinkedIn</a>
     </td>
   </tr>
 </table>
