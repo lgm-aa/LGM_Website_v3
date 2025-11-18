@@ -3,9 +3,9 @@ import "./Ministries.css";
 import MinistryCard from "./MinistryCard";
 import Button from "@/components/ui/Button/Button";
 
-import campusImg from "@/assets/ministry_campus.jpg";
-// import postgradImg from "@/../assets/ministry_postgrad.jpg";
-// import familyImg from "@/../assets/ministry_family.jpg";
+import campusImg from "@/assets/ministry_campus.webp";
+import postgradImg from "@/assets/ministry_postgrad.webp";
+// import familyImg from "@/assets/ministry_family.jpg";
 
 export default function Ministries() {
   return (
@@ -20,7 +20,7 @@ export default function Ministries() {
 
         <div className="ministries__grid">
           <MinistryCard title="CAMPUS" image={campusImg} href="#campus" />
-          <MinistryCard title="POST-GRAD" image={campusImg} href="#postgrad" />
+          <MinistryCard title="POST-GRAD" image={postgradImg} href="#postgrad" />
           <MinistryCard title="FAMILY" image={campusImg} href="#family" />
         </div>
 

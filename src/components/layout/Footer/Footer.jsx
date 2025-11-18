@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo from "@/assets/lgm_logo_white.png"; // adjust path if needed
+import logo from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 
 export default function Footer() {
   return (

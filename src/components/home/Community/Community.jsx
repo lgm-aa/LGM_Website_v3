@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 
-import img1 from "@/assets/community1.jpg";
-import img2 from "@/assets/community2.jpg";
-import img3 from "@/assets/community3.jpg";
-import img4 from "@/assets/community4.jpg";
+import img1 from "@/assets/community1.webp";
+import img2 from "@/assets/community2.webp";
+import img3 from "@/assets/community3.webp";
+import img4 from "@/assets/community4.webp";
 import { useCommunityCarousel } from "@/hooks/useCommunityCarousel";
 
 const photos = [img1, img2, img3, img4];

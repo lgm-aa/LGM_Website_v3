@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import logoWhite from "@/assets/lgm_logo_white.png"; // your light-on-dark logo
+import logoWhite from "@/assets/lgm_logo_white.webp"; // your light-on-dark logo
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

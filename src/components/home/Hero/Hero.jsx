@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import Button from "@/components/ui/Button/Button";
-import lgm_easter from "@/assets/lgm_easter.jpg";
+import lgm_easter from "@/assets/lgm_easter.webp";
 
 export default function Hero() {
   return (
