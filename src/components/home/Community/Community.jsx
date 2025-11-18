@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Community.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,68 +9,14 @@ import img1 from "@/assets/community1.jpg";
 import img2 from "@/assets/community2.jpg";
 import img3 from "@/assets/community3.jpg";
 import img4 from "@/assets/community4.jpg";
+import { useCommunityCarousel } from "@/hooks/useCommunityCarousel";
 
 const photos = [img1, img2, img3, img4];
-const communityPhotos = [...photos, ...photos]; // duplicate for longer belt
+const communityPhotos = [...photos, ...photos];
 
 export default function Community() {
-  const swiperRef = useRef(null);
-  const idleTimerRef = useRef(null);
-
-  const interruptAutoplay = () => {
-    const swiper = swiperRef.current;
-    if (!swiper) return null;
-
-    // stop autoplay timer
-    if (swiper.autoplay) {
-      swiper.autoplay.stop();
-    }
-
-    // force-cancel the current long transition
-    swiper.setTransition(0);
-    swiper.animating = false;
-
-    return swiper;
-  };
-
-  const scheduleAutoplayRestart = () => {
-    const swiper = swiperRef.current;
-    if (!swiper || !swiper.autoplay) return;
-
-    if (idleTimerRef.current) {
-      clearTimeout(idleTimerRef.current);
-    }
-
-    idleTimerRef.current = setTimeout(() => {
-      const sw = swiperRef.current;
-      if (sw && sw.autoplay) {
-        sw.autoplay.start();
-      }
-    }, 5_000); // 30 seconds
-  };
-
-  const handlePrev = () => {
-    const swiper = interruptAutoplay();
-    if (!swiper) return;
-
-    swiper.slidePrev(500); // fast, responsive click
-    scheduleAutoplayRestart(); // resume belt after idle
-  };
-
-  const handleNext = () => {
-    const swiper = interruptAutoplay();
-    if (!swiper) return;
-
-    swiper.slideNext(500);
-    scheduleAutoplayRestart();
-  };
-
-  // optional: treat touch/drag as interaction too
-  const handleUserTouch = () => {
-    const swiper = interruptAutoplay();
-    if (!swiper) return;
-    scheduleAutoplayRestart();
-  };
+  const { swiperRef, handlePrev, handleNext, handleUserTouch } =
+    useCommunityCarousel();
 
   useEffect(() => {
     return () => {
@@ -85,20 +31,18 @@ export default function Community() {
       </div>
 
       <div className="community__rail">
-        {/* custom arrows */}
         <button
           type="button"
           className="community__nav community__nav--prev"
           onClick={handlePrev}
-          aria-label="Previous community photo"
         >
           ‹
         </button>
+
         <button
           type="button"
           className="community__nav community__nav--next"
           onClick={handleNext}
-          aria-label="Next community photo"
         >
           ›
         </button>
@@ -109,15 +53,11 @@ export default function Community() {
           freeMode={true}
           freeModeMomentum={false}
           spaceBetween={24}
-          slidesPerView={1.1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 }, // 4 cards in “static” mode
-          }}
-          speed={14000} // slow continuous belt
+          slidesPerView={"auto"} // << FIXED
+          speed={14000}
           autoplay={{
             delay: 0,
-            disableOnInteraction: false, // we control it ourselves
+            disableOnInteraction: false,
           }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
