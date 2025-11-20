@@ -18,16 +18,19 @@
 
 /* centers the content block */
 .hero-content {
-  position: absolute; /* changed from relative */
+  position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;    /* 👈 stack children vertically */
+  align-items: center;       /* center horizontally */
+  justify-content: center;   /* center vertically */
   text-align: center;
   color: white;
   padding: 0 1rem;
-  z-index: 1; /* above overlay */
+  z-index: 1;
+  gap: 2rem;                 /* nice space between title + buttons */
 }
+
 
 /* typography */
 .hero-title {
