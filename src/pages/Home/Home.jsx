@@ -12,9 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section id="about">
-        <Community />
-      </section>
+      <Community />
       <Welcome />
       <Plan />
       <Updates />
