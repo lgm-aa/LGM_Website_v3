@@ -4,7 +4,7 @@ import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Ministries", href: "#ministries" },
   { label: "Sermons", href: "#sermons" },
   { label: "Donate", href: "#donate" },
