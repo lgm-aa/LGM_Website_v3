@@ -1,7 +1,7 @@
 import React from "react";
 import "./Welcome.css";
 import Button from "@/components/ui/Button/Button";
-import welcomePhoto from "@/assets/welcome.jpg";
+import welcomePhoto from "@/assets/welcome.webp";
 
 export default function Welcome() {
   return (

@@ -1,9 +1,18 @@
 import React from "react";
 import "./Hero.css";
+import "@/components/AnimatedSection/AnimatedSection.css"; // make sure this is imported
 import Button from "@/components/ui/Button/Button";
-import lgm_easter from "@/assets/lgm_easter.jpg";
+import lgm_easter from "@/assets/lgm_easter.webp";
+import { useStaggeredFade } from "@/hooks/useStaggeredFade";
 
 export default function Hero() {
+  // 2 items: [0] title, [1] buttons
+  // title starts at 200ms, buttons 1s later (interval = 1000)
+  const { getClassName } = useStaggeredFade(2, {
+    baseDelay: 200,
+    interval: 1000,
+  });
+
   return (
     <>
       {/* Background image */}
@@ -17,8 +26,13 @@ export default function Hero() {
 
       {/* Centered content */}
       <div className="hero-content">
-        <div>
+        {/* Title fades in first */}
+        <div className={getClassName(0)}>
           <h1 className="hero-title">LIVING GRACE MINISTRY</h1>
+        </div>
+
+        {/* Buttons fade in 1s after the title */}
+        <div className={getClassName(1)}>
           <div className="hero-actions">
             <Button as="a" href="/" variant="primary" size="lg">
               Plan your visit
@@ -33,7 +47,6 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="scroll-indicator">
         <div>scroll</div>
-        {/* down chevron */}
         <svg
           className="chevron"
           viewBox="0 0 24 24"
@@ -47,9 +60,7 @@ export default function Hero() {
 
       {/* Bottom wave */}
       <div className="hero-wave" aria-hidden="true">
-        {/* preserveAspectRatio='none' lets it stretch full width responsively */}
         <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
-          {/* Soft wave that dips slightly then rises — tweak path for your taste */}
           <path
             d="
             M0,64 
