@@ -1,36 +1,92 @@
 // src/components/layout/NavBar/NavBar.jsx
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Ministries", href: "#ministries" },
   { label: "Sermons", href: "#sermons" },
   { label: "Donate", href: "#donate" },
 ];
 
 export default function NavBar() {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (dropdownName) => {
+    setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+  };
+
+  const closeDropdown = () => {
+    setOpenDropdown(null);
+  };
+  
   return (
     <header className="lgm-nav">
       <div className="lgm-nav__inner">
         {/* Left: logo + title */}
-        <a href="/" className="lgm-nav__brand">
+        <Link to="/" className="lgm-nav__brand">
           <img
             src={logoWhite}
             alt="Living Grace Ministry logo"
             className="lgm-nav__logo"
           />
           <span className="lgm-nav__title">Living Grace Ministry</span>
-        </a>
+        </Link>
 
         {/* Right: links */}
-        <nav className="lgm-nav__links">
-          {navLinks.map(({ label, href }) => (
-            <a key={label} href={href} className="lgm-nav__link">
-              {label}
-            </a>
-          ))}
+        <nav className="lgm-nav__links">  
+          <div className="lgm-nav__item">
+            <Link to="/about" className="lgm-nav__link">
+              About
+            </Link>
+          </div>
+
+          {/* Ministries dropdown */}
+          <div 
+            className={`lgm-nav__item lgm-nav__item--dropdown ${
+              openDropdown === 'ministries' ? 'lgm-nav__item--open' : ''
+            }`}
+            onMouseEnter={() => setOpenDropdown('ministries')}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <span 
+              className="lgm-nav__link lgm-nav__link--dropdown"
+              onClick={() => toggleDropdown('ministries')}
+            >
+              Ministries
+            </span>
+            
+            <div className="lgm-nav__dropdown">
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+                Children's
+              </Link>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+                Youth Group
+              </Link>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+                Campus
+              </Link>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+                Post Grad
+              </Link>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+                Adult / Family
+              </Link>
+            </div>
+          </div>
+
+          <div className="lgm-nav__item">
+            <Link to="/" className="lgm-nav__link">
+              Sermons
+            </Link>
+          </div>
+          <div className="lgm-nav__item">
+            <Link to="/" className="lgm-nav__link">
+              Donate
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
