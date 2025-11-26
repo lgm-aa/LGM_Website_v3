@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Community.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,12 +17,6 @@ const communityPhotos = [...photos, ...photos];
 export default function Community() {
   const { swiperRef, handlePrev, handleNext, handleUserTouch } =
     useCommunityCarousel();
-
-  useEffect(() => {
-    return () => {
-      if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-    };
-  }, []);
 
   return (
     <section className="community">
@@ -53,7 +47,7 @@ export default function Community() {
           freeMode={true}
           freeModeMomentum={false}
           spaceBetween={24}
-          slidesPerView={"auto"} // << FIXED
+          slidesPerView={"auto"}
           speed={14000}
           autoplay={{
             delay: 0,
