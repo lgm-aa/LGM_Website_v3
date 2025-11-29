@@ -7,7 +7,6 @@ import Plan from "@/components/home/Plan/Plan";
 import Updates from "@/components/home/Updates/Updates";
 import Ministries from "@/components/home/Ministries/Ministries";
 import Footer from "@/components/layout/Footer/Footer";
-import YouTubeLatest from "@/components/home/youtube";
 
 export default function Home() {
   return (
