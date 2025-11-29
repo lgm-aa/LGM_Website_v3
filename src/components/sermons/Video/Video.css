@@ -1,0 +1,59 @@
+.latest-sermon {
+  background-color: #e5ebf3; /* light gray/blue like your mock */
+  padding: 4rem 1.5rem 5rem;
+}
+
+.latest-sermon__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* "LATEST SERMON" label */
+.latest-sermon__eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.4);
+  margin-bottom: 0.75rem;
+}
+
+/* Main title */
+.latest-sermon__title {
+  font-family: "Playfair Display SC", serif; /* same serif family */
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* Date */
+.latest-sermon__date {
+  font-size: 0.95rem;
+  color: rgba(15, 23, 42, 0.65);
+  margin-bottom: 2rem;
+}
+
+/* Video card */
+.latest-sermon__video-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+}
+
+/* Keep YouTube embed 16:9 and responsive */
+.latest-sermon__video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.latest-sermon__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -77,7 +77,7 @@ export default function Footer() {
         {/* Quick Links */}
         <nav className="footer__col">
           <h4>Quick Links</h4>
-          <a href="#">About Us</a>
+          <a href="/about">About Us</a>
           <a href="#">Our Beliefs</a>
           <a href="#">Ministries</a>
           <a href="#">Events</a>

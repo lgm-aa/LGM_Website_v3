@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import NavBar from "@/components/layout/NavBar/NavBar";
 import Hero from "@/components/home/Hero/Hero";
 import Community from "@/components/home/Community/Community";
 import Welcome from "@/components/home/Welcome/Welcome";
@@ -13,11 +12,8 @@ import YouTubeLatest from "@/components/home/youtube";
 export default function Home() {
   return (
     <>
-      <NavBar />
       <Hero />
-      <section id="about">
-        <Community />
-      </section>
+      <Community />
       <Welcome />
       <Plan />
       <Updates />
