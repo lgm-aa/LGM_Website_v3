@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap");
+
 /* --- Minimal reset so the hero/navbar are truly edge-to-edge --- */
 html {
   scroll-behavior: smooth;
