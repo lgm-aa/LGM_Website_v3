@@ -1,51 +1,125 @@
-/* make page background match homepage */
-.sermons {
-  background-color: #0f172a; /* dark slate */
-}
-
-/* Same layout as homepage hero */
+/* Hero container */
 .sermons-hero {
   position: relative;
   width: 100%;
-  height: min(85vh, 750px); /* same size as homepage */
+  height: min(85vh, 750px);
   overflow: hidden;
 }
 
-/* Hero background image */
+/* Background image */
 .sermons-hero__bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Dark/blue overlay (same as homepage) */
+/* Matching blue-dark overlay */
 .sermons-hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(30, 41, 59, 0.55) 0%,
-    rgba(30, 41, 59, 0.4) 40%,
-    rgba(15, 23, 42, 0.75) 100%
+    rgba(30, 41, 59, 0.35) 0%,     /* softened */
+    rgba(30, 41, 59, 0.22) 40%,
+    rgba(15, 23, 42, 0.45) 100%
   );
 }
 
-/* Text centered */
+/* Content (left-aligned) */
 .sermons-hero__content {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  top: 35%;
+  transform: translateY(-50%);
+  left: clamp(5rem, 10vw, 12rem);
 }
 
-/* Big SERMONS text styled like homepage */
+/* Title styling */
 .sermons-hero__title {
-  color: white;
-  font-size: clamp(3rem, 10vw, 8rem);
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-align: center;
+  font-family: "Playfair Display SC", serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
   text-transform: uppercase;
+}
+
+/* CTA under the title */
+.sermons-hero__cta {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* YouTube icon */
+.sermons-hero__cta-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* CTA button */
+.sermons-hero__cta-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sermons-hero__cta-button:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .sermons-hero__content {
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 45%;
+  }
+
+  .sermons-hero__cta {
+    flex-direction: row;
+  }
+
+  .sermons-hero__cta-button {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/*   S E R M O N S   W A V E   (scoped, no global interference)           */
+/* ---------------------------------------------------------------------- */
+
+.sermons-hero__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; /* slight overlap */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sermons-hero__wave-svg {
+  display: block;
+  width: 100%;
+  height: 96px;
+}
+
+/* Local sermons variable — NOT global */
+.sermons-hero {
+  --sermons-bg: #e5ebf3;
+}
+
+.sermons-hero__wave-path {
+  fill: var(--sermons-bg);
 }
