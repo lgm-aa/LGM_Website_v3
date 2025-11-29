@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { youtubeSearchUrl } from "@/utils/google";
+import { youtubeSearchUrl } from "@/utils/googleAPI";
 
-export function useYouTubeSearch(query, { maxResults = 6, channelId } = {}) {
+const channelId = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
+
+export function useYouTubeSearch(query, { maxResults = 6 } = {}) {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -85,7 +87,7 @@ export function useYouTubeSearch(query, { maxResults = 6, channelId } = {}) {
       console.log("🔚 useYouTubeSearch cleanup — cancelling fetch");
       cancelled = true;
     };
-  }, [query, maxResults, channelId]);
+  }, [query, maxResults]);
 
   return { videos, loading, error };
 }

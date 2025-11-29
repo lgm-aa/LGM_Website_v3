@@ -18,7 +18,6 @@ export default function Home() {
       <Plan />
       <Updates />
       <Ministries />
-      <YouTubeLatest channelId="UCFN3i5-SUCJctC_h5hMiBBw" />
       <Footer />
     </>
   );
