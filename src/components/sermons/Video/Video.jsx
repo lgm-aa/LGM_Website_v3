@@ -2,12 +2,26 @@
 import "./Video.css";
 import useLatestSermon from "@/hooks/useLatestSermon";
 
+const SERMON_TZ = "America/New_York";
+
+function formatSermonDate(isoString) {
+  if (!isoString) return "";
+
+  const date = new Date(isoString);
+
+  // Example output: "November 23, 2025"
+  return date.toLocaleDateString("en-US", {
+    timeZone: SERMON_TZ,
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export default function Video({
   titleLabel = "Latest Sermon",
 }) {
   const { sermon, error, loading } = useLatestSermon();
-
-  console.log("[Video] useLatestSermon result:", { sermon, error, loading });
 
   const hasSermon = !!sermon && !!sermon.videoId;
   const iframeSrc = hasSermon
@@ -21,7 +35,7 @@ export default function Video({
       ? "Loading latest sermon…"
       : titleLabel;
 
-  const displayDate = hasSermon ? sermon.publishedAt : "";
+  const displayDate = hasSermon ? formatSermonDate(sermon.publishedAt) : "";
 
   return (
     <section className="latest-sermon">
