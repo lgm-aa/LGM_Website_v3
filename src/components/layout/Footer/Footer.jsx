@@ -82,6 +82,9 @@ export default function Footer() {
           <a href="#">Ministries</a>
           <a href="#updates__container">Events</a>
           <a href="/contact">Contact Us</a>
+          <a href="#ministries">Ministries</a>
+          <a href="#">Events</a>
+          <a href="#">Contact Us</a>
         </nav>
 
         {/* Get Involved */}

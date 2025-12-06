@@ -16,8 +16,8 @@ export default function Welcome() {
             />
             <div className="welcome__quote">
               <p>
-                "The purpose of Living Grace Ministry is to nurture genuine
-                Christian discipleship through grace"
+                The purpose of Living Grace Ministry is to nurture genuine
+                Christian discipleship through grace
               </p>
             </div>
           </div>
