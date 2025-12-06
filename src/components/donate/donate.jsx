@@ -1,5 +1,5 @@
 import React from "react";
-import "./Donate.css";
+import "./donate.css";
 import give from "@/assets/ministry_campus.webp"; // change name/path if needed
 
 export default function Donate() {
