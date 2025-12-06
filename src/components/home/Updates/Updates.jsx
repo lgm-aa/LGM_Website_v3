@@ -27,7 +27,7 @@ export default function Updates({
 }) {
   return (
     <section className="updates">
-      <div className="updates__container">
+      <div id = "updates__container" className="updates__container">
         <header className="updates__header">
           <h2 className="updates__title">This Week at Living Grace Ministry</h2>
           <p className="updates__subtitle">

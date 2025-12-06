@@ -80,14 +80,14 @@ export default function Footer() {
           <a href="/about">About Us</a>
           <a href="#">Our Beliefs</a>
           <a href="#">Ministries</a>
-          <a href="#">Events</a>
-          <a href="#">Contact Us</a>
+          <a href="#updates__container">Events</a>
+          <a href="/contact">Contact Us</a>
         </nav>
 
         {/* Get Involved */}
         <nav className="footer__col">
           <h4>Get Involved</h4>
-          <a href="#">Plan Your Visit</a>
+          <a href="#plan-section">Plan Your Visit</a>
           <a href="#">Small Groups</a>
           <a href="#">Volunteer</a>
           <a href="#">Prayer Requests</a>

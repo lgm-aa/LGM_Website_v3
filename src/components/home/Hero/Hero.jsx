@@ -34,7 +34,7 @@ export default function Hero() {
         {/* Buttons fade in 1s after the title */}
         <div className={getClassName(1)}>
           <div className="hero-actions">
-            <Button as="a" href="/" variant="primary" size="lg">
+            <Button as="a" href="#plan-section" variant="primary" size="lg">
               Plan your visit
             </Button>
             <Button as="a" href="/" variant="primary" size="lg">
