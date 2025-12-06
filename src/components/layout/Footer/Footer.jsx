@@ -79,7 +79,7 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <a href="/about">About Us</a>
           <a href="#">Our Beliefs</a>
-          <a href="#">Ministries</a>
+          <a href="#ministries">Ministries</a>
           <a href="#">Events</a>
           <a href="#">Contact Us</a>
         </nav>
