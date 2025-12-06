@@ -1,7 +1,6 @@
 import React from "react";
 import "./Ministries.css";
 import MinistryCard from "./MinistryCard";
-import Button from "@/components/ui/Button/Button";
 
 import campusImg from "@/assets/ministry_campus.webp";
 import postgradImg from "@/assets/ministry_postgrad.webp";
@@ -24,11 +23,6 @@ export default function Ministries() {
           <MinistryCard title="FAMILY" image={campusImg} href="#family" />
         </div>
 
-        <div className="ministries__cta">
-          <Button variant="outline" size="lg" className="ministries-button">
-            See all ministries
-          </Button>
-        </div>
       </div>
     </section>
   );

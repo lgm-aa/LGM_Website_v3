@@ -59,19 +59,19 @@ export default function NavBar() {
             </span>
             
             <div className="lgm-nav__dropdown">
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/childrens" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Children's
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/youth-group" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Youth Group
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/campus" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Campus
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/post-grad" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Post Grad
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/adult-family" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Adult / Family
               </Link>
             </div>
