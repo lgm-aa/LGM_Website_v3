@@ -110,13 +110,20 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 400;
-  width: 100%;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .notify-button:hover {
   background-color: #111827;
 }
+
+.notify-button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem; /* optional spacing */
+}
+
 
 /* Weekly Bulletin */
 .weekly-bulletin {

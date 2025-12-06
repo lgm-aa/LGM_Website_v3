@@ -8,6 +8,7 @@ import Updates from "@/components/home/Updates/Updates";
 import Ministries from "@/components/home/Ministries/Ministries";
 import Footer from "@/components/layout/Footer/Footer";
 
+
 export default function Home() {
   return (
     <>
@@ -18,6 +19,7 @@ export default function Home() {
       <Updates />
       <Ministries />
       <Footer />
+      
     </>
   );
 }

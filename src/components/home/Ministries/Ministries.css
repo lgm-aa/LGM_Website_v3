@@ -1,5 +1,5 @@
 .ministries {
-  background: #e9edf2; /* light gray-blue like your mock */
+  background: #e9edf2;
   padding: clamp(48px, 6vw, 80px) 24px;
 }
 
@@ -27,15 +27,27 @@
 
 .ministries__subtitle {
   margin: 0;
-  color: #334155; /* slate-700 */
+  color: #334155;
   font-size: clamp(16px, 2.4vw, 20px);
+}
+
+.ministries__carousel-container {
+  position: relative;
+  margin-top: clamp(20px, 3vw, 28px);
+}
+
+.ministries__grid-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .ministries__grid {
   display: grid;
   gap: clamp(16px, 2.5vw, 28px);
   grid-template-columns: 1fr;
-  margin-top: clamp(20px, 3vw, 28px);
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 720px) {
@@ -50,7 +62,70 @@
   }
 }
 
-/* Card */
+.ministries__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: #2b3443;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ministries__arrow:focus {
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ministries__arrow:focus-visible {
+  outline: 2px solid #2b3443;
+  outline-offset: 2px;
+}
+
+.ministries__arrow:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(255, 255, 255, 0.95);
+  color: #2b3443;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ministries__arrow:hover:not(:disabled) {
+  background: #2b3443;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ministries__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.ministries__arrow--left {
+  left: -24px;
+}
+
+.ministries__arrow--right {
+  right: -24px;
+}
+
 .ministry-card {
   display: block;
   border-radius: 16px;
@@ -59,10 +134,12 @@
   box-shadow: 0 10px 24px rgba(2, 6, 23, 0.1), 0 2px 6px rgba(2, 6, 23, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   background: #2b3443;
+  position: relative;
+  z-index: 10;
 }
 
 .ministry-card:focus-visible {
-  outline: 3px solid #93c5fd; /* blue-300 */
+  outline: 3px solid #93c5fd;
   outline-offset: 3px;
   border-radius: 18px;
 }
@@ -72,15 +149,12 @@
   box-shadow: 0 16px 34px rgba(2, 6, 23, 0.16), 0 4px 10px rgba(2, 6, 23, 0.1);
 }
 
-/* Image/placeholder area */
 .ministry-card__media {
-  aspect-ratio: 4 / 5; /* tall card */
+  aspect-ratio: 4 / 5;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* pretty placeholder if no image passed */
   background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.12),
@@ -89,7 +163,6 @@
     repeating-linear-gradient(45deg, #eef2f7 0 18px, #dde4ec 18px 36px);
 }
 
-/* Label bar */
 .ministry-card__label {
   background: #0f1321;
   color: #ffffff;
@@ -102,13 +175,82 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.ministries-button {
-  background-color: #ffffff;
-  color: #0f172a;
-  /* border: 1px solid rgba(15, 23, 42, 0.15); */
+.ministries__dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
 }
 
-.ministries-button:hover {
-  background-color: #f1f5f9;
-  border-color: rgba(23, 61, 149, 0.25);
+.ministries__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.ministries__dot:hover:not(:disabled) {
+  background: #94a3b8;
+  transform: scale(1.2);
+}
+
+.ministries__dot:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ministries__dot--active {
+  background: #2b3443;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .ministries__arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .ministries__arrow--left {
+    left: -16px;
+  }
+  
+  .ministries__arrow--right {
+    right: -16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ministries__arrow {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .ministries__arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .ministries__arrow--left {
+    left: -12px;
+  }
+  
+  .ministries__arrow--right {
+    right: -12px;
+  }
+  
+  .ministries__arrow:active:not(:disabled) {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2b3443;
+  }
+}
+
+@media (max-width: 480px) {
+  .ministries__arrow {
+    display: none;
+  }
 }

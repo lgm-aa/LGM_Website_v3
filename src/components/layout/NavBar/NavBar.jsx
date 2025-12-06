@@ -59,31 +59,31 @@ export default function NavBar() {
             </span>
             
             <div className="lgm-nav__dropdown">
-              <Link to="/childrens" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Children's
               </Link>
-              <Link to="/youth-group" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Youth Group
               </Link>
-              <Link to="/campus" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Campus
               </Link>
-              <Link to="/post-grad" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Post Grad
               </Link>
-              <Link to="/adult-family" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Adult / Family
               </Link>
             </div>
           </div>
 
           <div className="lgm-nav__item">
-            <Link to="/sermons" className="lgm-nav__link">
+            <Link to="/" className="lgm-nav__link">
               Sermons
             </Link>
           </div>
           <div className="lgm-nav__item">
-            <Link to="/" className="lgm-nav__link">
+            <Link to="/donate" className="lgm-nav__link">
               Donate
             </Link>
           </div>
