@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "@/components/layout/NavBar/NavBar";
 import Home from "@/pages/Home/Home";
 import About from "@/pages/About/About";
+import Donate from "@/pages/Donate/Donate";
+import Contact from "@/pages/Contact/Contact";
 import Sermons from "@/pages/Sermons/Sermons";
 import ChildrensMinistry from "@/pages/ChildrensMinistry/ChildrensMinistry"
 import YouthGroupMinistry from "@/pages/YouthGroupMinistry/YouthGroupMinistry"
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/sermons" element={<Sermons />} />
         <Route path="/childrens" element={<ChildrensMinistry />} />
         <Route path="/youth-group" element={<YouthGroupMinistry />} />

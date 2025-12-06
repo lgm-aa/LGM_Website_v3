@@ -27,7 +27,7 @@ export const ContactIcon = () => (
 
 export default function Plan() {
   return (
-    <div className="plan-section">
+    <div id="plan-section" className="plan-section">
       <div className="plan-container">
         {/* Header above both columns */}
         <h1 className="plan-title">Plan Your Visit</h1>
@@ -87,7 +87,12 @@ export default function Plan() {
                 </div>
               </div>
 
-              <button className="notify-button">Let Us Know You're Coming</button>
+              <div className="notify-button-wrapper">
+                <a href="/contact" className="notify-button">
+                  Let Us Know You're Coming
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
