@@ -37,7 +37,7 @@ export default function Hero() {
             <Button as="a" href="/" variant="primary" size="lg">
               Plan your visit
             </Button>
-            <Button as="a" href="/" variant="primary" size="lg">
+            <Button as="a" href="/sermons" variant="primary" size="lg">
               Watch Online
             </Button>
           </div>
