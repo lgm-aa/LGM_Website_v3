@@ -9,6 +9,9 @@
 html {
   scroll-behavior: smooth;
 }
+header, main{
+  font-family: "Lato", serif;
+}
 body {
   font-family: "Lato", sans-serif;
 }

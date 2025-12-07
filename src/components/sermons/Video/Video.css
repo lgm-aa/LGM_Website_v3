@@ -20,7 +20,7 @@
 
 /* Main title */
 .latest-sermon__title {
-  font-family: "Playfair Display SC", serif; /* same serif family */
+  /* font-family: "Playfair Display SC", serif; */
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 400;
   color: #111827;

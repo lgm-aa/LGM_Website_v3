@@ -15,7 +15,7 @@
   margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 .updates__title {
-  font-family: "Playfair Display SC", serif;
+  
   color: #2b3443;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -23,7 +23,7 @@
   margin: 0 0 2rem;
 }
 .updates__subtitle {
-  font-family: "Playfair Display SC", serif;
+  
   color: #6b7280;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
 }

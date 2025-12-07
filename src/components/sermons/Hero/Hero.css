@@ -35,7 +35,7 @@
 
 /* Title styling */
 .sermons-hero__title {
-  font-family: "Playfair Display SC", serif;
+  /* font-family: "Playfair Display SC", serif; */
   color: rgba(255, 255, 255, 0.9);
   font-size: clamp(3rem, 12vw, 8rem);
   font-weight: 400;

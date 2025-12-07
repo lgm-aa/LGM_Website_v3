@@ -84,7 +84,7 @@
 }
 
 .welcome__title {
-  font-family: "Playfair Display SC", serif; /* same serif family */
+   /* same serif family */
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   margin: 0;
