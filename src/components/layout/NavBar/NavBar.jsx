@@ -4,13 +4,6 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 
-const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Ministries", href: "#ministries" },
-  { label: "Sermons", href: "#sermons" },
-  { label: "Donate", href: "#donate" },
-];
-
 export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -59,26 +52,26 @@ export default function NavBar() {
             </span>
             
             <div className="lgm-nav__dropdown">
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/childrens" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Children's
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/youth-group" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Youth Group
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/campus" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Campus
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/post-grad" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Post Grad
               </Link>
-              <Link to="/" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
+              <Link to="/adult-family" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Adult / Family
               </Link>
             </div>
           </div>
 
           <div className="lgm-nav__item">
-            <Link to="/" className="lgm-nav__link">
+            <Link to="/sermons" className="lgm-nav__link">
               Sermons
             </Link>
           </div>
