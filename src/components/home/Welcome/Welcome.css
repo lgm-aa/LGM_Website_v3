@@ -19,7 +19,7 @@
   }
 
   .welcome__media {
-    flex: 1.35;
+    flex: 0 0 500px;
   }
 
   .welcome__content {
@@ -48,6 +48,7 @@
 }
 
 .welcome__quote {
+  font-family: "Lato", sans-serif;
   position: absolute;
   left: 8%;
   bottom: -32px;
@@ -83,6 +84,7 @@
 }
 
 .welcome__title {
+  font-family: "Playfair Display SC", serif; /* same serif family */
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   margin: 0;
@@ -105,6 +107,7 @@
 }
 
 .welcome__text {
+  font-family: "Lato", sans-serif;
   max-width: 360px;
   font-size: 1.05rem;
   color: #6b7280;

@@ -1,3 +1,8 @@
+body, h1, h2, h3  {
+  /* 1. Default for EVERYTHING */
+  font-family: "Lato", sans-serif; 
+}
+
 .footer {
   background: #1f2330;
   color: #cbd5e1;

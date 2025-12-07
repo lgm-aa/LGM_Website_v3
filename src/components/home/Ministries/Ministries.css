@@ -13,6 +13,7 @@
 }
 
 .ministries__title {
+  font-family: "Playfair Display SC", serif;
   font-size: clamp(28px, 5vw, 48px);
   line-height: 1.1;
   color: #2b3443;
@@ -26,6 +27,7 @@
 }
 
 .ministries__subtitle {
+  font-family: "Playfair Display SC", serif;
   margin: 0;
   color: #334155;
   font-size: clamp(16px, 2.4vw, 20px);
@@ -164,6 +166,7 @@
 }
 
 .ministry-card__label {
+  font-family: "Lato", sans-serif;
   background: #0f1321;
   color: #ffffff;
   padding: 20px;
