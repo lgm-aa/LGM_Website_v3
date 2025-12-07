@@ -8,7 +8,7 @@
 /* --- Minimal reset so the hero/navbar are truly edge-to-edge --- */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 60px;
 }
 body{
   font-family: "Lato", sans-serif;

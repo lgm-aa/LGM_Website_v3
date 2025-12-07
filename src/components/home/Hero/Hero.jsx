@@ -5,6 +5,14 @@ import Button from "@/components/ui/Button/Button";
 import lgm_easter from "@/assets/lgm_easter.webp";
 import { useStaggeredFade } from "@/hooks/useStaggeredFade";
 
+const handleScroll = (e, id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      e.preventDefault(); // This stops the URL from changing
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 export default function Hero() {
   // 2 items: [0] title, [1] buttons
   // title starts at 200ms, buttons 1s later (interval = 1000)
@@ -34,7 +42,7 @@ export default function Hero() {
         {/* Buttons fade in 1s after the title */}
         <div className={getClassName(1)}>
           <div className="hero-actions">
-            <Button as="a" href="#plan-section" variant="primary" size="lg">
+            <Button as="a" href="#plan-section" onClick={(e) => handleScroll(e, "updates__container")} variant="primary" size="lg">
               Plan your visit
             </Button>
             <Button as="a" href="/sermons" variant="primary" size="lg">
