@@ -1,6 +1,14 @@
 import React from "react";
 import "./Footer.css";
-import logo from "@/assets/lgm_logo_white.webp"; // adjust path if needed
+import logo from "@/assets/lgm_logo_white.webp"; 
+
+const handleScroll = (e, id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      e.preventDefault(); // This stops the URL from changing
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
 export default function Footer() {
   return (
@@ -79,15 +87,21 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <a href="/about">About Us</a>
           <a href="#">Our Beliefs</a>
-          <a href="#ministries">Ministries</a>
-          <a href="#updates__container">Events</a>
+          <a href="#ministries" onClick={(e) => handleScroll(e, "ministries")}>
+            Ministries
+          </a>
+          <a href="#updates__container" onClick={(e) => handleScroll(e, "updates__container")}>
+            Events
+          </a>
           <a href="/contact">Contact Us</a>
         </nav>
 
         {/* Get Involved */}
         <nav className="footer__col">
           <h4>Get Involved</h4>
-          <a href="#plan-section">Plan Your Visit</a>
+          <a href="#plan-section" onClick={(e) => handleScroll(e, "plan-section")}>
+            Plan Your Visit
+          </a>
           <a href="#">Small Groups</a>
           <a href="#">Volunteer</a>
           <a href="#">Prayer Requests</a>
