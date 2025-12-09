@@ -1,30 +1,45 @@
+// src/components/Updates.jsx
 import React from "react";
 import "./Updates.css";
 import Button from "@/components/ui/Button/Button";
+import useLatestBulletin from "@/hooks/useLatestBulletin";
+// 1. Import the shared date utility
+import { getMostRecentSundayISOString } from "@/utils/timeNY";
 
-/* You can later feed these from an API / Google Drive */
-const sampleBulletin = {
-  title: "This Week's Bulletin",
-  date: "November 3, 2025",
-  items: [
-    'Sermon: "Walking in Grace" - Pastor John Smith',
-    "Fellowship lunch following service",
-    "Youth group meeting at 6:00 PM",
-  ],
-  link: "#", // bulletin PDF or page
-};
+export default function Updates() {
+  const { data, loading, error } = useLatestBulletin();
 
-const sampleArchive = [
-  { label: "October 27, 2025", href: "#" },
-  { label: "October 20, 2025", href: "#" },
-  { label: "October 13, 2025", href: "#" },
-  { label: "October 6, 2025", href: "#" },
-];
+  const formatDate = (isoString) => {
+    if (!isoString) return "";
+    return new Date(isoString).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
 
-export default function Updates({
-  bulletin = sampleBulletin,
-  archives = sampleArchive,
-}) {
+  let displayTitle = "Weekly Bulletin";
+  let displayDate = "";
+
+  if (loading) {
+    displayTitle = "Checking for updates...";
+  } else if (error) {
+    displayTitle = "Bulletin Unavailable";
+  } else if (data) {
+    displayTitle = data.name.replace(".pdf", "");
+
+    // 2. CHANGE: Use the calculated "Sunday" date instead of the file upload date
+    // This ensures it matches the sermon logic exactly.
+    displayDate = formatDate(getMostRecentSundayISOString());
+  }
+
+  const pdfLink = data?.url || "#";
+  const embedUrl = data?.id
+    ? `https://drive.google.com/file/d/${data.id}/preview`
+    : null;
+
+  const isDisabled = loading || error || !data?.url;
+
   return (
     <section className="updates">
       <div className="updates__container">
@@ -37,11 +52,9 @@ export default function Updates({
         </header>
 
         <div className="updates__grid">
-          {/* Left — Weekly Bulletin (dark card) */}
           <article className="updates__card updates__card--dark">
             <div className="updates__cardHeader">
               <span className="icon-badge">
-                {/* doc icon */}
                 <svg
                   viewBox="0 0 24 24"
                   width="22"
@@ -55,23 +68,42 @@ export default function Updates({
                 </svg>
               </span>
               <div>
-                <h3 className="updates__cardTitle">{bulletin.title}</h3>
-                <div className="updates__date">{bulletin.date}</div>
+                <h3 className="updates__cardTitle">{displayTitle}</h3>
+                <div className="updates__date">{displayDate}</div>
               </div>
             </div>
 
-            <ul className="updates__list">
-              {bulletin.items.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
+            {embedUrl ? (
+              <div className="updates__pdf-container">
+                <iframe
+                  src={embedUrl}
+                  className="updates__pdf-frame"
+                  title="Weekly Bulletin PDF"
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            ) : (
+              <div className="updates__content-placeholder">
+                <p>
+                  {loading
+                    ? "Syncing with Google Drive..."
+                    : "The bulletin will appear here once loaded."}
+                </p>
+              </div>
+            )}
 
             <Button
               as="a"
-              href={bulletin.link}
+              href={pdfLink}
+              target={!isDisabled ? "_blank" : undefined}
+              rel="noopener noreferrer"
               variant="primary"
               size="lg"
               className="updates__cta"
+              style={{
+                pointerEvents: isDisabled ? "none" : "auto",
+                opacity: isDisabled ? 0.7 : 1,
+              }}
             >
               <span className="btn-icon">
                 <svg
@@ -82,77 +114,16 @@ export default function Updates({
                   stroke="currentColor"
                   strokeWidth="2"
                 >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </span>
-              View Full Bulletin
-              <span className="btn-ext">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
                   <path d="M18 13V6H11" />
                   <path d="M18 6L7 17" />
                 </svg>
               </span>
+              {loading ? "Loading..." : "Open PDF in New Tab"}
             </Button>
 
-            {/* soft radial accents */}
             <span className="updates__blob updates__blob--tl" />
             <span className="updates__blob updates__blob--br" />
           </article>
-
-          {/* Right — Archives (light card) */}
-          <aside className="updates__card updates__card--light">
-            <div className="updates__cardHeader">
-              <span className="icon-badge icon-badge--light">
-                {/* calendar icon */}
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <path d="M16 2v4M8 2v4M3 10h18" />
-                </svg>
-              </span>
-              <h3 className="updates__cardTitle">Check our archives</h3>
-            </div>
-
-            <p className="updates__desc">
-              Browse previous bulletins, sermon notes, and announcements from
-              past weeks.
-            </p>
-
-            <div className="updates__archiveList">
-              {archives.map((a, i) => (
-                <a className="archiveItem" href={a.href} key={i}>
-                  <span>{a.label}</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="18"
-                    height="18"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-              ))}
-            </div>
-
-            <button className="archiveAllBtn" type="button">
-              View All Archives
-            </button>
-          </aside>
         </div>
       </div>
     </section>

@@ -1,11 +1,13 @@
+/* src/components/Updates.css */
+
 /* Section wrapper */
 .updates {
-  background: #e9eef4; /* same family as About */
+  background: #e9eef4;
   padding: clamp(3.5rem, 6vw, 5.5rem) 1rem;
 }
 
 .updates__container {
-  max-width: 1100px;
+  max-width: 1000px; /* Increased slightly for better PDF reading */
   margin: 0 auto;
 }
 
@@ -26,38 +28,32 @@
   font-size: clamp(0.95rem, 2vw, 1.05rem);
 }
 
-/* Grid of cards */
+/* Grid/Layout - NOW SINGLE COLUMN */
 .updates__grid {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2rem);
-}
-@media (min-width: 980px) {
-  .updates__grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  display: flex; /* Changed from grid to flex */
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Cards */
 .updates__card {
   position: relative;
   border-radius: 18px;
-  padding: clamp(1.25rem, 3vw, 1.75rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
   overflow: hidden;
+  width: 100%; /* Ensure it spans across */
+  box-sizing: border-box;
 }
+
 .updates__card--dark {
   background: radial-gradient(
       1200px 300px at 75% 0%,
       rgba(255, 255, 255, 0.06),
       transparent 60%
     ),
-    #0f172a; /* slate-900 */
+    #0f172a;
   color: #e5e7eb;
-}
-.updates__card--light {
-  background: #f7fafc;
-  color: #1f2937;
-  border: 1px solid rgba(2, 6, 23, 0.08);
 }
 
 /* Card header */
@@ -65,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .icon-badge {
   display: grid;
@@ -73,12 +69,8 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(253, 230, 138, 0.18); /* warm accent */
+  background: rgba(253, 230, 138, 0.18);
   color: #fde68a;
-}
-.icon-badge--light {
-  background: rgba(2, 6, 23, 0.06);
-  color: #374151;
 }
 
 .updates__cardTitle {
@@ -91,23 +83,39 @@
   font-size: 0.95rem;
 }
 
-/* Bulleted list */
-.updates__list {
-  margin: 1rem 0 1.2rem;
-  padding-left: 1.25rem;
+/* PDF Embed Styles */
+.updates__pdf-container {
+  width: 100%;
+  height: 800px; /* Tall enough to read comfortably */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.updates__list li {
-  margin: 0.5rem 0;
-  list-style: disc;
+
+.updates__pdf-frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff; /* White bg for the iframe ensures PDF looks clean */
+}
+
+/* Placeholder text when loading or empty */
+.updates__content-placeholder {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
 }
 
 /* CTA button spacing */
 .updates__cta {
   width: 100%;
   justify-content: center;
+  margin-top: 1rem;
 }
 
-/* Decorative blobs on dark card */
+/* Decorative blobs */
 .updates__blob {
   position: absolute;
   border-radius: 50%;
@@ -131,44 +139,9 @@
   bottom: -80px;
 }
 
-/* Right card */
-.updates__desc {
-  color: #4b5563;
-  margin: 0.25rem 0 1.25rem;
-}
-.updates__archiveList {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.archiveItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 1rem;
-  background: #ffffff;
-  border: 1px solid rgba(2, 6, 23, 0.06);
-  border-radius: 12px;
-  color: #1f2937;
-  text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.archiveItem:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
-}
-
-.archiveAllBtn {
-  width: 100%;
-  margin-top: 1rem;
-  padding: 0.9rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(2, 6, 23, 0.2);
-  background: transparent;
-  color: #1f2937;
-  font-weight: 600;
-  cursor: pointer;
-}
-.archiveAllBtn:hover {
-  background: rgba(2, 6, 23, 0.04);
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .updates__pdf-container {
+    height: 500px;
+  }
 }
