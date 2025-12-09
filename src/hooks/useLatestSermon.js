@@ -150,7 +150,7 @@ async function fetchSundaySermonFromYouTube() {
 function createLivestreamFallback() {
   const ts = Date.now();
   return {
-    videoId: LIVESTREAM_ID,
+    videoId: "LIVESTREAM",
     title: "Watch Our Sunday Livestream",
     publishedAt: getMostRecentSundayISOString(),
     fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}/live`,
