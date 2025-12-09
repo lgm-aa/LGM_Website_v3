@@ -13,7 +13,6 @@ import {
 
 const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
-const LIVESTREAM_ID = import.meta.env.VITE_LIVESTREAM_FALLBACK_ID;
 
 const CACHE_KEY_SERMON = "latestSermonData";
 const CACHE_KEY_TIMESTAMP = "latestSermonTimestamp";
@@ -154,7 +153,7 @@ function createLivestreamFallback() {
     videoId: LIVESTREAM_ID,
     title: "Watch Our Sunday Livestream",
     publishedAt: getMostRecentSundayISOString(),
-    fallbackUrl: `https://www.youtube.com/watch?v=${LIVESTREAM_ID}`,
+    fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}/live`,
     isFallback: true,
     ...buildCacheMeta(ts),
   };
