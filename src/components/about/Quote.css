@@ -7,5 +7,12 @@
     background-color: #e5ebf3;
 }
 .quote-text {
-    
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 300;
+}
+.highlight-text {
+    color: #274C8D;
+    font-weight: 600;
 }
