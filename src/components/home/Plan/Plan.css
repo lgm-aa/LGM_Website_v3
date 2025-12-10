@@ -40,7 +40,7 @@
 .map-container {
   width: 600px;
   height: 500px;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -107,7 +107,7 @@
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   font-weight: 400;
   margin: 0;
