@@ -15,17 +15,16 @@
   margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 .updates__title {
-  font-family: "Playfair Display SC", serif;
+  font-family: "Playfair Display", serif;
   color: #2b3443;
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 .updates__subtitle {
-  font-family: "Playfair Display SC", serif;
   color: #6b7280;
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
 }
 
 /* Grid of cards */

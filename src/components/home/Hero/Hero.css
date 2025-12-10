@@ -36,7 +36,7 @@
 .hero-title {
   font-family: "Playfair Display SC", serif;
   font-size: clamp(2.5rem, 6vw, 6rem);
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 0.95;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
