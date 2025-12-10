@@ -1,7 +1,11 @@
-.about-section {
-    padding-top: 100px;
+.quote-container {
+    padding: 10rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e5ebf3;
+}
+.quote-text {
+    
 }
