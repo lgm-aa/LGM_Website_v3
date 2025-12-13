@@ -35,12 +35,11 @@ export default function Footer() {
           </p>
 
           <div className="footer__service">
-            <div>Regular Service</div>
-            <div>Sunday 1:30pm</div>
+            <div>Sunday Service @ 1:30PM</div>
           </div>
 
           <div className="footer__socials">
-            <a href="#" aria-label="Facebook" className="social">
+            <a href="https://www.facebook.com/profile.php?id=100064729684652" aria-label="Facebook" className="social">
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -52,7 +51,7 @@ export default function Footer() {
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
-            <a href="#" aria-label="Instagram" className="social">
+            <a href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==" aria-label="Instagram" className="social">
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -66,7 +65,7 @@ export default function Footer() {
                 <circle cx="17.5" cy="6.5" r="1.5" />
               </svg>
             </a>
-            <a href="#" aria-label="YouTube" className="social">
+            <a href="https://www.youtube.com/@LivingGraceMinistry" aria-label="YouTube" className="social">
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -110,23 +109,6 @@ export default function Footer() {
         {/* Contact */}
         <div className="footer__col">
           <h4>Contact</h4>
-
-          <div className="footer__row">
-            <span className="i">
-              <svg
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M22 16.92V19a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.62-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l.67-1.18a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </span>
-            <a href="tel:+1-000-000-0000">(XXX) 123-2303</a>
-          </div>
-
           <div className="footer__row">
             <span className="i">
               <svg
@@ -141,7 +123,7 @@ export default function Footer() {
                 <path d="M22 6l-10 7L2 6" />
               </svg>
             </span>
-            <a href="mailto:info@livinggrace.org">info@livinggrace.org</a>
+            <a href="mailto:livinggraceministry@gmail.com">livinggraceministry@gmail.com</a>
           </div>
         </div>
       </div>
