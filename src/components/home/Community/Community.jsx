@@ -14,11 +14,14 @@ import img6 from "@/assets/community6.webp";
 import img7 from "@/assets/community7.webp";
 import img8 from "@/assets/community8.webp";
 import img9 from "@/assets/community9.webp";
-import img10 from "@/assets/community10.webp"
+import img10 from "@/assets/community10.webp";
 import { useCommunityCarousel } from "@/hooks/useCommunityCarousel";
 
 const photos = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
-const communityPhotos = [...photos, ...photos];
+const communityPhotos = [...photos];
+
+//import photo
+//add to photos array
 
 export default function Community() {
   const { swiperRef, handlePrev, handleNext, handleUserTouch } =
