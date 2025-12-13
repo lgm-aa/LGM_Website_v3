@@ -92,7 +92,6 @@ export default function Ministries() {
             <button 
               className="ministries__arrow ministries__arrow--right"
               onClick={nextSlide}
-              disabled={isAnimating}
               aria-label="Next ministries"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
