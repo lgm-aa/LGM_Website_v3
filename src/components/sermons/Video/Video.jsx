@@ -2,14 +2,13 @@
 import "./Video.css";
 import useLatestSermon from "@/hooks/useLatestSermon";
 
+// 1. We need the Channel ID to construct the live embed URL
+const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
 const SERMON_TZ = "America/New_York";
 
 function formatSermonDate(isoString) {
   if (!isoString) return "";
-
   const date = new Date(isoString);
-
-  // Example output: "November 23, 2025"
   return date.toLocaleDateString("en-US", {
     timeZone: SERMON_TZ,
     year: "numeric",
@@ -18,15 +17,25 @@ function formatSermonDate(isoString) {
   });
 }
 
-export default function Video({
-  titleLabel = "Latest Sermon",
-}) {
+export default function Video({ titleLabel = "Latest Sermon" }) {
   const { sermon, error, loading } = useLatestSermon();
 
   const hasSermon = !!sermon && !!sermon.videoId;
-  const iframeSrc = hasSermon
-    ? `https://www.youtube.com/embed/${sermon.videoId}`
-    : "";
+
+  // 2. LOGIC FIX: Check for the special "LIVESTREAM" ID
+  const isLivestreamFallback = sermon?.videoId === "LIVESTREAM";
+
+  // 3. Construct the correct URL based on the type
+  let iframeSrc = "";
+  if (hasSermon) {
+    if (isLivestreamFallback) {
+      // ✅ CORRECT WAY: Use the 'live_stream' endpoint with your Channel ID
+      iframeSrc = `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`;
+    } else {
+      // Standard video
+      iframeSrc = `https://www.youtube.com/embed/${sermon.videoId}`;
+    }
+  }
 
   const displayTitle =
     hasSermon && sermon.title
@@ -44,9 +53,7 @@ export default function Video({
 
         <h2 className="latest-sermon__title">{displayTitle}</h2>
 
-        {displayDate && (
-          <p className="latest-sermon__date">{displayDate}</p>
-        )}
+        {displayDate && <p className="latest-sermon__date">{displayDate}</p>}
 
         {error && (
           <p className="latest-sermon__error">
