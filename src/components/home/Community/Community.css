@@ -29,7 +29,7 @@
 .community__card {
   width: 100%; /* fills the slide’s fixed width */
   height: 330px; /* fixed height */
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 18px 60px rgba(15, 23, 42, 0.12);
 }
