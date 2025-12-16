@@ -5,16 +5,18 @@ import About from "@/pages/About/About";
 import Donate from "@/pages/Donate/Donate";
 import Contact from "@/pages/Contact/Contact";
 import Sermons from "@/pages/Sermons/Sermons";
-import ChildrensMinistry from "@/pages/ChildrensMinistry/ChildrensMinistry"
-import YouthGroupMinistry from "@/pages/YouthGroupMinistry/YouthGroupMinistry"
-import CampusMinistry from "@/pages/CampusMinistry/CampusMinistry"
-import PostGradMinistry from "./pages/PostGradMinistry/PostGradMinistry";
-import AdultFamilyContent from "./components/adult-family/AdultFamilyContent";
+import ChildrensMinistry from "@/pages/ChildrensMinistry/ChildrensMinistry";
+import YouthGroupMinistry from "@/pages/YouthGroupMinistry/YouthGroupMinistry";
+import CampusMinistry from "@/pages/CampusMinistry/CampusMinistry";
+import PostGradMinistry from "@/pages/PostGradMinistry/PostGradMinistry";
+import AdultFamilyContent from "@/components/adult-family/AdultFamilyContent";
+import ScrollToAnchor from "@/components/ScrollToAnchor/ScrollToAnchor";
 
 function App() {
   return (
     <>
       <NavBar />
+      <ScrollToAnchor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
