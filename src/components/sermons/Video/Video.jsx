@@ -1,8 +1,8 @@
 // src/components/sermons/Latest/Video.jsx
 import "./Video.css";
 import useLatestSermon from "@/hooks/useLatestSermon";
+import Button from "@/components/ui/Button/Button";
 
-// 1. We need the Channel ID to construct the live embed URL
 const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
 const SERMON_TZ = "America/New_York";
 
@@ -20,21 +20,63 @@ function formatSermonDate(isoString) {
 export default function Video({ titleLabel = "Latest Sermon" }) {
   const { sermon, error, loading } = useLatestSermon();
 
+  // 1. Check strict conditions
   const hasSermon = !!sermon && !!sermon.videoId;
+  const isFallbackMode = sermon?.isFallback === true;
 
-  // 2. LOGIC FIX: Check for the special "LIVESTREAM" ID
-  const isLivestreamFallback = sermon?.videoId === "LIVESTREAM";
+  // Link to channel for the button
+  const youtubeLink =
+    sermon?.fallbackUrl || `https://www.youtube.com/channel/${CHANNEL_ID}`;
 
-  // 3. Construct the correct URL based on the type
+  /* -------------------------------------------------------------------------- */
+  /* MODE A: CLEAN FALLBACK (No TV)                       */
+  /* -------------------------------------------------------------------------- */
+  if (!loading && isFallbackMode) {
+    return (
+      <section
+        className="latest-sermon"
+        style={{ minHeight: "auto", padding: "4rem 1rem" }}
+      >
+        <div className="latest-sermon__inner" style={{ textAlign: "center" }}>
+          <h2 className="latest-sermon__title" style={{ marginBottom: "1rem" }}>
+            Join Us on YouTube
+          </h2>
+          <p
+            style={{
+              color: "#6b7280",
+              marginBottom: "2rem",
+              fontSize: "1.1rem",
+              maxWidth: "600px",
+              marginInline: "auto",
+            }}
+          >
+            Our latest service is available directly on our channel. Click below
+            to watch the recording or join the livestream.
+          </p>
+
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              as="a"
+              href={youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+            >
+              Visit YouTube Channel &rarr;
+            </Button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* MODE B: STANDARD VIDEO PLAYER                        */
+  /* -------------------------------------------------------------------------- */
+
   let iframeSrc = "";
   if (hasSermon) {
-    if (isLivestreamFallback) {
-      // ✅ CORRECT WAY: Use the 'live_stream' endpoint with your Channel ID
-      iframeSrc = `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}`;
-    } else {
-      // Standard video
-      iframeSrc = `https://www.youtube.com/embed/${sermon.videoId}`;
-    }
+    iframeSrc = `https://www.youtube.com/embed/${sermon.videoId}`;
   }
 
   const displayTitle =
@@ -50,9 +92,7 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
     <section className="latest-sermon">
       <div className="latest-sermon__inner">
         <p className="latest-sermon__eyebrow">LATEST SERMON</p>
-
         <h2 className="latest-sermon__title">{displayTitle}</h2>
-
         {displayDate && <p className="latest-sermon__date">{displayDate}</p>}
 
         {error && (
