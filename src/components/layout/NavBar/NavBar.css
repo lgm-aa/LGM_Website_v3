@@ -1,6 +1,8 @@
 /* src/components/layout/NavBar/NavBar.css */
 
-/* fixed bar at the very top */
+/* --- 1. GLOBAL / DESKTOP STYLES --- */
+
+/* Fixed bar at the very top */
 .lgm-nav {
   position: fixed;
   top: 0;
@@ -10,7 +12,7 @@
   color: #ffffff;
 }
 
-/* subtle dark gradient so white text is readable over hero */
+/* Subtle dark gradient for readability */
 .lgm-nav::before {
   content: "";
   position: absolute;
@@ -24,9 +26,8 @@
   pointer-events: none;
 }
 
-/* layout container */
 .lgm-nav__inner {
-  position: relative; /* sit above ::before */
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
   padding: 14px 24px;
@@ -35,7 +36,7 @@
   justify-content: space-between;
 }
 
-/* brand area */
+/* Brand */
 .lgm-nav__brand {
   display: flex;
   align-items: center;
@@ -53,14 +54,16 @@
 .lgm-nav__title {
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
 }
 
-/* links on the right */
+/* Links Container */
 .lgm-nav__links {
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-top: 6px;
 }
 
 .lgm-nav__link {
@@ -71,105 +74,125 @@
   letter-spacing: 0.03em;
   opacity: 0.9;
   transition: opacity 0.15s ease;
+  cursor: pointer;
 }
 
 .lgm-nav__link:hover {
   opacity: 1;
 }
 
-/* simple mobile tweak: slightly tighter spacing */
-@media (max-width: 768px) {
-  .lgm-nav__inner {
-    padding-inline: 16px;
-  }
+/* --- DESKTOP DROPDOWN LOGIC --- */
 
-  .lgm-nav__links {
-    gap: 18px;
-    font-size: 0.9rem;
-  }
-}
-
-/* dropdown style */
-.lgm-nav__item {
+/* 1. Desktop Parent: Relative so the dropdown floats right under THIS word */
+.lgm-nav__item--dropdown {
   position: relative;
+  height: 100%;
 }
 
-.lgm-nav__item--dropdown:hover .lgm-nav__dropdown,
-.lgm-nav__item--open .lgm-nav__dropdown {
-  display: block;
-}
-
-.lgm-nav__link--dropdown {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-/* dropdowm arrow */
-.lgm-nav__item--dropdown > .lgm-nav__link::after {
-  content: '▾';
-  margin-left: 0.25rem;
-  font-size: 1em;
-}
-
+/* 2. Desktop Dropdown: Standard floating box */
 .lgm-nav__dropdown {
-  display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  min-width: 10rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  padding: 0.25rem 0;
-  z-index: 1001;
-  border-radius: 4px;
+  top: 100%; /* Push it down */
+  left: 50%;
+  transform: translateX(-50%); /* Center it */
+  min-width: 180px;
+  
+  /* Styling */
+  background-color: rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(15px);            /* Adds the glass effect */
+  -webkit-backdrop-filter: blur(15px);    /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  
+  /* Hidden by default on Desktop */
+  display: none;
+  flex-direction: column;
 }
 
+/* 3. Desktop Hover Action */
+.lgm-nav__item--dropdown:hover .lgm-nav__dropdown {
+  display: flex;
+}
+
+/* Desktop Links */
 .lgm-nav__dropdown-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #000000;
+  padding: 10px 20px;
+  color: #d4d4d4;
   text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s ease;
   font-size: 0.9rem;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.lgm-nav__dropdown-link:hover,
-.lgm-nav__dropdown-link:focus {
-  background-color: #f0f0f0;
+.lgm-nav__dropdown-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
+
+/* --- 2. MOBILE OVERRIDES --- */
 @media (max-width: 768px) {
+  
+  /* Hide Title */
+  .lgm-nav__title {
+    display: none;
+  }
+  
+  /* Reset Inner container so dropdown can be full width */
   .lgm-nav__inner {
     padding-inline: 16px;
+    /* position: static; */
   }
 
-  .lgm-nav__links {
-    gap: 18px;
-    font-size: 0.9rem;
-  }
-
-  .lgm-nav__dropdown {
+  /* Reset Parent Item so dropdown ignores its width */
+  /* .lgm-nav__item {
     position: static;
+  } */
+  
+  /* Reset Desktop Transform and Positioning */
+  .lgm-nav__dropdown {
+    /* Anchoring Logic (Matches Desktop) */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Centers it under "Ministries" */
+    
+    /* Sizing: Auto width based on content, but not too small */
+    width: auto;     
+    min-width: 160px; /* Ensures longer words fit nicely */
+    right: auto;      /* Stop it from stretching to the right edge */
+    
+    /* Styling */
+    border-radius: 8px; /* Round all corners */
+    margin-top: 10px;   /* distinct gap so it doesn't overlap the navbar */
+    
+    /* Keep your existing Colors/Blur */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* State */
     display: none;
-    box-shadow: none;
-    background: none;
-    padding: 0;
+    z-index: 1000;
   }
-
-  .lgm-nav__item--dropdown:hover .lgm-nav__dropdown,
+  
+  /* Mobile Open Logic (Handled by React state 'openDropdown') */
   .lgm-nav__item--open .lgm-nav__dropdown {
     display: block;
   }
-
+  
+  /* Larger Touch Targets for Mobile */
   .lgm-nav__dropdown-link {
-    padding-left: 1.5rem;
-    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center; /* Optional: Looks nice in a centered floating box */
   }
 
-  .lgm-nav__dropdown-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  .lgm-nav__links {
+    gap: 18px;
+    font-size: 0.9rem;
   }
 }
