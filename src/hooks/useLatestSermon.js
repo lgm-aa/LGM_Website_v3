@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 import {
   getLastSundayTimeRange,
   getMostRecentSundayISOString,
-  isSundayAfternoonNY,
   NY_TZ,
 } from "@/utils/timeNY";
 
 /* -------------------------------------------------------------------------- */
-/*                               CONFIG / CONSTANTS                           */
+/* CONFIG / CONSTANTS                           */
 /* -------------------------------------------------------------------------- */
 
 const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
@@ -16,44 +15,17 @@ const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
 
 const CACHE_KEY_SERMON = "latestSermonData";
 const CACHE_KEY_TIMESTAMP = "latestSermonTimestamp";
-
-// Throttle background "ID-only" checks
-const CACHE_KEY_LAST_ID_CHECK = "latestSermonLastIdCheck";
-const ID_CHECK_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
-
-// Cache duration: 1 hour
-const CACHE_DURATION_MS = 1000 * 60 * 60;
+const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 hour
 
 /* -------------------------------------------------------------------------- */
-/*                                CACHE HELPERS                               */
+/* CACHE HELPERS                               */
 /* -------------------------------------------------------------------------- */
 
 function buildCacheMeta(tsMs) {
   const date = new Date(tsMs);
-
-  const cacheHumanTime = date.toLocaleString("en-US", {
-    timeZone: NY_TZ,
-    year: "numeric",
-    month: "short",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
-  const ageMs = Date.now() - tsMs;
-  const ageMinutes = Math.floor(ageMs / 60000);
-  const remainingMs = CACHE_DURATION_MS - ageMs;
-  const minutesLeft = Math.max(0, Math.floor(remainingMs / 60000));
-
   return {
     cacheTimestamp: tsMs,
-    cacheHumanTime,
-    cacheAgeMinutes: ageMinutes,
-    cacheMinutesLeft: minutesLeft,
-    // When the next background ID-check is allowed
-    nextIdCheckAllowedAt: new Date(
-      tsMs + ID_CHECK_INTERVAL_MS
-    ).toLocaleString("en-US", { timeZone: NY_TZ }),
+    cacheHumanTime: date.toLocaleString("en-US", { timeZone: NY_TZ }),
   };
 }
 
@@ -82,36 +54,45 @@ function cacheSermon(sermon, ts = Date.now()) {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                              YOUTUBE HELPERS                               */
+/* YOUTUBE HELPERS                               */
 /* -------------------------------------------------------------------------- */
 
-function buildSundaySearchUrl(publishedAfter, publishedBefore) {
+function buildSearchUrl(startTime, endTime) {
   return (
     "https://www.googleapis.com/youtube/v3/search?" +
     `key=${API_KEY}&channelId=${CHANNEL_ID}` +
     "&part=snippet&order=date&maxResults=5&type=video" +
-    `&publishedAfter=${publishedAfter}` +
-    `&publishedBefore=${publishedBefore}`
+    `&publishedAfter=${startTime}` +
+    `&publishedBefore=${endTime}`
   );
 }
 
 function buildDetailUrl(videoIds) {
+  // 1. UPDATE: We now ask for 'status' so we can check privacy
   return (
     "https://www.googleapis.com/youtube/v3/videos?" +
-    `key=${API_KEY}&id=${videoIds}&part=snippet`
+    `key=${API_KEY}&id=${videoIds}&part=snippet,status`
   );
 }
 
+function createFallback() {
+  const ts = Date.now();
+  return {
+    // We use a special ID to signal the UI to show the "Card" instead of a player
+    videoId: "FALLBACK_LINK",
+    title: "Join us on YouTube",
+    publishedAt: getMostRecentSundayISOString(),
+    fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}`,
+    isFallback: true,
+    ...buildCacheMeta(ts),
+  };
+}
+
 /**
- * Fetch full Sunday sermon details (search + video details).
- * Returns a sermon object enriched with cache metadata, or null if none found.
+ * Searches for a valid sermon video within a specific time window.
  */
-async function fetchSundaySermonFromYouTube() {
-  console.log("🚀 Fetching full Sunday sermon…");
-
-  const { publishedAfter, publishedBefore } = getLastSundayTimeRange();
-  const searchUrl = buildSundaySearchUrl(publishedAfter, publishedBefore);
-
+async function fetchVideoInWindow(startTime, endTime) {
+  const searchUrl = buildSearchUrl(startTime, endTime);
   const res = await fetch(searchUrl);
   const searchData = await res.json();
 
@@ -126,60 +107,64 @@ async function fetchSundaySermonFromYouTube() {
   const detailRes = await fetch(buildDetailUrl(videoIds));
   const details = await detailRes.json();
 
-  const nonLive = details.items?.filter(
-    (v) =>
-      v?.snippet?.liveBroadcastContent === "none" &&
-      !v.snippet.title.toLowerCase().includes("livestream")
-  );
+  // 2. UPDATE: Strict Filtering
+  // - Must not be Live
+  // - Must not have "livestream" in title
+  // - Must be PUBLIC (ignores private/unlisted videos)
+  const validVideo = details.items?.filter((v) => {
+    const isLive = v?.snippet?.liveBroadcastContent !== "none";
+    const isLivestreamTitle = v?.snippet?.title
+      .toLowerCase()
+      .includes("livestream");
+    const isPrivate = v?.status?.privacyStatus !== "public";
 
-  if (!nonLive?.length) return null;
+    return !isLive && !isLivestreamTitle && !isPrivate;
+  });
 
-  const vid = nonLive[0];
-
-  const ts = Date.now();
-  return {
-    videoId: vid.id,
-    title: vid.snippet.title,
-    publishedAt: getMostRecentSundayISOString(),
-    fallbackUrl: "https://www.youtube.com/@LivingGraceMinistry",
-    isFallback: false,
-    ...buildCacheMeta(ts),
-  };
-}
-
-function createLivestreamFallback() {
-  const ts = Date.now();
-  return {
-    videoId: "LIVESTREAM",
-    title: "Watch Our Sunday Livestream",
-    publishedAt: getMostRecentSundayISOString(),
-    fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}/live`,
-    isFallback: true,
-    ...buildCacheMeta(ts),
-  };
+  return validVideo?.length ? validVideo[0] : null;
 }
 
 /**
- * Lightweight “ID-only” Sunday check.
- * Used to detect a new upload without fetching full details.
+ * STRATEGY: Sunday -> Rescue (Mon/Tue) -> Fallback Link
  */
-async function fetchLatestSundayVideoIdOnly() {
+async function fetchBestSermonStrategy() {
+  console.log("🚀 Starting Sermon Search Strategy...");
   const { publishedAfter, publishedBefore } = getLastSundayTimeRange();
 
-  const url =
-    "https://www.googleapis.com/youtube/v3/search?" +
-    `key=${API_KEY}&channelId=${CHANNEL_ID}` +
-    "&part=id&order=date&maxResults=1&type=video" +
-    `&publishedAfter=${publishedAfter}` +
-    `&publishedBefore=${publishedBefore}`;
+  // STEP 1: Strict Sunday Search
+  let rawVideo = await fetchVideoInWindow(publishedAfter, publishedBefore);
 
-  const res = await fetch(url);
-  const data = await res.json();
-  return data.items?.[0]?.id?.videoId || null;
+  // STEP 2: The "Rescue" Search (Monday & Tuesday)
+  if (!rawVideo) {
+    console.log("⚠️ No Sunday video found. Attempting 'Rescue' search...");
+    const rescueStart = publishedBefore;
+    const rescueEnd = new Date(
+      new Date(publishedBefore).getTime() + 48 * 60 * 60 * 1000
+    ).toISOString();
+
+    rawVideo = await fetchVideoInWindow(rescueStart, rescueEnd);
+  }
+
+  // If found (Sunday or Rescue)
+  if (rawVideo) {
+    const ts = Date.now();
+    return {
+      videoId: rawVideo.id,
+      title: rawVideo.snippet.title,
+      publishedAt: getMostRecentSundayISOString(),
+      fallbackUrl: `https://www.youtube.com/watch?v=${rawVideo.id}`,
+      isFallback: false,
+      ...buildCacheMeta(ts),
+    };
+  }
+
+  // STEP 3: Fallback (No Player, just Link)
+  console.log("❌ No sermon found. Using Link Fallback.");
+  return createFallback();
 }
 
 /* -------------------------------------------------------------------------- */
-/*                             THE MAIN REACT HOOK                            */
+/* MAIN HOOK                                  */
 /* -------------------------------------------------------------------------- */
 
 export default function useLatestSermon() {
@@ -190,71 +175,20 @@ export default function useLatestSermon() {
   useEffect(() => {
     async function run() {
       try {
-        // 1) Try cache first
         const cached = getFreshCachedSermon();
         if (cached) {
           console.log("⚡ Using cached sermon:", cached);
           setSermon(cached);
           setLoading(false);
-
-          // 1a) Background freshness check (Option C: throttled + Sunday-only)
-          (async () => {
-            try {
-              if (!isSundayAfternoonNY()) {
-                console.log("[ID-CHECK] Skipped — not Sunday afternoon (NY)");
-                return;
-              }
-
-              const lastCheck = Number(
-                localStorage.getItem(CACHE_KEY_LAST_ID_CHECK) || 0
-              );
-              const now = Date.now();
-
-              if (now - lastCheck < ID_CHECK_INTERVAL_MS) {
-                console.log("[ID-CHECK] Skipped — throttled");
-                return;
-              }
-
-              localStorage.setItem(
-                CACHE_KEY_LAST_ID_CHECK,
-                now.toString()
-              );
-
-              const latestId = await fetchLatestSundayVideoIdOnly();
-              console.log("[ID-CHECK] Latest Sunday ID:", latestId);
-
-              if (!latestId || latestId === cached.videoId) {
-                console.log("[ID-CHECK] Cache still points at latest sermon.");
-                return;
-              }
-
-              console.log(
-                "[ID-CHECK] New Sunday video detected — refreshing sermon data."
-              );
-
-              let fresh = await fetchSundaySermonFromYouTube();
-              if (!fresh) fresh = createLivestreamFallback();
-
-              setSermon(fresh);
-              cacheSermon(fresh, fresh.cacheTimestamp ?? Date.now());
-            } catch (bgErr) {
-              console.error("[ID-CHECK] Background error:", bgErr);
-            }
-          })();
-
           return;
         }
 
-        // 2) No cache → fetch from YouTube
-        let latest = await fetchSundaySermonFromYouTube();
-        if (!latest) latest = createLivestreamFallback();
-
-        console.log("[Sermon] Fresh fetch:", latest);
-        setSermon(latest);
-        cacheSermon(latest, latest.cacheTimestamp ?? Date.now());
+        const bestSermon = await fetchBestSermonStrategy();
+        setSermon(bestSermon);
+        cacheSermon(bestSermon, bestSermon.cacheTimestamp);
         setLoading(false);
       } catch (err) {
-        console.error("❌ useLatestSermon API error:", err);
+        console.error("❌ useLatestSermon error:", err);
         setError("Failed to fetch sermon");
         setLoading(false);
       }

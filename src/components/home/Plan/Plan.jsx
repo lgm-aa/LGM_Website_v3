@@ -35,17 +35,20 @@ export default function Plan() {
         {/* Two columns */}
         <div className="plan-columns">
           {/* Left column - Embedded Google Maps */}
-          <div className="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.2252306435407!2d-83.77847969999999!3d42.2950593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cb1f2052d3fe7%3A0x614e856e62cdff1f!2sKorean%20United%20Methodist%20Church%20of%20Ann%20Arbor!5e0!3m2!1sen!2sus!4v1764090019105!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="LGM Location Map"
-            />
+
+          <div className="plan-left">
+            <div className="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.2252306435407!2d-83.77847969999999!3d42.2950593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cb1f2052d3fe7%3A0x614e856e62cdff1f!2sKorean%20United%20Methodist%20Church%20of%20Ann%20Arbor!5e0!3m2!1sen!2sus!4v1764090019105!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="LGM Location Map"
+              />
+              </div>
             </div>
 
           {/* Right column - Content */}

@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +9,6 @@
 /* --- Minimal reset so the hero/navbar are truly edge-to-edge --- */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 60px;
 }
 body {
   font-family: "Lato", sans-serif;

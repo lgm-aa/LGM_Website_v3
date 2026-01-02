@@ -1,14 +1,14 @@
 import React from "react";
 import "./Footer.css";
-import logo from "@/assets/lgm_logo_white.webp"; 
+import logo from "@/assets/lgm_logo_white.webp";
 
 const handleScroll = (e, id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      e.preventDefault(); // This stops the URL from changing
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const element = document.getElementById(id);
+  if (element) {
+    e.preventDefault(); // This stops the URL from changing
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function Footer() {
   return (
@@ -39,7 +39,11 @@ export default function Footer() {
           </div>
 
           <div className="footer__socials">
-            <a href="https://www.facebook.com/profile.php?id=100064729684652" aria-label="Facebook" className="social">
+            <a
+              href="https://www.facebook.com/profile.php?id=100064729684652"
+              aria-label="Facebook"
+              className="social"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -51,7 +55,11 @@ export default function Footer() {
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
-            <a href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==" aria-label="Instagram" className="social">
+            <a
+              href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="
+              aria-label="Instagram"
+              className="social"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -65,7 +73,11 @@ export default function Footer() {
                 <circle cx="17.5" cy="6.5" r="1.5" />
               </svg>
             </a>
-            <a href="https://www.youtube.com/@LivingGraceMinistry" aria-label="YouTube" className="social">
+            <a
+              href="https://www.youtube.com/@LivingGraceMinistry"
+              aria-label="YouTube"
+              className="social"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="18"
@@ -89,7 +101,7 @@ export default function Footer() {
           <a href="#ministries" onClick={(e) => handleScroll(e, "ministries")}>
             Ministries
           </a>
-          <a href="#updates__container" onClick={(e) => handleScroll(e, "updates__container")}>
+          <a href="#bulletin" onClick={(e) => handleScroll(e, "bulletin")}>
             Events
           </a>
           <a href="/contact">Contact Us</a>
@@ -98,7 +110,10 @@ export default function Footer() {
         {/* Get Involved */}
         <nav className="footer__col">
           <h4>Get Involved</h4>
-          <a href="#plan-section" onClick={(e) => handleScroll(e, "plan-section")}>
+          <a
+            href="#plan-section"
+            onClick={(e) => handleScroll(e, "plan-section")}
+          >
             Plan Your Visit
           </a>
           <a href="#">Small Groups</a>
@@ -123,7 +138,9 @@ export default function Footer() {
                 <path d="M22 6l-10 7L2 6" />
               </svg>
             </span>
-            <a href="mailto:livinggraceministry@gmail.com">livinggraceministry@gmail.com</a>
+            <a href="mailto:livinggraceministry@gmail.com">
+              livinggraceministry@gmail.com
+            </a>
           </div>
         </div>
       </div>

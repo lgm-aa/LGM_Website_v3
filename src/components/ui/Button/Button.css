@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 0.75rem; /* rounded-xl */
+  border-radius: 16px; /* rounded-xl */
   padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
   font-weight: 500;
   line-height: 1.2;
