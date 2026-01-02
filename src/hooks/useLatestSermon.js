@@ -80,9 +80,9 @@ function createFallback() {
   return {
     // We use a special ID to signal the UI to show the "Card" instead of a player
     videoId: "FALLBACK_LINK",
-    title: "Join us on YouTube",
+    title: "Watch our Livestream on YouTube",
     publishedAt: getMostRecentSundayISOString(),
-    fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}`,
+    fallbackUrl: `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}&autoplay=1`,
     isFallback: true,
     ...buildCacheMeta(ts),
   };
