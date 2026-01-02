@@ -18,6 +18,27 @@ const CACHE_KEY_TIMESTAMP = "latestSermonTimestamp";
 const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 hour
 
 /* -------------------------------------------------------------------------- */
+/* TIME HELPERS                                 */
+/* -------------------------------------------------------------------------- */
+
+function isNoCacheWindow() {
+  const now = new Date();
+  const nyString = now.toLocaleString("en-US", { timeZone: NY_TZ });
+  const nyDate = new Date(nyString);
+  const day = nyDate.getDay();   
+  const hour = nyDate.getHours(); 
+  const minute = nyDate.getMinutes();
+
+  if (day !== 0) return false;
+
+  const currentMinutes = hour * 60 + minute;
+  const startMinutes = 13 * 60; // 1:00 PM
+  const endMinutes = 15 * 60; // 3:00 PM
+
+  return currentMinutes >= startMinutes && currentMinutes < endMinutes;
+}
+
+/* -------------------------------------------------------------------------- */
 /* CACHE HELPERS                               */
 /* -------------------------------------------------------------------------- */
 
@@ -61,63 +82,65 @@ function buildSearchUrl(startTime, endTime) {
   return (
     "https://www.googleapis.com/youtube/v3/search?" +
     `key=${API_KEY}&channelId=${CHANNEL_ID}` +
-    "&part=snippet&order=date&maxResults=5&type=video" +
+    "&part=snippet&order=date&maxResults=1&type=video" +
     `&publishedAfter=${startTime}` +
     `&publishedBefore=${endTime}`
   );
 }
 
 function buildDetailUrl(videoIds) {
-  // 1. UPDATE: We now ask for 'status' so we can check privacy
   return (
     "https://www.googleapis.com/youtube/v3/videos?" +
     `key=${API_KEY}&id=${videoIds}&part=snippet,status`
   );
 }
 
-function createFallback() {
+// NEW: Search specifically for a "Live" broadcast right now
+async function fetchLiveVideo() {
+  const liveUrl = 
+    "https://www.googleapis.com/youtube/v3/search?" +
+    `key=${API_KEY}&channelId=${CHANNEL_ID}` +
+    "&part=snippet&type=video&eventType=live&maxResults=1"; // eventType=live is the magic key
+
+  const res = await fetch(liveUrl);
+  const data = await res.json();
+
+  if (data.items && data.items.length > 0) {
+    return data.items[0];
+  }
+  return null;
+}
+
+// 4. SECONDARY FALLBACK: The Clean "Visit Channel" Card
+function createGenericFallback() {
   const ts = Date.now();
   return {
-    // We use a special ID to signal the UI to show the "Card" instead of a player
     videoId: "FALLBACK_LINK",
-    title: "Watch our Livestream on YouTube",
+    title: "Join us on YouTube",
     publishedAt: getMostRecentSundayISOString(),
-    fallbackUrl: `https://www.youtube.com/embed/live_stream?channel=${CHANNEL_ID}&autoplay=1`,
-    isFallback: true,
+    fallbackUrl: `https://www.youtube.com/channel/${CHANNEL_ID}`,
+    isFallback: true, // This triggers the Clean Card in Video.jsx
     ...buildCacheMeta(ts),
   };
 }
 
-/**
- * Searches for a valid sermon video within a specific time window.
- */
 async function fetchVideoInWindow(startTime, endTime) {
   const searchUrl = buildSearchUrl(startTime, endTime);
   const res = await fetch(searchUrl);
   const searchData = await res.json();
 
   const items = searchData.items || [];
-  const videoIds = items
-    .map((i) => i?.id?.videoId)
-    .filter(Boolean)
-    .join(",");
+  const videoIds = items.map((i) => i?.id?.videoId).filter(Boolean).join(",");
 
   if (!videoIds) return null;
 
   const detailRes = await fetch(buildDetailUrl(videoIds));
   const details = await detailRes.json();
 
-  // 2. UPDATE: Strict Filtering
-  // - Must not be Live
-  // - Must not have "livestream" in title
-  // - Must be PUBLIC (ignores private/unlisted videos)
   const validVideo = details.items?.filter((v) => {
     const isLive = v?.snippet?.liveBroadcastContent !== "none";
-    const isLivestreamTitle = v?.snippet?.title
-      .toLowerCase()
-      .includes("livestream");
+    const isLivestreamTitle = v?.snippet?.title.toLowerCase().includes("livestream");
     const isPrivate = v?.status?.privacyStatus !== "public";
-
     return !isLive && !isLivestreamTitle && !isPrivate;
   });
 
@@ -125,42 +148,56 @@ async function fetchVideoInWindow(startTime, endTime) {
 }
 
 /**
- * STRATEGY: Sunday -> Rescue (Mon/Tue) -> Fallback Link
+ * STRATEGY: Sunday -> Rescue -> Live Check -> Final Fallback
  */
 async function fetchBestSermonStrategy() {
   console.log("🚀 Starting Sermon Search Strategy...");
   const { publishedAfter, publishedBefore } = getLastSundayTimeRange();
 
-  // STEP 1: Strict Sunday Search
+  // 1. Strict Sunday Search
   let rawVideo = await fetchVideoInWindow(publishedAfter, publishedBefore);
 
-  // STEP 2: The "Rescue" Search (Monday & Tuesday)
+  // 2. Rescue Search (Mon/Tue)
   if (!rawVideo) {
-    console.log("⚠️ No Sunday video found. Attempting 'Rescue' search...");
+    console.log("⚠️ No Sunday video. Attempting 'Rescue' search...");
     const rescueStart = publishedBefore;
-    const rescueEnd = new Date(
-      new Date(publishedBefore).getTime() + 48 * 60 * 60 * 1000
-    ).toISOString();
-
+    const rescueEnd = new Date(new Date(publishedBefore).getTime() + 48 * 60 * 60 * 1000).toISOString();
     rawVideo = await fetchVideoInWindow(rescueStart, rescueEnd);
   }
 
-  // If found (Sunday or Rescue)
+  // If we found a recorded video, return it
   if (rawVideo) {
-    const ts = Date.now();
     return {
       videoId: rawVideo.id,
       title: rawVideo.snippet.title,
       publishedAt: getMostRecentSundayISOString(),
       fallbackUrl: `https://www.youtube.com/watch?v=${rawVideo.id}`,
       isFallback: false,
-      ...buildCacheMeta(ts),
+      ...buildCacheMeta(Date.now()),
     };
   }
 
-  // STEP 3: Fallback (No Player, just Link)
-  console.log("❌ No sermon found. Using Link Fallback.");
-  return createFallback();
+  // 3. NEW: Live Check
+  // If no recorded video, check if we are LIVE right now.
+  console.log("⚠️ No recorded video. Checking for LIVE broadcast...");
+  const liveVideo = await fetchLiveVideo();
+
+  if (liveVideo) {
+    console.log("🔴 WE ARE LIVE! Showing livestream.");
+    return {
+      videoId: liveVideo.id.videoId, // Use the REAL live ID, not a hardcoded link
+      title: liveVideo.snippet.title, // "Sunday Service Live"
+      publishedAt: getMostRecentSundayISOString(),
+      fallbackUrl: `https://www.youtube.com/watch?v=${liveVideo.id.videoId}`,
+      isFallback: false, // Treat it like a real video so the Player shows
+      isLive: true,      // Optional flag if you want to style it differently
+      ...buildCacheMeta(Date.now()),
+    };
+  }
+
+  // 4. Secondary Fallback (Clean Card)
+  console.log("❌ No sermon & Not Live. Using Generic Fallback.");
+  return createGenericFallback();
 }
 
 /* -------------------------------------------------------------------------- */
@@ -175,21 +212,40 @@ export default function useLatestSermon() {
   useEffect(() => {
     async function run() {
       try {
-        const cached = getFreshCachedSermon();
-        if (cached) {
-          console.log("⚡ Using cached sermon:", cached);
-          setSermon(cached);
-          setLoading(false);
-          return;
+        const skipCache = isNoCacheWindow(); // Returns TRUE at 1:00 PM
+
+        if (skipCache) {
+          // 1. We enter this block immediately
+          console.log("🚫 Sunday detected. Bypassing cache.");
+        } else {
+          // 2. The code that reads the old 12:45 cache is inside this 'else'.
+          // We NEVER reach here at 1:30 PM.
+          const cached = getFreshCachedSermon();
+          if (cached) return; 
         }
 
+        // 3. We proceed to fetch fresh data immediately
         const bestSermon = await fetchBestSermonStrategy();
         setSermon(bestSermon);
-        cacheSermon(bestSermon, bestSermon.cacheTimestamp);
+
+        // Cache Logic:
+        // 1. Don't cache if in the "No Cache" Sunday window
+        // 2. Don't cache the "Generic Fallback" (keep checking for updates)
+        // 3. Don't cache "Live" status for long (since it ends eventually), 
+        //    but for simplicity, we treat "Live" as valid content for now.
+        //    (The 1-hour cache might be too long for Live, but Acceptable)
+        if (!skipCache && !bestSermon.isFallback) {
+          cacheSermon(bestSermon, bestSermon.cacheTimestamp);
+        } else {
+          console.log("🚫 Skipping cache write");
+        }
+        
         setLoading(false);
       } catch (err) {
         console.error("❌ useLatestSermon error:", err);
         setError("Failed to fetch sermon");
+        // On error, show the clean card
+        setSermon(createGenericFallback());
         setLoading(false);
       }
     }
