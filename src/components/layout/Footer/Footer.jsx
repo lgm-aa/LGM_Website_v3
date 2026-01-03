@@ -101,10 +101,8 @@ export default function Footer() {
           <a href="#ministries" onClick={(e) => handleScroll(e, "ministries")}>
             Ministries
           </a>
-          <a href="#bulletin" onClick={(e) => handleScroll(e, "bulletin")}>
-            Events
-          </a>
-          <a href="/contact">Contact Us</a>
+
+          {/* <a href="/contact">Contact Us</a> */}
         </nav>
 
         {/* Get Involved */}
@@ -117,8 +115,9 @@ export default function Footer() {
             Plan Your Visit
           </a>
           <a href="#">Small Groups</a>
-          <a href="#">Volunteer</a>
-          <a href="#">Prayer Requests</a>
+          <a href="#bulletin" onClick={(e) => handleScroll(e, "bulletin")}>
+            Events
+          </a>
         </nav>
 
         {/* Contact */}
