@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "@/components/layout/NavBar/NavBar";
+
+import Layout from "@/components/layout/Layout";
+
 import Home from "@/pages/Home/Home";
 import About from "@/pages/About/About";
 import Donate from "@/pages/Donate/Donate";
@@ -15,19 +18,27 @@ import ScrollToAnchor from "@/components/ScrollToAnchor/ScrollToAnchor";
 function App() {
   return (
     <>
-      <NavBar />
+      {/* ScrollToAnchor handles scroll position on route changes */}
       <ScrollToAnchor />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/sermons" element={<Sermons />} />
-        <Route path="/childrens" element={<ChildrensMinistry />} />
-        <Route path="/youth-group" element={<YouthGroupMinistry />} />
-        <Route path="/campus" element={<CampusMinistry />} />
-        <Route path="/post-grad" element={<PostGradMinistry />} />
-        <Route path="/adult-family" element={<AdultFamilyContent />} />
+        {/* 👇 OPENING TAG: Layout wraps everything */}
+        <Route element={<Layout />}>
+          
+          {/* All these pages will render INSIDE the Layout's <Outlet/> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/sermons" element={<Sermons />} />
+          <Route path="/childrens" element={<ChildrensMinistry />} />
+          <Route path="/youth-group" element={<YouthGroupMinistry />} />
+          <Route path="/campus" element={<CampusMinistry />} />
+          <Route path="/post-grad" element={<PostGradMinistry />} />
+          <Route path="/adult-family" element={<AdultFamilyContent />} />
+          
+        </Route>
+        {/* 👆 CLOSING TAG: End of the Layout wrapper */}
       </Routes>
     </>
   );
