@@ -22,53 +22,6 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
 
   // 1. Check strict conditions
   const hasSermon = !!sermon && !!sermon.videoId;
-  const isFallbackMode = sermon?.isFallback === true;
-
-  // Link to channel for the button
-  const youtubeLink =
-    sermon?.fallbackUrl || `https://www.youtube.com/channel/${CHANNEL_ID}`;
-
-  /* -------------------------------------------------------------------------- */
-  /* MODE A: CLEAN FALLBACK (No TV)                       */
-  /* -------------------------------------------------------------------------- */
-  if (!loading && isFallbackMode) {
-    return (
-      <section
-        className="latest-sermon"
-        style={{ minHeight: "auto", padding: "4rem 1rem" }}
-      >
-        <div className="latest-sermon__inner" style={{ textAlign: "center" }}>
-          <h2 className="latest-sermon__title" style={{ marginBottom: "1rem" }}>
-            Join Us on YouTube
-          </h2>
-          <p
-            style={{
-              color: "#6b7280",
-              marginBottom: "2rem",
-              fontSize: "1.1rem",
-              maxWidth: "600px",
-              marginInline: "auto",
-            }}
-          >
-            Our latest service is available directly on our channel. Click below
-            to watch the recording or join the livestream.
-          </p>
-
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              as="a"
-              href={youtubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-            >
-              Visit YouTube Channel &rarr;
-            </Button>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   /* -------------------------------------------------------------------------- */
   /* MODE B: STANDARD VIDEO PLAYER                        */
