@@ -41,7 +41,7 @@ export default function Updates() {
           </p>
         </header>
 
-        <div className="updates__grid">
+        <div className="updates__content">
           {/* Reusable Component */}
           <PdfCard
             title={displayTitle}

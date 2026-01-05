@@ -15,8 +15,8 @@
 /* Header Spacing */
 .updates__header {
   text-align: center;
-  /* Matches the margin below the title for perfect symmetry */
-  margin-bottom: 1rem;
+  /* REMOVED: margin-bottom: 1rem; */
+  margin-bottom: 0; 
 }
 
 /* Typography */
@@ -25,19 +25,19 @@
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
-  margin: 0 0 1rem; /* 1rem gap below title */
+  margin: 0 0 1.5rem; 
 }
 
 .updates__subtitle {
   color: #6b7280;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
-  margin: 0; /* Reset browser default to ensure exact spacing */
+  margin: 0; 
 }
 
 /* Grid Layout */
-.updates__grid {
+.updates__content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 2rem; /* Adds space if you ever stack multiple cards */
+  margin-top: 2rem; 
 }
