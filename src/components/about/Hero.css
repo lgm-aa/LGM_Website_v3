@@ -2,7 +2,7 @@
 .about-hero {
   position: relative;
   width: 100%;
-  height: min(85vh, 750px);
+  height: min(95vh, 1000px);
   overflow: hidden;
 }
 
@@ -25,12 +25,13 @@
   );
 }
 
-/* Content (left-aligned) */
+/* Content */
 .about-hero__content {
   position: absolute;
   top: 35%;
-  transform: translateY(-50%);
-  left: clamp(5rem, 10vw, 12rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* Title styling */

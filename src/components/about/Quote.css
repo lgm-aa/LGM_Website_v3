@@ -1,5 +1,5 @@
 .quote-container {
-    padding: 10rem 3rem;
+    padding: 8rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,8 +11,31 @@
     text-align: center;
     font-size: 42px;
     font-weight: 300;
+    display: inline-block;
+    position: relative;
+    padding: 20px 50px 20px 100px;
 }
 .highlight-text {
     color: #274C8D;
     font-weight: 600;
+}
+.quote-left {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 0px;
+    top: 0px
+}
+.quote-right {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 0px;
+    bottom: 0px;
+}
+.quote-line {
+    width: 375px;
+    height: 2px;
+    background-color: #000;
+    margin-top: 70px;
 }
