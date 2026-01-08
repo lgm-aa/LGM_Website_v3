@@ -8,6 +8,8 @@ const CACHE_KEY_DATA = "latestPdfData"; // Renamed from 'URL' since we store mor
 const CACHE_KEY_TIMESTAMP = "latestPdfTimestamp";
 const CACHE_DURATION_MS = 1000 * 60 * 60; // 1 hour
 
+const IS_DEV = import.meta.env.DEV;
+
 const useLatestBulletin = () => {
   // Store the full object (name, date, url) instead of just a string
   const [data, setData] = useState(null);
@@ -26,13 +28,13 @@ const useLatestBulletin = () => {
           Date.now() - parseInt(cachedTime) < CACHE_DURATION_MS;
 
         if (isFresh) {
-          console.log("⚡ Using cached PDF Data");
+          if (IS_DEV) console.log("⚡ Using cached PDF Data");
           setData(JSON.parse(cachedData));
           setLoading(false);
           return;
         }
 
-        console.log("📥 Fetching latest PDF from Google Drive...");
+        if (IS_DEV) console.log("📥 Fetching latest PDF from Google Drive...");
 
         // 2. Prepare the Query
         // We added: createdTime, webViewLink, size, thumbnailLink
@@ -43,7 +45,7 @@ const useLatestBulletin = () => {
         const result = await res.json();
 
         if (!result.files || result.files.length === 0) {
-          console.warn("⚠️ No PDF files found in folder");
+          if (IS_DEV) console.warn("⚠️ No PDF files found in folder");
           setError("No PDF files found");
           setLoading(false);
           return;
@@ -68,7 +70,7 @@ const useLatestBulletin = () => {
         localStorage.setItem(CACHE_KEY_TIMESTAMP, Date.now().toString());
         setLoading(false);
 
-        console.log("✅ Fetched Bulletin:", bulletinData);
+        if (IS_DEV) console.log("✅ Fetched Bulletin:", bulletinData);
 
       } catch (err) {
         console.error("❌ Failed to fetch PDF:", err);
