@@ -7,6 +7,7 @@
 .community__inner {
   max-width: 1100px;
   margin: 0 auto 2rem;
+  padding-top: 4rem;
 }
 
 .community__title {
@@ -16,6 +17,26 @@
   letter-spacing: 0.1em;
 }
 
+.squiggle-left {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  left: -100px;
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+
+.squiggle-right {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  bottom: -180px;
+  right: -20px;
+  z-index: 5;
+  transform: rotate(10deg);
+}
+
 /* Full-width rail */
 .community__rail {
   width: 100vw;
@@ -23,6 +44,7 @@
   left: 50%;
   transform: translateX(-50%);
   padding-inline: 2rem;
+  padding-top: 3rem;
 }
 
 /* Cards */

@@ -5,6 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 
+import squiggleLeft from '@/assets/squiggle-left.svg';
+import squiggleRight from '@/assets/squiggle-right.svg';
+
 import img1 from "@/assets/community1.webp";
 import img2 from "@/assets/community2.webp";
 import img3 from "@/assets/community3.webp";
@@ -20,6 +23,7 @@ export default function Community() {
 
   return (
     <section className="community">
+      <img src={squiggleLeft} alt="left" className="squiggle-left" />
       <div className="community__inner">
         <h2 className="community__title">OUR COMMUNITY</h2>
       </div>
@@ -72,6 +76,7 @@ export default function Community() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <img src={squiggleRight} alt="right" className="squiggle-right" />
       </div>
     </section>
   );
