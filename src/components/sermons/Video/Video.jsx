@@ -13,10 +13,10 @@ function formatDate(date) {
 export default function Video() {
   const { sermon, loading, error } = useLatestSermon();
 
-  const hasSermon = !!sermon && !!sermon.id.videoId;
+  const hasSermon = !!sermon && !!sermon.videoId;
 
-  const date = hasSermon ? formatDate(sermon.snippet.publishedAt) : null;
-  const title = hasSermon ? sermon.snippet.title : "Loading Latest Sermon...";
+  const date = hasSermon ? formatDate(sermon.publishedAt) : null;
+  const title = hasSermon ? sermon.title : "Loading Latest Sermon...";
 
   return (
     <section className="latest-sermon">
@@ -34,7 +34,7 @@ export default function Video() {
             {hasSermon ? (
               <iframe
                 className="latest-sermon__iframe"
-                src={`https://www.youtube.com/embed/${sermon.id.videoId}`}
+                src={`https://www.youtube.com/embed/${sermon.videoId}`}
                 title="Trauma and the God who Sees - Living Grace Ministry"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
