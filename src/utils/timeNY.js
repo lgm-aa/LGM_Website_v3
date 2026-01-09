@@ -112,17 +112,3 @@ export function getMostRecentSundayISOString() {
   const { sundayStartIso } = getEffectiveSundayNY();
   return sundayStartIso;
 }
-
-/**
- * True if it's Sunday between 1:00 PM and 6:00 PM in New York time.
- * We only run freshness checks in this window.
- */
-export function isSundayAfternoonNY(now = new Date()) {
-  const { dow, hh, mm } = getNYParts(now);
-  if (dow !== 0) return false; // 0 = Sunday
-
-  const afterStart = hh > 13 || (hh === 13 && mm >= 0);
-  const beforeEnd = hh < 18;
-
-  return afterStart && beforeEnd;
-}
