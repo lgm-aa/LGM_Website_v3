@@ -36,7 +36,11 @@ export default function Hero() {
       <div className="hero-content">
         {/* Title fades in first */}
         <div className={getClassName(0)}>
-          <h1 className="hero-title">LIVING GRACE MINISTRY</h1>
+          <h1 className="hero-title">
+            LIVING GRACE
+            <br/>
+            <span className="ministry-letter">M</span>INISTRY
+          </h1>
         </div>
 
         {/* Buttons fade in 1s after the title */}

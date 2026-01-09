@@ -16,16 +16,17 @@
   background: 
     linear-gradient(
       to top,                 /* gradient goes from bottom -> top */
-      rgba(20, 40, 68, 0.5),
+      rgba(20, 40, 68, 0.7),
       rgba(20, 40, 68, 0)
-    ),
-    rgba(6, 24, 44, 0.45); /* bluish wash */
+    );
 }
 
 /* centers the content block */
 .hero-content {
   position: absolute;
-  inset: 0;
+  top: 30vh;          /* move content down 25% of viewport height */
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;    /* 👈 stack children vertically */
   align-items: center;       /* center horizontally */
@@ -40,12 +41,21 @@
 
 /* typography */
 .hero-title {
+  font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 6vw, 6rem);
-  font-weight: 700;
   letter-spacing: 0.04em;
-  line-height: 0.95;
+  line-height: 0.85;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   margin-bottom: 6rem;
+}
+
+.ministry-letter {
+  font-family: 'Tangerine', cursive;
+  font-size: 10.5rem; /* adjust to taste */
+  display: inline-block;
+  vertical-align: text-bottom; /* aligns the bottom of the M to the text baseline */
+  position: relative;
+  top: 0.03em;
 }
 
 /* buttons group */
