@@ -20,31 +20,36 @@ function formatSermonDate(isoString) {
 export default function Video({ titleLabel = "Latest Sermon" }) {
   const { sermon, error, loading } = useLatestSermon();
 
-  // 1. Check strict conditions
+  // Check if we have a sermon and if it's live
   const hasSermon = !!sermon && !!sermon.videoId;
+  const isLive = sermon?.isLive || false;
+  const isFallback = sermon?.isFallback || false;
 
   /* -------------------------------------------------------------------------- */
   /* MODE B: STANDARD VIDEO PLAYER                        */
   /* -------------------------------------------------------------------------- */
 
   let iframeSrc = "";
-  if (hasSermon) {
+  if (hasSermon && !isFallback) {
     iframeSrc = `https://www.youtube.com/embed/${sermon.videoId}`;
   }
 
-  const displayTitle =
-    hasSermon && sermon.title
-      ? sermon.title
-      : loading
-      ? "Loading latest sermon…"
-      : titleLabel;
+  const displayTitle = isLive
+    ? "WORSHIP WITH US LIVE"
+    : hasSermon && sermon.title
+    ? sermon.title
+    : loading
+    ? "Loading latest sermon…"
+    : titleLabel;
 
   const displayDate = hasSermon ? formatSermonDate(sermon.publishedAt) : "";
 
   return (
     <section className="latest-sermon">
       <div className="latest-sermon__inner">
-        <p className="latest-sermon__eyebrow">LATEST SERMON</p>
+        {/* Only show eyebrow for recorded sermons */}
+        {!isLive && <p className="latest-sermon__eyebrow">LATEST SERMON</p>}
+
         <h2 className="latest-sermon__title">{displayTitle}</h2>
         {displayDate && <p className="latest-sermon__date">{displayDate}</p>}
 
@@ -68,9 +73,25 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
               />
             ) : (
               <div className="latest-sermon__placeholder">
-                {loading
-                  ? "Loading video…"
-                  : "The latest sermon will appear here soon."}
+                {loading ? (
+                  "Loading video…"
+                ) : isFallback ? (
+                  <div className="latest-sermon__fallback">
+                    <p>No recent sermon available yet.</p>
+                    <Button
+                      as="a"
+                      href={`https://www.youtube.com/channel/${CHANNEL_ID}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="primary"
+                      size="lg"
+                    >
+                      Visit Our YouTube Channel
+                    </Button>
+                  </div>
+                ) : (
+                  "The latest sermon will appear here soon."
+                )}
               </div>
             )}
           </div>
