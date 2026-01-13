@@ -18,17 +18,10 @@
 /* Positions the content block */
 .about-hero-content {
   position: absolute;
-  top: 30%;
-  left: 0;
-  right: 0;
+  top: 20%;
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
+  left: clamp(5rem, 10vw, 12rem);
   color: white;
-  padding: 0 max(2rem, 7vw);
   z-index: 1;
 }
 

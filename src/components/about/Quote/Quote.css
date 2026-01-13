@@ -1,0 +1,52 @@
+/* Quote Section */
+.about-quote {
+  background-color: #e5ebf3;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-quote__content {
+  max-width: 1100px;
+  text-align: center;
+}
+
+.about-quote__text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin: 0 0 3rem 0;
+}
+
+.about-quote__emphasis {
+  font-weight: 700;
+}
+
+.about-quote__grace {
+  font-style: italic;
+}
+
+.about-quote__divider {
+  width: 300px;
+  height: 2px;
+  background-color: #1a1a1a;
+  margin: 0 auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-quote {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-quote__text {
+    margin: 0 0 2rem 0;
+  }
+
+  .about-quote__divider {
+    width: 200px;
+  }
+}

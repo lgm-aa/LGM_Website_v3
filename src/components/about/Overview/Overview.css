@@ -1,0 +1,147 @@
+/* Overview Section */
+.about-overview {
+  background-color: #e5ebf3;
+  padding: 4rem 2rem;
+}
+
+.about-overview__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-overview__image-wrapper,
+.about-overview__content {
+  align-self: start;
+}
+
+/* Left side - Image */
+.about-overview__image-wrapper {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  display: flex;
+}
+
+.about-overview__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Right side - Content */
+.about-overview__content {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.about-overview__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.056em;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -0.15em;
+}
+
+.about-overview__emphasis {
+  font-weight: 700;
+  letter-spacing: 0.056em;
+}
+
+/* Accordion */
+.about-overview__accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  border-top: 1px solid #1a1a1a;
+}
+
+.accordion-item:last-child {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.accordion-item__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.056em;
+  color: #000000;
+  text-align: left;
+  transition: opacity 0.2s ease;
+}
+
+.accordion-item__header:hover {
+  opacity: 0.7;
+}
+
+.accordion-item__title {
+  flex: 1;
+}
+
+.accordion-item__icon {
+  font-size: 2rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.accordion-item__icon.open {
+  transform: rotate(45deg);
+}
+
+.accordion-item__content {
+  padding: 0 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Mobile adjustments */
+@media (max-width: 968px) {
+  .about-overview__container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-overview__content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-overview {
+    padding: 3rem 1.5rem;
+  }
+
+  .accordion-item__header {
+    font-size: 1.25rem;
+    padding: 1.25rem 0;
+  }
+
+  .accordion-item__icon {
+    font-size: 1.75rem;
+  }
+}
