@@ -1,0 +1,64 @@
+/* --- About Hero Section ------------------------------------------------------ */
+.about-hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay so white text is readable */
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Positions the content block */
+.about-hero-content {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  color: white;
+  padding: 0 max(2rem, 7vw);
+  z-index: 1;
+}
+
+/* Typography */
+.about-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+/* --- Bottom wave ------------------------------------------------------ */
+.about-hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 96px;
+}
+
+.about-hero-wave path {
+  fill: var(--page-bg, #f4f6fa);
+}

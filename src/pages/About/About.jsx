@@ -1,10 +1,10 @@
 import React from "react";
-import AboutContent from "@/components/about/AboutContent";
+import Hero from '@/components/about/Hero/Hero'
 
 export default function About() {
   return (
     <>
-      <AboutContent />
+      <Hero />
     </>
   );
 }
