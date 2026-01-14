@@ -5,13 +5,10 @@ import backgroundImage from "@/assets/lgm_building.webp";
 export default function Hero() {
   return (
     <main className="sermons">
-      <section className="sermons-hero">
-        <img
-          src={backgroundImage}
-          alt="Living Grace Ministry"
-          className="sermons-hero__bg"
-        />
-
+      <section
+        className="sermons-hero"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className="sermons-hero__overlay"></div>
 
         {/* Left-aligned title and CTA */}
