@@ -1,6 +1,7 @@
 // src/components/sermons/Hero/Hero.jsx
 import "./Hero.css";
 import backgroundImage from "@/assets/lgm_building.webp";
+import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 
 export default function Hero() {
   return (
@@ -36,6 +37,9 @@ export default function Hero() {
             </a>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <ScrollIndicator />
 
         {/* Bottom wave */}
         <div className="sermons-hero__wave" aria-hidden="true">
