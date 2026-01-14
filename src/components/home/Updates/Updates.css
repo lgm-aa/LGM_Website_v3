@@ -21,8 +21,8 @@
 
 /* Typography */
 .updates__title {
+  font-family: 'Playfair Display', serif;
   color: #2b3443;
-  font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   margin: 0 0 1.5rem; 
