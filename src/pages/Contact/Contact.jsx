@@ -1,10 +1,13 @@
 import React from "react";
-import ContactContent from "@/components/contact/ContactContent";
+import Hero from "@/components/contact/Hero/Hero";
+import ContactInfo from "@/components/contact/ContactInfo/ContactInfo";
+import "./Contact.css";
 
 export default function Contact() {
   return (
-    <>
-      <ContactContent />
-    </>
+    <div className="contact-page">
+      <Hero />
+      <ContactInfo />
+    </div>
   );
 }

@@ -1,0 +1,126 @@
+/* Contact Info Section */
+.contact-info {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.contact-info__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-info__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 3rem 2rem;
+  justify-items: center;
+}
+
+/* Team Card */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  max-width: 250px;
+  width: 100%;
+}
+
+/* Circular Image */
+.team-card__image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background-color: #e5ebf3;
+}
+
+.team-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name */
+.team-card__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Role */
+.team-card__role {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #666;
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+/* Email Link */
+.team-card__email {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.team-card__email:hover {
+  color: #2563eb;
+}
+
+/* Mobile adjustments */
+@media (max-width: 968px) {
+  .contact-info__grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2.5rem 1.5rem;
+  }
+
+  .team-card__image-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-info__grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  .team-card__image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .team-card__name {
+    font-size: 1.25rem;
+  }
+
+  .team-card__role {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

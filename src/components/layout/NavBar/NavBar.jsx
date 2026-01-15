@@ -80,6 +80,11 @@ export default function NavBar() {
               Donate
             </Link>
           </div>
+          <div className="lgm-nav__item">
+            <Link to="/contact" className="lgm-nav__link">
+              Contact
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
