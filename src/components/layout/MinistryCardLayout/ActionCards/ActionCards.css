@@ -1,0 +1,71 @@
+.action-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 8vw, 9rem);
+    background-color: #E3E8EE;
+}
+
+.action-card {
+  position: relative; 
+  flex: 1 1 30%;            /* grow, shrink, base width 30% */
+  aspect-ratio: 6/8;        /* keeps card proportional */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  transition: transform 0.3s, opacity 0.3s;
+  min-width: 100px;           /* prevents shrinking too small */
+}
+
+.action-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(20, 40, 68, 0.4); /* your blue tint */
+  z-index: 0; /* behind text */
+  border-radius: 16px;
+}
+
+.action-card:hover {
+  transform: scale(1.01);
+  opacity: 0.95;
+}
+
+/* Text inside card */
+.action-card-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    justify-content: flex-start;
+    padding: clamp(1.5rem, 3vw, 3rem);
+    box-sizing: border-box;
+}
+
+.action-card-text {
+  color: white;
+  font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+  z-index: 1;
+
+}
+
+@media (max-width: 700px) {
+  .action-cards {
+    flex-wrap: wrap;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .action-card {
+    flex: 1 1 100%;       /* stack cards full width on mobile */
+    aspect-ratio: 6/7;
+  }
+
+  .action-card-content {
+    padding: clamp(2rem, 8vw, 5rem);
+  }
+
+  .action-card-text {
+    font-size: clamp(2rem, 6vw, 5rem);
+  }
+}

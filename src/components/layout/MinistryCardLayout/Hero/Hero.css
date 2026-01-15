@@ -1,0 +1,37 @@
+/* --- Ministry Card Hero Section ------------------------------------------------------ */
+.ministry-card-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay so text is readable */
+.ministry-card-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Positions the content block */
+.ministry-card-hero__content {
+  position: absolute;
+  bottom: 13%;               /* move it near the bottom */
+  right: 10%;                /* move it near the right edge */
+  color: white;
+  z-index: 1;
+  text-align: right;        /* aligns text to the right side */
+}
+
+/* Typography */
+.ministry-card-hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(5rem, 10vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
