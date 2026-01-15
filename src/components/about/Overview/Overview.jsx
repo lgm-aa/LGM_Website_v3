@@ -35,7 +35,13 @@ export default function Overview() {
               isOpen={openSection === "events"}
               onToggle={() => toggleSection("events")}
             >
-              <p>Content about events will go here.</p>
+              <p>We host a variety of events throughout the year designed to build community and grow together. In the past, we've held events like Field Day, Abide, and our annual Christmas Party.</p>
+              <p>To stay up to date on upcoming events and details, you can check:</p>
+              <ul className="link-list">
+                <li><a href="https://calendar.google.com/calendar/u/0?cid=bGdtYW5uYXJib3JAZ21haWwuY29t" target="_blank" rel="noopener noreferrer">LGM Calendar</a></li>
+                <li><a href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100064729684652" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+              </ul>
             </AccordionItem>
 
             <AccordionItem
@@ -43,7 +49,9 @@ export default function Overview() {
               isOpen={openSection === "service"}
               onToggle={() => toggleSection("service")}
             >
-              <p>Content about service information will go here.</p>
+              <p>Our Sunday service begins at 1:30 PM, with fellowship starting at 12:45 PM.</p>
+              <p>For those coming from campus at @umich, we recommend taking the Blake Transit bus. Additional transportation details can be found in our Google Doc:</p>
+              <p>→ [Link to Google Doc]</p>
             </AccordionItem>
 
             <AccordionItem
@@ -51,7 +59,8 @@ export default function Overview() {
               isOpen={openSection === "team"}
               onToggle={() => toggleSection("team")}
             >
-              <p>Content about the core team will go here.</p>
+              <p>LGM is currently searching for a new pastor. If you have any questions, please contact <a href="mailto:livinggraceministry@gmail.com">livinggraceministry@gmail.com</a>.</p>
+              <p>Meet the rest of our team!</p>
             </AccordionItem>
 
             <AccordionItem
@@ -59,7 +68,8 @@ export default function Overview() {
               isOpen={openSection === "connected"}
               onToggle={() => toggleSection("connected")}
             >
-              <p>Content about staying connected will go here.</p>
+              <p>Stay connected with our community by following us on Instagram and Facebook for updates, announcements, and event reminders.</p>
+              <p>You can also join one of our small groups (Post-Grad and Campus Ministries) or be part of our general LGM group chat to stay in the loop and connected throughout the week.</p>
             </AccordionItem>
           </div>
         </div>

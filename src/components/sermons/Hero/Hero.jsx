@@ -1,17 +1,15 @@
 // src/components/sermons/Hero/Hero.jsx
 import "./Hero.css";
 import backgroundImage from "@/assets/lgm_building.webp";
+import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 
 export default function Hero() {
   return (
     <main className="sermons">
-      <section className="sermons-hero">
-        <img
-          src={backgroundImage}
-          alt="Living Grace Ministry"
-          className="sermons-hero__bg"
-        />
-
+      <section
+        className="sermons-hero"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className="sermons-hero__overlay"></div>
 
         {/* Left-aligned title and CTA */}
@@ -39,6 +37,9 @@ export default function Hero() {
             </a>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <ScrollIndicator />
 
         {/* Bottom wave */}
         <div className="sermons-hero__wave" aria-hidden="true">
