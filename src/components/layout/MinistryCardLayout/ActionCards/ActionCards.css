@@ -1,9 +1,14 @@
 .action-cards {
-    display: flex;
-    gap: 2rem;
-    justify-content: flex-start;
-    padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 8vw, 9rem);
     background-color: #E3E8EE;
+}
+
+.action-cards-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 8vw, 9rem);    
 }
 
 .action-card {

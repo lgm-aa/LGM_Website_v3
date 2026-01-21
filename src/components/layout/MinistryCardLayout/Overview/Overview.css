@@ -1,10 +1,14 @@
+.overview {
+  background-color: #E3E8EE;
+}
 .overview__container {
+  max-width: 1500px;
   display: flex;            /* side-by-side layout */
   gap: 10rem;                /* space between left and right */
   align-items: flex-start;
   padding: clamp(3rem, 8vw, 10rem) 8rem;
-  background-color: #E3E8EE;
   align-items: stretch;
+  margin: 0 auto;
 }
 
 /* Left and Right sections */
@@ -24,14 +28,14 @@
 }
 
 .overview__subtitle {
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-size: clamp(1.20rem, 2vw, 1.50rem);
     letter-spacing: 0.03em;
 }
 
 .overview__desc {
     margin-top: auto;
     font-weight: 300;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-size: clamp(1.20rem, 2vw, 1.50rem);
     letter-spacing: 0.03em;
 }
 

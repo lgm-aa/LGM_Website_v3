@@ -8,19 +8,21 @@ export default function ActionCards({
     
     return (
         <section className="action-cards">
-            {cards.map((card) => (
-                <a
-                    key={card.id}
-                    href={card.link}
-                    className="action-card"
-                    style={{ backgroundImage: `url(${card.img})` }}
-                >
-                    <div className="action-card-content">
-                        <p className="action-card-text">{card.text}</p>
-                    </div>
+            <div className="action-cards-container">
+                {cards.map((card) => (
+                    <a
+                        key={card.id}
+                        href={card.link}
+                        className="action-card"
+                        style={{ backgroundImage: `url(${card.img})` }}
+                    >
+                        <div className="action-card-content">
+                            <p className="action-card-text">{card.text}</p>
+                        </div>
 
-                </a>
-            ))}
+                    </a>
+                ))}
+            </div>
         </section>
     );
 }
