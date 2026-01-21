@@ -1,76 +1,79 @@
-.donate-page {
+.donate {
   background: var(--page-bg, #e9eef4);
   min-height: 100vh;
 }
 
-/* hero with background photo */
+:root {
+  --donate-light-bg: #eef2f6;
+}
+
 .donate-hero {
   position: relative;
-  min-height: 75vh;
   width: 100%;
+  min-height: 100vh;
   background-size: cover;
-  background-position: center;
+  background-position: center 45%; 
   background-repeat: no-repeat;
+
+  --donate-bg: var(--page-bg, #e9eef4);
 }
 
-/* bluish overlay */
-.donate-overlay {
+.donate-hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 22, 40, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.35) 0%,
+    rgba(30, 41, 59, 0.22) 40%,
+    rgba(15, 23, 42, 0.45) 100%
+  );
 }
 
-/* place title near upper left / center-ish */
-.donate-content {
+.donate-hero__content {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 6vw;
-  z-index: 1;
+  top: 35%;
+  transform: translateY(-50%);
+  left: clamp(5rem, 10vw, 12rem);
 }
 
-/* big serif “DONATE” */
-.donate-title {
-  font-size: clamp(3.5rem, 9vw, 7rem);
+.donate-hero__title {
+  font-family: "Playfair Display SC", serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(3rem, 12vw, 8rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
-  margin: 0 0 0.75rem 0;
-  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-/* thin white line under title */
-.donate-title-line {
+.donate-hero__line {
+  margin-top: 1.25rem;
   width: 140px;
   height: 2px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.65);
 }
 
-/* bottom wave */
-.donate-wave {
+
+.donate-hero__wave {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
+  bottom: -1px; 
   z-index: 1;
   pointer-events: none;
 }
 
-.donate-wave svg {
+.donate-hero__wave-svg {
   display: block;
   width: 100%;
-  height: 80px;
+  height: 96px; 
 }
 
-.donate-wave path {
-  fill: var(--page-bg, #e9eef4);
+.donate-hero__wave-path {
+  fill: var(--donate-light-bg);
 }
 
-/* body section below hero (light background) */
 .donate-body {
   padding: 4rem 1.5rem 5rem;
   max-width: 900px;
@@ -78,14 +81,143 @@
   color: #1f2933;
 }
 
-/* responsive tweaks */
 @media (max-width: 768px) {
-  .donate-content {
-    align-items: center;
-    text-align: center;
+  .donate-hero__content {
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 45%;
+    text-align: left; 
   }
 
-  .donate-title-line {
-    margin: 0 auto;
+  .donate-hero__line {
+    width: 120px;
   }
+}
+
+.donate-quote {
+  background: var(--donate-light-bg);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  padding-bottom: 8rem;
+}
+
+.donate-quote blockquote {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Playfair Display", serif;
+  color: #0f172a;
+}
+
+.donate-quote p {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  margin-bottom: 0.15rem;
+}
+
+.donate-quote span {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 0rem;
+  display: block;
+}
+
+
+.donate-ways {
+  background: #253b57;
+  color: rgba(255, 255, 255, 0.92);
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  margin-top: -3rem;
+
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  padding: 4rem 0 3.5rem;
+  margin-top: -1.5rem;
+}
+
+.donate-ways__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem; 
+  text-align: center;
+}
+
+
+.donate-ways__title {
+  font-family: "Playfair Display SC", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.donate-ways__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.donate-ways__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.donate-ways__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.donate-ways__footer {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive                                                              */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .donate-ways {
+    padding: 3rem 1.5rem;
+    border-radius: 22px;
+  }
+
+  .donate-ways__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.donate-link {
+  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.donate-link:hover {
+  opacity: 0.75;
+}
+
+.donate-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
 }
