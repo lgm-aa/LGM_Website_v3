@@ -31,35 +31,16 @@
   font-size: clamp(16px, 2.4vw, 20px);
 }
 
-.ministries__carousel-container {
+/* Carousel Wrapper */
+.ministries__carousel {
   position: relative;
   margin-top: clamp(20px, 3vw, 28px);
+  overflow: visible;
 }
 
-.ministries__grid-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.ministries__grid {
-  display: grid;
-  gap: clamp(16px, 2.5vw, 28px);
-  grid-template-columns: 1fr;
-  width: 100%;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 720px) {
-  .ministries__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .ministries__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Swiper slides */
+.ministries__swiper .swiper-slide {
+  width: 300px; /* adjust slide width as needed */
 }
 
 .ministries__arrow {
@@ -81,16 +62,9 @@
   transition: all 0.3s ease;
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .ministries__arrow:focus {
-  outline: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -103,13 +77,12 @@
   transform: translateY(-50%) scale(0.95);
   background: rgba(43, 52, 67, 0.95);
   color: #2b3443;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .ministries__arrow:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.1);
   background: rgba(43, 52, 67, 1);
   color: white;
-  transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -128,6 +101,7 @@
 
 .ministry-card {
   display: block;
+  width: 100%; /* fill slide */
   border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
@@ -155,12 +129,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.12),
-      rgba(255, 255, 255, 0)
-    ),
-    repeating-linear-gradient(45deg, #eef2f7 0 18px, #dde4ec 18px 36px);
 }
 
 .ministry-card__label {
@@ -181,13 +149,8 @@
     height: 40px;
   }
   
-  .ministries__arrow--left {
-    left: -16px;
-  }
-  
-  .ministries__arrow--right {
-    right: -16px;
-  }
+  .ministries__arrow--left { left: -16px; }
+  .ministries__arrow--right { right: -16px; }
 }
 
 @media (max-width: 768px) {
@@ -202,13 +165,8 @@
     height: 18px;
   }
   
-  .ministries__arrow--left {
-    left: -12px;
-  }
-  
-  .ministries__arrow--right {
-    right: -12px;
-  }
+  .ministries__arrow--left { left: -12px; }
+  .ministries__arrow--right { right: -12px; }
   
   .ministries__arrow:active:not(:disabled) {
     background: rgba(255, 255, 255, 0.9);
@@ -217,7 +175,5 @@
 }
 
 @media (max-width: 480px) {
-  .ministries__arrow {
-    display: none;
-  }
+  .ministries__arrow { display: none; }
 }
