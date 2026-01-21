@@ -52,7 +52,6 @@ export default function Footer() {
         <nav className="footer__col">
           <h4>Quick Links</h4>
           <a href="/about">About Us</a>
-          <a href="/beliefs">Our Beliefs</a>
           <a 
             href="/#ministries" 
             onClick={(e) => handleScroll(e, "ministries")}
