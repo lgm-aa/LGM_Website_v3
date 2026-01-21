@@ -7,7 +7,7 @@ import img3 from "@/assets/community3.webp";
 
 const cards = [
         { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},
-        { id: 2, img: img2, link: "https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==", text: "Upcoming Events"},
+        { id: 2, img: img2, link: "https://calendar.google.com/calendar/u/0/r?cid=Y18wOGRkM2QwNDhmNDNhNDVkNDY2MGNkODAzMjcyNzEwOTAyZTMwNzhhYWU3ODk2YmUwMTk4OTY4ZTc4ZmI5YjNiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20 ", text: "Upcoming Events"},
         { id: 3, img: img3, link: "https://linktr.ee/livinggraceministry?utm_source=linktree_profile_share&ltsid=a0b56597-b014-4494-8919-dd97399adf93", text: "Campus Ride Info"},
       ]
 
