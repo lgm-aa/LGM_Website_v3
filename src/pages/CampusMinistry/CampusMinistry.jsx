@@ -6,9 +6,9 @@ import img2 from "@/assets/community2.webp";
 import img3 from "@/assets/community3.webp";
 
 const cards = [
-        { id: 1, img: img1, link: "/contact", text: "Campus Small Groups"},
-        { id: 2, img: img2, link: "/contact", text: "Upcoming Events"},
-        { id: 3, img: img3, link: "/contact", text: "Campus Ride Info"},
+        { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},
+        { id: 2, img: img2, link: "https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==", text: "Upcoming Events"},
+        { id: 3, img: img3, link: "https://linktr.ee/livinggraceministry?utm_source=linktree_profile_share&ltsid=a0b56597-b014-4494-8919-dd97399adf93", text: "Campus Ride Info"},
       ]
 
 

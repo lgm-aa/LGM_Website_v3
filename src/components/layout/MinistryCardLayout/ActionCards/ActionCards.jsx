@@ -13,6 +13,8 @@ export default function ActionCards({
                     <a
                         key={card.id}
                         href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="action-card"
                         style={{ backgroundImage: `url(${card.img})` }}
                     >
