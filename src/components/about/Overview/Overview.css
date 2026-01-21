@@ -5,7 +5,7 @@
 }
 
 .about-overview__container {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,7 +21,7 @@
 /* Left side - Image */
 .about-overview__image-wrapper {
   position: relative;
-  width: 100%;
+  aspect-ratio: 9/10;
   line-height: 0;
   display: flex;
 }
