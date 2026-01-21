@@ -104,6 +104,8 @@ export default function Footer() {
               href="https://www.facebook.com/profile.php?id=100064729684652"
               aria-label="Facebook"
               className="social"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -120,6 +122,8 @@ export default function Footer() {
               href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="
               aria-label="Instagram"
               className="social"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -138,6 +142,8 @@ export default function Footer() {
               href="https://www.youtube.com/@LivingGraceMinistry"
               aria-label="YouTube"
               className="social"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 viewBox="0 0 24 24"
