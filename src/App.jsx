@@ -28,7 +28,7 @@ function App() {
           {/* All these pages will render INSIDE the Layout's <Outlet/> */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/donate" element={<Donate />} />
+          <Route path="/give" element={<Donate />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sermons" element={<Sermons />} />
           <Route path="/childrens" element={<ChildrensMinistry />} />

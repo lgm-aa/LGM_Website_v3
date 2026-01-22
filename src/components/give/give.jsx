@@ -1,31 +1,31 @@
-import "./donate.css";
+import "./give.css";
 import backgroundImage from "@/assets/ministry_campus.webp";
 import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 
-export default function Donate() {
+export default function Give() {
   return (
-    <main className="donate">
+    <main className="give">
       <section
-        className="donate-hero"
+        className="give-hero"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="donate-hero__overlay" />
+        <div className="give-hero__overlay" />
 
-        <div className="donate-hero__content">
-          <h1 className="donate-hero__title">GIVE</h1>
+        <div className="give-hero__content">
+          <h1 className="give-hero__title">GIVE</h1>
 
         </div>
 
         <ScrollIndicator />
 
-        <div className="donate-hero__wave" aria-hidden="true">
+        <div className="give-hero__wave" aria-hidden="true">
           <svg
-            className="donate-hero__wave-svg"
+            className="give-hero__wave-svg"
             viewBox="0 0 1440 160"
             preserveAspectRatio="none"
           >
             <path
-              className="donate-hero__wave-path"
+              className="give-hero__wave-path"
               d="
                 M0,64 
                 C120,96 240,128 360,128
@@ -39,7 +39,7 @@ export default function Donate() {
         </div>
       </section>
 
-      <section className="donate-quote">
+      <section className="give-quote">
         <blockquote>
           <p>
             “Each one must give as he has decided in his heart, not reluctantly or
@@ -49,20 +49,20 @@ export default function Donate() {
         </blockquote>
       </section>
 
-      <section className="donate-ways">
-  <div className="donate-ways__inner">
-    <h2 className="donate-ways__title">Ways to Give</h2>
+      <section className="give-ways">
+  <div className="give-ways__inner">
+    <h2 className="give-ways__title">Ways to Give</h2>
 
-    <div className="donate-ways__grid">
-      <div className="donate-ways__item">
-        <div className="donate-ways__icon" />
+    <div className="give-ways__grid">
+      <div className="give-ways__item">
+        <div className="give-ways__icon" />
         <p>
           Venmo to{" "}
           <a
             href="https://account.venmo.com/u/LGMAA"
             target="_blank"
             rel="noopener noreferrer"
-            className="donate-link"
+            className="give-link"
           >
             LGMAA
           </a>
@@ -70,13 +70,13 @@ export default function Donate() {
 
       </div>
 
-      <div className="donate-ways__item">
-        <div className="donate-ways__icon" />
+      <div className="give-ways__item">
+        <div className="give-ways__icon" />
         <p>Give in person to the welcoming team</p>
       </div>
 
-      <div className="donate-ways__item">
-        <div className="donate-ways__icon" />
+      <div className="give-ways__item">
+        <div className="give-ways__icon" />
         <p>
           Zelle to <br />
           livinggraceministry@gmail.com
@@ -84,7 +84,7 @@ export default function Donate() {
       </div>
     </div>
 
-    <p className="donate-ways__footer">
+    <p className="give-ways__footer">
       Thank you for considering a financial gift. Any of the payment methods
       above can be used to make a donation.
     </p>

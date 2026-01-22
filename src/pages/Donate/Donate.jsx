@@ -1,10 +1,10 @@
 import React from "react";
-import Donatecontent from "@/components/donate/donate";
+import Givecontent from "@/components/give/give";
 
 export default function Donate() {
   return (
     <>
-      <Donatecontent />
+      <Givecontent />
     </>
   );
 }

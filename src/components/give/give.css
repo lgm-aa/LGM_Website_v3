@@ -1,13 +1,13 @@
-.donate {
+.give {
   background: var(--page-bg, #e9eef4);
   min-height: 100vh;
 }
 
 :root {
-  --donate-light-bg: #eef2f6;
+  --give-light-bg: #eef2f6;
 }
 
-.donate-hero {
+.give-hero {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -15,10 +15,10 @@
   background-position: center 45%; 
   background-repeat: no-repeat;
 
-  --donate-bg: var(--page-bg, #e9eef4);
+  --give-bg: var(--page-bg, #e9eef4);
 }
 
-.donate-hero__overlay {
+.give-hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -29,14 +29,14 @@
   );
 }
 
-.donate-hero__content {
+.give-hero__content {
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
   left: clamp(5rem, 10vw, 12rem);
 }
 
-.donate-hero__title {
+.give-hero__title {
   font-family: "Playfair Display SC", serif;
   color: rgba(255, 255, 255, 0.9);
   font-size: clamp(3rem, 12vw, 8rem);
@@ -47,7 +47,7 @@
   margin: 0;
 }
 
-.donate-hero__line {
+.give-hero__line {
   margin-top: 1.25rem;
   width: 140px;
   height: 2px;
@@ -55,7 +55,7 @@
 }
 
 
-.donate-hero__wave {
+.give-hero__wave {
   position: absolute;
   left: 0;
   right: 0;
@@ -64,17 +64,17 @@
   pointer-events: none;
 }
 
-.donate-hero__wave-svg {
+.give-hero__wave-svg {
   display: block;
   width: 100%;
   height: 96px; 
 }
 
-.donate-hero__wave-path {
+.give-hero__wave-path {
   fill: var(--donate-light-bg);
 }
 
-.donate-body {
+.give-body {
   padding: 4rem 1.5rem 5rem;
   max-width: 900px;
   margin: 0 auto;
@@ -82,39 +82,39 @@
 }
 
 @media (max-width: 768px) {
-  .donate-hero__content {
+  .give-hero__content {
     left: 1.5rem;
     right: 1.5rem;
     top: 45%;
     text-align: left; 
   }
 
-  .donate-hero__line {
+  .give-hero__line {
     width: 120px;
   }
 }
 
-.donate-quote {
+.give-quote {
   background: var(--donate-light-bg);
   padding: 4rem 1.5rem;
   text-align: center;
   padding-bottom: 8rem;
 }
 
-.donate-quote blockquote {
+.give-quote blockquote {
   max-width: 800px;
   margin: 0 auto;
   font-family: "Playfair Display", serif;
   color: #0f172a;
 }
 
-.donate-quote p {
+.give-quote p {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   line-height: 1.6;
   margin-bottom: 0.15rem;
 }
 
-.donate-quote span {
+.give-quote span {
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -124,7 +124,7 @@
 }
 
 
-.donate-ways {
+.give-ways {
   background: #253b57;
   color: rgba(255, 255, 255, 0.92);
 
@@ -143,7 +143,7 @@
   margin-top: -1.5rem;
 }
 
-.donate-ways__inner {
+.give-ways__inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem; 
@@ -151,21 +151,21 @@
 }
 
 
-.donate-ways__title {
+.give-ways__title {
   font-family: "Playfair Display SC", serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 400;
   margin-bottom: 3rem;
 }
 
-.donate-ways__grid {
+.give-ways__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   margin-bottom: 2.5rem;
 }
 
-.donate-ways__item {
+.give-ways__item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,14 +174,14 @@
   line-height: 1.4;
 }
 
-.donate-ways__icon {
+.give-ways__icon {
   width: 96px;
   height: 96px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.12);
 }
 
-.donate-ways__footer {
+.give-ways__footer {
   max-width: 700px;
   margin: 0 auto;
   font-size: 0.9rem;
@@ -193,18 +193,18 @@
 /* ---------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
-  .donate-ways {
+  .give-ways {
     padding: 3rem 1.5rem;
     border-radius: 22px;
   }
 
-  .donate-ways__grid {
+  .give-ways__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 }
 
-.donate-link {
+.give-link {
   font-family: "Playfair Display", serif;
   color: #ffffff;
   text-decoration: underline;
@@ -213,11 +213,11 @@
   transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-.donate-link:hover {
+.give-link:hover {
   opacity: 0.75;
 }
 
-.donate-link:focus-visible {
+.give-link:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.6);
   outline-offset: 3px;
 }

@@ -76,8 +76,8 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="lgm-nav__item">
-            <Link to="/donate" className="lgm-nav__link">
-              Donate
+            <Link to="/give" className="lgm-nav__link">
+              Give
             </Link>
           </div>
           <div className="lgm-nav__item">
