@@ -22,14 +22,14 @@ export default function ContactInfo() {
       id: 2,
       name: "Andrew Choi",
       role: "Worship Leader",
-      email: "livinggraceministry@gmail.com",
+      email: "andrewsungwoochoi@gmail.coms",
       image: praise_leader,
     },
     {
       id: 3,
       name: "Daniel Cha",
       role: "Assistant Worship Leader",
-      email: "livinggraceministry@gmail.com",
+      email: "dchaa@umich.edu",
       image: praise_apprentice,
     },
     {
@@ -86,11 +86,6 @@ export default function ContactInfo() {
   return (
     <section className="contact-info">
       <div className="contact-info__container">
-        <div className="contact-info__email-section">
-          <a href="mailto:livinggraceministry@gmail.com" className="contact-info__email-link">
-            livinggraceministry@gmail.com
-          </a>
-        </div>
         <div className="contact-info__grid">
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">
@@ -108,6 +103,12 @@ export default function ContactInfo() {
               </a>
             </div>
           ))}
+        </div>
+        <div className="contact-info__cta-section">
+          <p className="contact-info__cta-text">Not looking to contact a specific person?</p>
+          <a href="mailto:livinggraceministry@gmail.com" className="contact-info__cta-button">
+            Contact LGM
+          </a>
         </div>
       </div>
     </section>

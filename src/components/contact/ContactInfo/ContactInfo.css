@@ -1,6 +1,6 @@
 /* Contact Info Section */
 .contact-info {
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #ffffff 0%, #e8eef5 50%, #d4dce8 100%);
   padding: 6rem 2rem;
 }
 
@@ -9,43 +9,37 @@
   margin: 0 auto;
 }
 
-/* Email Section */
-.contact-info__email-section {
+/* CTA Section */
+.contact-info__cta-section {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
   padding: 2rem;
 }
 
-.contact-info__email-link {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e40af;
-  text-decoration: none;
+.contact-info__cta-text {
+  font-size: 1.125rem;
+  color: #4a5568;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.contact-info__cta-button {
   display: inline-block;
+  background-color: #4a74b8;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
   transition: all 0.3s ease;
-  position: relative;
-  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info__email-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: #2563eb;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.contact-info__email-link:hover {
-  color: #2563eb;
+.contact-info__cta-button:hover {
+  background-color: #3d5a8f;
   transform: translateY(-2px);
-}
-
-.contact-info__email-link:hover::after {
-  width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact-info__grid {
@@ -140,7 +134,7 @@
   }
 
   .contact-info__email-section {
-    margin-bottom: 3rem;
+    margin-top: 3rem;
     padding: 1.5rem 1rem;
   }
 
@@ -164,6 +158,20 @@
 
   .team-card__role {
     font-size: 0.875rem;
+  }
+
+  .contact-info__cta-section {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-info__cta-text {
+    font-size: 1rem;
+  }
+
+  .contact-info__cta-button {
+    font-size: 1rem;
+    padding: 0.875rem 2.5rem;
   }
 }
 
