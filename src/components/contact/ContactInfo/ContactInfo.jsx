@@ -1,63 +1,85 @@
 import "./ContactInfo.css";
-import headshot from "@/assets/headshot.jpg";
+
+import youth_director from "@/assets/people/youth_director.jpg";
+import praise_leader from "@/assets/people/praise_leader.jpg";
+import praise_apprentice from "@/assets/people/praise_apprentice.jpg";
+import campus_admin from "@/assets/people/campus_admin.jpg";
+import postgrad_admin_1 from "@/assets/people/postgrad_admin_1.jpg";
+import postgrad_admin_2 from "@/assets/people/postgrad_admin_2.jpg";
+import finance_chair from "@/assets/people/finance_chair.jpg";
+import filler from "@/assets/lgm_logo.webp";
 
 export default function ContactInfo() {
   const teamMembers = [
     {
       id: 1,
-      name: "TBD",
+      name: "Currently Searching",
       role: "Pastor",
       email: "livinggraceministry@gmail.com",
-      image: headshot,
+      image: filler,
     },
     {
       id: 2,
       name: "Andrew Choi",
       role: "Worship Leader",
       email: "livinggraceministry@gmail.com",
-      image: headshot,
+      image: praise_leader,
     },
     {
       id: 3,
       name: "Daniel Cha",
       role: "Assistant Worship Leader",
       email: "livinggraceministry@gmail.com",
-      image: headshot,
+      image: praise_apprentice,
     },
     {
       id: 4,
       name: "Sarah Chung",
       role: "Youth Ministry Director",
-      email: "livinggraceministry@gmail.com",
-      image: headshot,
+      email: "sarah201671@gmail.com",
+      image: youth_director,
     },
     {
       id: 5,
       name: "Sammy Kim",
       role: "Campus Ministry Admin",
       email: "samueki@umich.edu",
-      image: headshot,
+      image: campus_admin,
     },
     {
       id: 6,
       name: "Ian Yu",
       role: "Post-Grad Ministry Admin",
       email: "9921ianyu@gmail.com",
-      image: headshot,
+      image: postgrad_admin_1,
     },
     {
       id: 7,
-      name: "TBD",
-      role: "Adult/Family Group",
-      email: "LGMAdultandFamilyMinistry@gmail.com",
-      image: headshot,
+      name: "Yubin Choi",
+      role: "Post-Grad Ministry Admin",
+      email: "ychoi1276@gmail.com",
+      image: postgrad_admin_2,
     },
     {
       id: 8,
+      name: "TBD",
+      role: "Adult/Family Group",
+      email: "LGMAdultandFamilyMinistry@gmail.com",
+      image: filler,
+    },
+    {
+      id: 9,
+      name: "Colin Janak",
+      role: "Core Council Administrator",
+      email: "colinjanak2015@gmail.com",
+      image: filler,
+    },
+    {
+      id: 10,
       name: "Jason Um",
       role: "Finance Chair",
-      email: "LGMAdultandFamilyMinistry@gmail.com",
-      image: headshot,
+      email: "livinggraceministry@gmail.com",
+      image: finance_chair,
     },
   ];
 

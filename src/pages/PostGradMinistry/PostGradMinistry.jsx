@@ -1,7 +1,7 @@
 import React from "react";
 import MinistryStandardLayout from "../../components/layout/MinistryCardLayout/MinistryCardLayout";
 import heroImage from "@/assets/postgrad_hero.webp";
-import img1 from "@/assets/headshot.jpg";
+import img1 from "@/assets/people/postgrad_admin_2.jpg";
 
 const cards = [
         { id: 1, img: img1, link: "/contact", text: "Post Grad Small Groups"},
