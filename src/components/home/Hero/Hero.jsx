@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 import "@/components/AnimatedSection/AnimatedSection.css"; // make sure this is imported
 import Button from "@/components/ui/Button/Button";
+import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 import lgm_easter from "@/assets/lgm_easter.webp";
 import { useStaggeredFade } from "@/hooks/useStaggeredFade";
 
@@ -57,18 +58,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="scroll-indicator">
-        <div>scroll</div>
-        <svg
-          className="chevron"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
+      <ScrollIndicator />
 
       {/* Bottom wave */}
       <div className="hero-wave" aria-hidden="true">
