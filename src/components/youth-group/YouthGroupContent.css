@@ -1,7 +1,62 @@
-.yg-section {
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.youth-intro {
+  background-color: #eef2f6;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 8rem);
+}
+
+.youth-intro__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.youth-intro__quote {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1.4;
+  color: #0f172a;
+  margin: 0 0 1.25rem 0;
+}
+
+.youth-intro__reference {
+  font-size: 0.95rem;
+  color: #475569;
+  letter-spacing: 0.05em;
+}
+
+.youth-intro__description p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+.youth-intro__image {
+  margin: 4rem auto 0;
+  max-width: 720px;
+  height: 220px;
+  border-radius: 16px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #f8fafc,
+      #f8fafc 20px,
+      #e5e7eb 20px,
+      #e5e7eb 40px
+    );
+}
+
+@media (max-width: 900px) {
+  .youth-intro__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .youth-intro__image {
+    height: 180px;
+  }
+}
+
+.page-hero {
+  --page-hero-bg: #eef2f6;
 }
