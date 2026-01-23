@@ -4,13 +4,10 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 
 export default function Hero() {
   return (
-    <>
-      {/* Background image */}
-      <section
-        className="about-hero-section"
-        style={{ backgroundImage: `url(${about_hero})` }}
-      />
-
+    <section
+      className="about-hero-section"
+      style={{ backgroundImage: `url(${about_hero})` }}
+    >
       {/* Dark overlay */}
       <div className="about-hero-overlay" />
 
@@ -21,6 +18,6 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <ScrollIndicator />
-    </>
+    </section>
   );
 }

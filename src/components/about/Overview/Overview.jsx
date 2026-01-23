@@ -51,7 +51,9 @@ export default function Overview() {
             >
               <p>Our Sunday service begins at 1:30 PM, with fellowship starting at 12:45 PM.</p>
               <p>For those coming from campus at @umich, we recommend taking the Blake Transit bus. Additional transportation details can be found in our Google Doc:</p>
-              <p>→ [Link to Google Doc]</p>
+              <ul className="link-list">
+                <li><a href="https://linktr.ee/livinggraceministry#328264619" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+              </ul>
             </AccordionItem>
 
             <AccordionItem
@@ -60,7 +62,9 @@ export default function Overview() {
               onToggle={() => toggleSection("team")}
             >
               <p>LGM is currently searching for a new pastor. If you have any questions, please contact <a href="mailto:livinggraceministry@gmail.com">livinggraceministry@gmail.com</a>.</p>
-              <p>Meet the rest of our team!</p>
+              <ul className="link-list">
+                <li><a href="/contact">Meet the rest of our team!</a></li>
+              </ul>
             </AccordionItem>
 
             <AccordionItem
