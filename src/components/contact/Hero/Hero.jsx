@@ -4,13 +4,10 @@ import contact_hero from "@/assets/lgm_easter.webp";
 
 export default function Hero() {
   return (
-    <>
-      {/* Background image */}
-      <section
-        className="contact-hero-section"
-        style={{ backgroundImage: `url(${contact_hero})` }}
-      />
-
+    <section
+      className="contact-hero-section"
+      style={{ backgroundImage: `url(${contact_hero})` }}
+    >
       {/* Dark overlay */}
       <div className="contact-hero-overlay" />
 
@@ -21,6 +18,6 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <ScrollIndicator />
-    </>
+    </section>
   );
 }
