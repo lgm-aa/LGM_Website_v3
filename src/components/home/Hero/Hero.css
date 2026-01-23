@@ -2,6 +2,7 @@
 .hero-section {
   position: relative; /* was fixed */
   min-height: 100vh;
+  min-height: 100dvh; /* dynamic viewport height for iOS Safari */
   width: 100%;
   background-size: cover;
   background-position: center;
