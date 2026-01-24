@@ -3,7 +3,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 100px; 
+  bottom: 60px; 
   z-index: 2;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
