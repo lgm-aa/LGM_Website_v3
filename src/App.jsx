@@ -12,7 +12,7 @@ import ChildrensMinistry from "@/pages/ChildrensMinistry/ChildrensMinistry";
 import YouthGroupMinistry from "@/pages/YouthGroupMinistry/YouthGroupMinistry";
 import CampusMinistry from "@/pages/CampusMinistry/CampusMinistry";
 import PostGradMinistry from "@/pages/PostGradMinistry/PostGradMinistry";
-import AdultFamilyContent from "@/components/adult-family/AdultFamilyContent";
+import AdultFamilyMinistry from "@/pages/AdultFamilyMinistry/AdultFamilyMinistry";
 import ScrollToAnchor from "@/components/ScrollToAnchor/ScrollToAnchor";
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
           <Route path="/youth-group" element={<YouthGroupMinistry />} />
           <Route path="/campus" element={<CampusMinistry />} />
           <Route path="/post-grad" element={<PostGradMinistry />} />
-          <Route path="/adult-family" element={<AdultFamilyContent />} />
+          <Route path="/adult-family" element={<AdultFamilyMinistry />} />
           
         </Route>
         {/* 👆 CLOSING TAG: End of the Layout wrapper */}

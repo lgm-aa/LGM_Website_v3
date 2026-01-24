@@ -24,10 +24,12 @@ export default function Overview() {
         {/* Right side - Content */}
         <div className="about-overview__content">
           <h2 className="about-overview__title">
-            We Are a Ministry That Lives Out Grace{" "}
-            <span className="about-overview__emphasis">Practically</span> in Ann Arbor
+            We Are a Ministry <br />
+            That Lives Out Grace <br />
+            <span className="about-overview__emphasis">Practically</span> in Ann <br />
+            Arbor
           </h2>
-
+          
           {/* Accordion sections */}
           <div className="about-overview__accordion">
             <AccordionItem

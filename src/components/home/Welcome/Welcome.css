@@ -1,6 +1,6 @@
 .welcome {
   background: #f4f6fa;
-  padding: clamp(3rem, 6vw, 4.5rem) 1rem;
+  padding: clamp(3rem, 6vw, 4.5rem) 1rem 11rem; 
 }
 
 .welcome__container {
