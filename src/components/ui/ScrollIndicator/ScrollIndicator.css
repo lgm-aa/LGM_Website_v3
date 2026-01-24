@@ -3,7 +3,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 120px; /* sits just above the wave */
+  bottom: 100px; 
   z-index: 2;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
@@ -28,5 +28,12 @@
   50% {
     transform: translateY(6px);
     opacity: 1;
+  }
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
   }
 }

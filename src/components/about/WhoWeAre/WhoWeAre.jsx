@@ -1,5 +1,6 @@
 import "./WhoWeAre.css";
 import aboutWhoweare from "@/assets/about-whoweare.webp";
+
 export default function WhoWeAre() {
   return (
     <section
