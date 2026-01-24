@@ -1,12 +1,22 @@
 /* Contact Info Section */
 .contact-info {
   background: linear-gradient(to bottom, #ffffff 0%, #e8eef5 50%, #d4dce8 100%);
-  padding: 6rem 2rem;
+  padding: 3rem 2rem 6rem;
 }
 
 .contact-info__container {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.contact-info__header {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0 0 3rem 0;
+  letter-spacing: 0.02em;
 }
 
 /* CTA Section */
@@ -97,18 +107,22 @@
   margin-bottom: 0.25rem;
 }
 
-/* Email Link */
+/* Email Button */
 .team-card__email {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: #000000;
-  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #4a5568;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   transition: color 0.2s ease;
   margin-top: 0.25rem;
+  word-break: break-all;
 }
 
 .team-card__email:hover {

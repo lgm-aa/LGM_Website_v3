@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./ContactInfo.css";
 
 import youth_director from "@/assets/people/youth_director.jpg";
@@ -10,6 +11,14 @@ import finance_chair from "@/assets/people/finance_chair.jpg";
 import filler from "@/assets/lgm_logo.webp";
 
 export default function ContactInfo() {
+  const [copiedId, setCopiedId] = useState(null);
+
+  const handleCopyEmail = (email, id) => {
+    navigator.clipboard.writeText(email);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
   const teamMembers = [
     {
       id: 1,
@@ -86,6 +95,7 @@ export default function ContactInfo() {
   return (
     <section className="contact-info">
       <div className="contact-info__container">
+        <h2 className="contact-info__header">Core Council Team</h2>
         <div className="contact-info__grid">
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">
@@ -98,14 +108,17 @@ export default function ContactInfo() {
               </div>
               <h3 className="team-card__name">{member.name}</h3>
               <p className="team-card__role">{member.role}</p>
-              <a href={`mailto:${member.email}`} className="team-card__email">
-                EMAIL →
-              </a>
+              <button
+                onClick={() => handleCopyEmail(member.email, member.id)}
+                className="team-card__email"
+              >
+                {copiedId === member.id ? "Copied!" : member.email}
+              </button>
             </div>
           ))}
         </div>
         <div className="contact-info__cta-section">
-          <p className="contact-info__cta-text">Not looking to contact a specific person?</p>
+          <p className="contact-info__cta-text">Have other comments or questions?</p>
           <a href="mailto:livinggraceministry@gmail.com" className="contact-info__cta-button">
             Contact LGM
           </a>
