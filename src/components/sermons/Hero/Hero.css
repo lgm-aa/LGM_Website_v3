@@ -99,38 +99,4 @@
   .sermons-hero__cta-button {
     font-size: 0.85rem;
   }
-
-  .sermons-hero__wave {
-    display: none;
-  }
-}
-
-
-
-/* ---------------------------------------------------------------------- */
-/*   S E R M O N S   W A V E   (scoped, no global interference)           */
-/* ---------------------------------------------------------------------- */
-
-.sermons-hero__wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px; /* slight overlap */
-  z-index: 1;
-  pointer-events: none;
-}
-
-.sermons-hero__wave-svg {
-  display: block;
-  width: 100%;
-  height: 96px;
-}
-
-/* Local sermons variable — NOT global */
-.sermons-hero {
-  --sermons-bg: #e5ebf3;
-}
-
-.sermons-hero__wave-path {
-  fill: var(--sermons-bg);
 }

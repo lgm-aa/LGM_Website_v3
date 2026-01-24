@@ -56,23 +56,3 @@
     font-size: 2.5rem;
   }
 }
-
-/* --- Bottom wave ------------------------------------------------------ */
-.about-hero-wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.about-hero-wave svg {
-  display: block;
-  width: 100%;
-  height: 96px;
-}
-
-.about-hero-wave path {
-  fill: var(--page-bg, #f4f6fa);
-}

@@ -40,27 +40,6 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <ScrollIndicator />
-
-        {/* Bottom wave */}
-        <div className="sermons-hero__wave" aria-hidden="true">
-          <svg
-            className="sermons-hero__wave-svg"
-            viewBox="0 0 1440 160"
-            preserveAspectRatio="none"
-          >
-            <path
-              className="sermons-hero__wave-path"
-              d="
-                M0,64 
-                C120,96 240,128 360,128
-                C540,128 600,64 780,64
-                C960,64 1080,120 1260,120
-                C1350,120 1395,110 1440,104
-                L1440,160 L0,160 Z
-              "
-            />
-          </svg>
-        </div>
       </section>
     </main>
   );
