@@ -77,8 +77,8 @@
 .give-quote {
   background: var(--donate-light-bg);
   text-align: center;
-  padding: 8rem 1.5rem;
-  padding-bottom: 11rem;
+  padding: 10rem 1.5rem;
+  padding-bottom: 16rem;
 }
 
 .give-quote blockquote {
@@ -184,7 +184,7 @@
   font-size: 0.9rem;
   opacity: 0.85;
   font-size: clamp(1rem, 1.8vw, 1.3rem);  /* match items */
-  margin-top: 5rem;
+  margin-top: 8rem;
   line-height: 1.45;
 }
 
