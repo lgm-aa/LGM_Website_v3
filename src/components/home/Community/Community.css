@@ -111,10 +111,3 @@
 .community__nav--next {
   right: 1.2rem;
 }
-
-/* optional: hide arrows on small screens */
-@media (max-width: 640px) {
-  .community__nav {
-    display: none;
-  }
-}

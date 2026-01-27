@@ -37,6 +37,7 @@
   overflow: visible;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
   max-width: 700px;
+  margin-inline: auto;
 }
 
 .welcome__image {
