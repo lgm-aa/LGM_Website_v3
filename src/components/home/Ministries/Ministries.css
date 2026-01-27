@@ -145,24 +145,24 @@
 
 @media (max-width: 1024px) {
   .ministries__arrow {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
   
-  .ministries__arrow--left { left: -16px; }
-  .ministries__arrow--right { right: -16px; }
+  .ministries__arrow--left { left: -20px; }
+  .ministries__arrow--right { right: -20px; }
 }
 
 @media (max-width: 768px) {
   .ministries__arrow {
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
     background: rgba(43, 52, 67, 0.85);
   }
   
   .ministries__arrow svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
   
   .ministries__arrow--left { left: -12px; }
@@ -172,8 +172,4 @@
     background: rgba(255, 255, 255, 0.9);
     color: white;
   }
-}
-
-@media (max-width: 480px) {
-  .ministries__arrow { display: none; }
 }
