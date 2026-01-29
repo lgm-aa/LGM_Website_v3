@@ -141,6 +141,10 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+   .plan-right {
+    flex-direction: column;
+  }
+
   .plan-columns {
     flex-direction: column;
     gap: 2rem;
