@@ -31,7 +31,7 @@ export default function ContactInfo() {
       id: 2,
       name: "Andrew Choi",
       role: "Worship Leader",
-      email: "andrewsungwoochoi@gmail.coms",
+      email: "andrewsungwoochoi@gmail.com",
       image: praise_leader,
     },
     {
