@@ -1,5 +1,6 @@
-import React from "react";
-import MinistryCardLayout from "../../components/layout/MinistryCardLayout/MinistryCardLayout";
+import Hero from "../../components/ministries/Hero/Hero"
+import Overview from "../../components/ministries/Overview/Overview";
+import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/campus_hero.webp";
 import img1 from "@/assets/community1.webp";
 import img2 from "@/assets/community2.webp";
@@ -28,7 +29,20 @@ const campusMinistry = {
 
 
 export default function CampusMinistry() {
-  return <MinistryCardLayout 
-    {...campusMinistry}
-  />;
+  const {
+    title,
+    heroImage,
+    subtitle,
+    description,
+    mission,
+    cards,
+  } = campusMinistry;
+
+    return (
+        <>
+            <Hero title={title} image={heroImage}/>
+            <Overview subtitle={subtitle} description={description} mission={mission}/>
+            <ActionCards cards={cards}/>
+        </>
+    );
 }

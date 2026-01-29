@@ -1,5 +1,6 @@
-import React from "react";
-import MinistryStandardLayout from "../../components/layout/MinistryCardLayout/MinistryCardLayout";
+import Hero from "../../components/ministries/Hero/Hero"
+import Overview from "../../components/ministries/Overview/Overview";
+import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/postgrad_hero.webp";
 import img1 from "@/assets/people/postgrad_admin_2.jpg";
 
@@ -24,7 +25,20 @@ const postGradMinistry = {
 };
 
 export default function PostGradMinistry() {
-  return <MinistryStandardLayout 
-    {...postGradMinistry}
-  />;
+  const {
+    title,
+    heroImage,
+    subtitle,
+    description,
+    mission,
+    cards,
+  } = postGradMinistry;
+
+    return (
+        <>
+            <Hero title={title} image={heroImage}/>
+            <Overview subtitle={subtitle} description={description} mission={mission}/>
+            <ActionCards cards={cards}/>
+        </>
+    );
 }

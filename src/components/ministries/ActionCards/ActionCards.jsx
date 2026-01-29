@@ -1,4 +1,4 @@
-// src/components/layout/MinistryCardLayout/ActionCards/ActionCards.jsx
+// src/components/ministries/ActionCards/ActionCards.jsx
 
 import "./ActionCards.css";
 

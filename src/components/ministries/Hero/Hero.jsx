@@ -1,4 +1,4 @@
-// src/components/layout/MinistryCardLayout/Hero/Hero.jsx
+// src/components/ministries/Hero/Hero.jsx
 
 import "./Hero.css";
 import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";

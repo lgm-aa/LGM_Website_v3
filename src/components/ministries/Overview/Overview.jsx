@@ -1,4 +1,4 @@
-// src/components/layout/MinistryCardLayout/Overview/Overview.jsx
+// src/components/ministries/Overview/Overview.jsx
 
 import "./Overview.css";
 
