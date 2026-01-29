@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Overview.css";
 import about_overview from "@/assets/about_overview.webp";
+import useLatestBulletin from "@/hooks/useLatestBulletin";
 
 export default function Overview() {
   const [openSection, setOpenSection] = useState(null);
+  const { data: bulletinData } = useLatestBulletin();
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
@@ -76,6 +78,11 @@ export default function Overview() {
             >
               <p>Stay connected with our community by following us on Instagram and Facebook for updates, announcements, and event reminders.</p>
               <p>You can also join one of our small groups (Post-Grad and Campus Ministries) or be part of our general LGM group chat to stay in the loop and connected throughout the week.</p>
+              <ul className="link-list">
+                {bulletinData?.url && (
+                  <li><a href={bulletinData.url} target="_blank" rel="noopener noreferrer">Weekly Bulletin</a></li>
+                )}
+              </ul>
             </AccordionItem>
           </div>
         </div>
