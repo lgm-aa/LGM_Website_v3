@@ -12,7 +12,7 @@ export default function Footer() {
   const handleScroll = (e, id) => {
     // Only intercept the click if we are ALREADY on the home page
     if (location.pathname === "/") {
-      e.preventDefault(); 
+      e.preventDefault();
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -39,9 +39,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <p className="footer__tag">
-            Creating disciples through grace
-          </p>
+          <p className="footer__tag">Creating disciples through grace</p>
 
           <div className="footer__service">
             <div>Sunday Service @ 1:30PM</div>
@@ -52,10 +50,7 @@ export default function Footer() {
         <nav className="footer__col">
           <h4>Quick Links</h4>
           <a href="/about">About Us</a>
-          <a 
-            href="/#ministries" 
-            onClick={(e) => handleScroll(e, "ministries")}
-          >
+          <a href="/#ministries" onClick={(e) => handleScroll(e, "ministries")}>
             Ministries
           </a>
         </nav>
@@ -70,10 +65,7 @@ export default function Footer() {
             Plan Your Visit
           </a>
           <a href="/small-groups">Small Groups</a>
-          <a 
-            href="/#bulletin" 
-            onClick={(e) => handleScroll(e, "bulletin")}
-          >
+          <a href="/#bulletin" onClick={(e) => handleScroll(e, "bulletin")}>
             Events
           </a>
         </nav>
@@ -97,6 +89,28 @@ export default function Footer() {
             </span>
             <a href="mailto:livinggraceministry@gmail.com">
               livinggraceministry@gmail.com
+            </a>
+          </div>
+          <div className="footer__row">
+            <span className="i">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <a
+              href="https://maps.app.goo.gl/osQh25X8XLRkJ8DL8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              1536 Franklin St, Ann Arbor, MI 48103
             </a>
           </div>
           <div className="footer__socials">
