@@ -48,7 +48,7 @@ export default function Hero() {
         <div className={getClassName(1)}>
           <div className="hero-actions">
             <Button as="a" href="#plan-section" onClick={(e) => handleScroll(e, "updates__container")} variant="primary" size="lg">
-              Plan your visit
+              Plan Your Visit
             </Button>
             <Button as="a" href="/sermons" variant="primary" size="lg">
               Watch Online
