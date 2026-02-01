@@ -28,10 +28,11 @@ export default function Overview() {
           <h2 className="about-overview__title">
             We Are a Ministry <br />
             That Lives Out Grace <br />
-            <span className="about-overview__emphasis">Practically</span> in Ann <br />
+            <span className="about-overview__emphasis">Practically</span> in Ann{" "}
+            <br />
             Arbor
           </h2>
-          
+
           {/* Accordion sections */}
           <div className="about-overview__accordion">
             <AccordionItem
@@ -39,12 +40,43 @@ export default function Overview() {
               isOpen={openSection === "events"}
               onToggle={() => toggleSection("events")}
             >
-              <p>We host a variety of events throughout the year designed to build community and grow together. In the past, we've held events like Field Day, Abide, and our annual Christmas Party.</p>
-              <p>To stay up to date on upcoming events and details, you can check:</p>
+              <p>
+                We host a variety of events throughout the year designed to
+                build community and grow together. In the past, we've held
+                events like Field Day, Abide, and our annual Christmas Party.
+              </p>
+              <p>
+                To stay up to date on upcoming events and details, you can
+                check:
+              </p>
               <ul className="link-list">
-                <li><a href="https://calendar.google.com/calendar/u/0?cid=bGdtYW5uYXJib3JAZ21haWwuY29t" target="_blank" rel="noopener noreferrer">LGM Calendar</a></li>
-                <li><a href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100064729684652" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li>
+                  <a
+                    href="https://calendar.google.com/calendar/u/0/r?cid=Y184MGRlNGI1OGJjNmFiOWI1ODAwNjFiMDQ3MDM5ODJkNzI2NjlkMWE3MmUyODVhMzU2Zjk5YTMzMzNjYjUzMWU2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LGM Calendar
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100064729684652"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Facebook
+                  </a>
+                </li>
               </ul>
             </AccordionItem>
 
@@ -53,10 +85,25 @@ export default function Overview() {
               isOpen={openSection === "service"}
               onToggle={() => toggleSection("service")}
             >
-              <p>Our Sunday service begins at 1:30 PM, with fellowship starting at 12:45 PM.</p>
-              <p>For those coming from campus at @umich, we recommend taking the Blake Transit bus. Additional transportation details can be found in our Google Doc:</p>
+              <p>
+                Our Sunday service begins at 1:30 PM, with fellowship starting
+                at 12:45 PM.
+              </p>
+              <p>
+                For those coming from campus at @umich, we recommend taking the
+                Blake Transit bus. Additional transportation details can be
+                found in our Google Doc:
+              </p>
               <ul className="link-list">
-                <li><a href="https://linktr.ee/livinggraceministry#328264619" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+                <li>
+                  <a
+                    href="https://linktr.ee/livinggraceministry#328264619"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Linktree
+                  </a>
+                </li>
               </ul>
             </AccordionItem>
 
@@ -65,9 +112,18 @@ export default function Overview() {
               isOpen={openSection === "team"}
               onToggle={() => toggleSection("team")}
             >
-              <p>LGM is currently searching for a new pastor. If you have any questions, please contact <a href="mailto:livinggraceministry@gmail.com">livinggraceministry@gmail.com</a>.</p>
+              <p>
+                LGM is currently searching for a new pastor. If you have any
+                questions, please contact{" "}
+                <a href="mailto:livinggraceministry@gmail.com">
+                  livinggraceministry@gmail.com
+                </a>
+                .
+              </p>
               <ul className="link-list">
-                <li><a href="/contact">Meet the rest of our team!</a></li>
+                <li>
+                  <a href="/contact">Meet the rest of our team!</a>
+                </li>
               </ul>
             </AccordionItem>
 
@@ -76,11 +132,26 @@ export default function Overview() {
               isOpen={openSection === "connected"}
               onToggle={() => toggleSection("connected")}
             >
-              <p>Stay connected with our community by following us on Instagram and Facebook for updates, announcements, and event reminders.</p>
-              <p>You can also join one of our small groups (Post-Grad and Campus Ministries) or be part of our general LGM group chat to stay in the loop and connected throughout the week.</p>
+              <p>
+                Stay connected with our community by following us on Instagram
+                and Facebook for updates, announcements, and event reminders.
+              </p>
+              <p>
+                You can also join one of our small groups (Post-Grad and Campus
+                Ministries) or be part of our general LGM group chat to stay in
+                the loop and connected throughout the week.
+              </p>
               <ul className="link-list">
                 {bulletinData?.url && (
-                  <li><a href={bulletinData.url} target="_blank" rel="noopener noreferrer">Weekly Bulletin</a></li>
+                  <li>
+                    <a
+                      href={bulletinData.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Weekly Bulletin
+                    </a>
+                  </li>
                 )}
               </ul>
             </AccordionItem>
@@ -104,11 +175,7 @@ function AccordionItem({ title, isOpen, onToggle, children }) {
           +
         </span>
       </button>
-      {isOpen && (
-        <div className="accordion-item__content">
-          {children}
-        </div>
-      )}
+      {isOpen && <div className="accordion-item__content">{children}</div>}
     </div>
   );
 }
