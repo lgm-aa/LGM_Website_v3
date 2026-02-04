@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout";
 
 import Home from "@/pages/Home/Home";
 import About from "@/pages/About/About";
-import Donate from "@/pages/Donate/Donate";
+import Give from "@/pages/Give/Give";
 import Contact from "@/pages/Contact/Contact";
 import Sermons from "@/pages/Sermons/Sermons";
 import ChildrensMinistry from "@/pages/ChildrensMinistry/ChildrensMinistry";
@@ -28,7 +28,7 @@ function App() {
           {/* All these pages will render INSIDE the Layout's <Outlet/> */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/give" element={<Donate />} />
+          <Route path="/give" element={<Give />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sermons" element={<Sermons />} />
           <Route path="/childrens" element={<ChildrensMinistry />} />

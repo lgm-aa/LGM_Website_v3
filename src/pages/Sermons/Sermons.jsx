@@ -1,12 +1,13 @@
-import React from "react";
-import Hero from "@/components/sermons/Hero/Hero";
-import Video from "@/components/sermons/Video/Video";
+import Sermoncontent from "@/components/sermons/Video/Video";
+import Hero from "@/components/ministries/Hero/Hero";
+import contactHeroImage from "@/assets/lgm_building.webp"; 
 
-export default function Sermons() {
+
+export default function Sermon() {
   return (
-    <>
-      <Hero />
-      <Video />
-    </>
+    <div className="sermon-page">
+      <Hero title="SERMONS" image={contactHeroImage} />
+      <Sermoncontent />
+    </div>
   );
 }

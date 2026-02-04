@@ -1,25 +1,11 @@
 import "./give.css";
-import backgroundImage from "@/assets/ministry_campus.webp";
-import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
+import venmoIcon from "@/assets/icons/imgvenmo.png";
+import zelleIcon from "@/assets/icons/imgzelle.png";
+import moneyIcon from "@/assets/icons/imgmoney.png";
 
 export default function Give() {
   return (
     <main className="give">
-      <section
-        className="give-hero"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="give-hero__overlay" />
-
-        <div className="give-hero__content">
-          <h1 className="give-hero__title">GIVE</h1>
-
-        </div>
-
-        <ScrollIndicator />
-
-        
-      </section>
 
       <section className="give-quote">
         <blockquote>
@@ -38,7 +24,11 @@ export default function Give() {
 
     <div className="give-ways__grid">
       <div className="give-ways__item">
-        <div className="give-ways__icon" />
+        <img
+          src={venmoIcon}
+          alt="Venmo"
+          className="give-ways__icon"
+        />
         <p>
           Venmo to{" "}
           <a
@@ -50,21 +40,31 @@ export default function Give() {
             LGMAA
           </a>
         </p>
-
       </div>
 
+
       <div className="give-ways__item">
-        <div className="give-ways__icon" />
+        <img
+          src={moneyIcon}
+          alt="Give in person"
+          className="give-ways__icon"
+        />
         <p>Give in person to the welcoming team</p>
       </div>
 
+
       <div className="give-ways__item">
-        <div className="give-ways__icon" />
+        <img
+          src={zelleIcon}
+          alt="Zelle"
+          className="give-ways__icon"
+        />
         <p>
           Zelle to <br />
           livinggraceministry@gmail.com
         </p>
       </div>
+
     </div>
 
     <p className="give-ways__footer">
