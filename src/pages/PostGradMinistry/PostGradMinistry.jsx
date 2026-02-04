@@ -3,6 +3,7 @@ import Overview from "../../components/ministries/Overview/Overview";
 import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/postgrad_hero.webp";
 import img1 from "@/assets/people/postgrad_admin_2.jpg";
+import sectionImage from "@/assets/ministry_postgrad.webp";
 
 const cards = [
         { id: 1, img: img1, link: "/contact", text: "Post Grad Small Groups"},
@@ -13,7 +14,6 @@ const cards = [
 
 const postGradMinistry = {
   title: "POST GRAD",
-  heroImage: heroImage,
   subtitle: "Post Grad Ministry",
   description: "A community for early adulthood, including grad students, working professionals, and those in between.",
   mission: (
@@ -27,7 +27,6 @@ const postGradMinistry = {
 export default function PostGradMinistry() {
   const {
     title,
-    heroImage,
     subtitle,
     description,
     mission,
@@ -37,7 +36,7 @@ export default function PostGradMinistry() {
     return (
         <>
             <Hero title={title} image={heroImage}/>
-            <Overview subtitle={subtitle} description={description} mission={mission}/>
+            <Overview subtitle={subtitle} description={description} mission={mission} image={sectionImage} imageAlt={'Post Grad Ministry Image'}/>
             <ActionCards cards={cards}/>
         </>
     );

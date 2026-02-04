@@ -5,6 +5,7 @@ import heroImage from "@/assets/campus_hero.webp";
 import img1 from "@/assets/community1.webp";
 import img2 from "@/assets/community2.webp";
 import img3 from "@/assets/community3.webp";
+import sectionImage from "/@assets/ministry_campus.webp";
 
 const cards = [
         { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},
@@ -15,7 +16,6 @@ const cards = [
 
 const campusMinistry = {
   title: "CAMPUS",
-  heroImage: heroImage,
   subtitle: "Campus Ministry",
   description: "A Christ-centered campus community walking together through college life at the University of Michigan.",
   mission: (
@@ -31,7 +31,6 @@ const campusMinistry = {
 export default function CampusMinistry() {
   const {
     title,
-    heroImage,
     subtitle,
     description,
     mission,
@@ -41,7 +40,7 @@ export default function CampusMinistry() {
     return (
         <>
             <Hero title={title} image={heroImage}/>
-            <Overview subtitle={subtitle} description={description} mission={mission}/>
+            <Overview subtitle={subtitle} description={description} mission={mission} image={sectionImage} imageAlt={'Campus Ministry Image'}/>
             <ActionCards cards={cards}/>
         </>
     );

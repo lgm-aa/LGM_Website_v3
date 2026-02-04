@@ -2,12 +2,11 @@
 
 import "./Overview.css";
 
-import image from "@/assets/ministry_campus.webp";
-
 export default function Overview({
     subtitle,
     description,
-    mission
+    mission,
+    image
 }) {
     return (
         <section className="overview">
