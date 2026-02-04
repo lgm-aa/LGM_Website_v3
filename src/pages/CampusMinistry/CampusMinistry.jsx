@@ -5,7 +5,7 @@ import heroImage from "@/assets/campus_hero.webp";
 import img1 from "@/assets/community1.webp";
 import img2 from "@/assets/community2.webp";
 import img3 from "@/assets/community3.webp";
-import sectionImage from "/@assets/ministry_campus.webp";
+import sectionImage from "@/assets/ministry_campus.webp";
 
 const cards = [
         { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},

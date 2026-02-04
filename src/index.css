@@ -67,6 +67,5 @@ body {
   .body-text {
     font-family: "Lato", sans-serif;
     font-size: clamp(16px, 1.4vw, 16px);
-    line-height: 1.65;
   }
 }

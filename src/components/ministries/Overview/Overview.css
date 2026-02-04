@@ -14,37 +14,42 @@
 /* Left and Right sections */
 .overview__left,
 .overview__right {
-  min-height: 300px;
+  min-height: 700px;
+  height: 700px;
   flex-direction: column;
 }
 
 .overview__left {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .overview__right {
   flex: 1;
+  overflow: hidden;
 }
 
 .overview__subtitle {
     letter-spacing: 0.03em;
-    padding-bottom: 3rem;
+    padding-bottom: 0.75rem;
 }
 
 .overview__desc {
-    margin-top: auto;
-    margin-bottom: 16rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .overview__mission-text {
     font-size: clamp(1.20rem, 2vw, 1.50rem);
-    padding-bottom: 4rem;
-    line-height: 1.3;
+    padding-bottom: 0.75rem;
+    line-height: 1.5 !important;
+    margin-top: auto;
 }
 
 .overview__contact-button {
     display: inline-flex;
-    margin-top: auto;
+    margin-top: 1rem;
     border-width: 2px;
     border-color: black;
     border-radius: 36px;
@@ -65,12 +70,23 @@
   object-fit: cover;
   display: block;
   margin-left: auto;  /* pushes image to the right side */
+  border-radius: 16px;
 }
 
 @media (max-width: 1200px) {
   .overview__container {
     flex-direction: column;
     gap: 5rem;
+  }
+
+  .overview__left,
+  .overview__right {
+    min-height: 0;
+    height: auto;
+  }
+
+  .overview__mission-text {
+    margin-top: 0;
   }
 
   .overview__desc {
@@ -81,5 +97,10 @@
   .overview__right {
     position: relative;
     padding-top: 5rem;
+    overflow: visible;
+  }
+
+  .overview__image {
+    height: auto;
   }
 }
