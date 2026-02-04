@@ -8,7 +8,7 @@
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
-  padding: clamp(2rem, 5vw, 2rem) clamp(2rem, 8vw, 9rem) clamp(2rem, 10vw, 15rem);    
+  padding: clamp(2rem, 5vw, 2rem) clamp(1.5rem, 18vw, 14rem) clamp(2rem, 10vw, 15rem);    
 }
 
 .action-card {
