@@ -105,11 +105,9 @@
   }
 }
 
-.welcome__text {
+.welcome__text-container {
   max-width: 360px;
-  font-size: 1.05rem;
   color: #6b7280;
-  line-height: 1.6;
   margin: 0 0 2rem;
 }
 

@@ -25,7 +25,7 @@ export default function Overview() {
 
         {/* Right side - Content */}
         <div className="about-overview__content">
-          <h2 className="about-overview__title">
+          <h2 className="about-overview__title section-h3">
             We Are a Ministry <br />
             That Lives Out Grace <br />
             <span className="about-overview__emphasis">Practically</span> in Ann{" "}
@@ -170,12 +170,12 @@ function AccordionItem({ title, isOpen, onToggle, children }) {
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="accordion-item__title">{title}</span>
+        <span className="accordion-item__title body-text">{title}</span>
         <span className={`accordion-item__icon ${isOpen ? "open" : ""}`}>
           +
         </span>
       </button>
-      {isOpen && <div className="accordion-item__content">{children}</div>}
+      {isOpen && <div className="accordion-item__content body-text">{children}</div>}
     </div>
   );
 }

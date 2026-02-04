@@ -29,14 +29,10 @@
 }
 
 /* Title */
-.who-we-are__title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 400;
-  color: white;
+.who-we-are .who-we-are__title {
   text-align: center;
   margin: 0 0 4rem 0;
-  letter-spacing: 0.02em;
+  color: white;
 }
 
 /* Cards Container */

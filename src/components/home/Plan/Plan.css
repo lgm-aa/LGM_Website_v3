@@ -13,12 +13,13 @@
 }
 
 /* Main title */
-.plan-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin: 0 0 2rem 0;
-  line-height: 1.1;
+.title-container {
   text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.plan-section .title-container .section-h2 {
+  color: white;
 }
 
 /* Two columns */
@@ -53,14 +54,6 @@
   gap: 2rem;
 }
 
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 0.8;
-}
-
 /* Updated info item with icon circles */
 .info-item {
   display: flex;
@@ -87,15 +80,12 @@
 }
 
 .info-title {
-  font-weight: 500;
-  font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
   letter-spacing: 0.5px;
 }
 
 .info-text {
   margin: 0;
-  font-size: 1.1rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;

@@ -1,5 +1,5 @@
 .latest-sermon {
-  background-color: #e5ebf3; /* light gray/blue like your mock */
+  background-color: #E3E8EE; /* light gray/blue like your mock */
   padding: 4rem 1.5rem 5rem;
 }
 
@@ -11,9 +11,6 @@
 
 /* "LATEST SERMON" label */
 .latest-sermon__eyebrow {
-  font-size: 0.9rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
   color: rgba(15, 23, 42, 0.4);
   margin-bottom: 0.75rem;
 }
@@ -71,7 +68,6 @@
 }
 
 .latest-sermon__fallback p {
-  font-size: 1.125rem;
   color: #4b5563;
   margin: 0;
 }

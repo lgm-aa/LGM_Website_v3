@@ -48,10 +48,10 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
     <section className="latest-sermon">
       <div className="latest-sermon__inner">
         {/* Only show eyebrow for recorded sermons */}
-        {!isLive && <p className="latest-sermon__eyebrow">LATEST SERMON</p>}
+        {!isLive && <p className="latest-sermon__eyebrow eyebrow">LATEST SERMON</p>}
 
-        <h2 className="latest-sermon__title">{displayTitle}</h2>
-        {displayDate && <p className="latest-sermon__date">{displayDate}</p>}
+        <h2 className="latest-sermon__title section-h2">{displayTitle}</h2>
+        {displayDate && <p className="latest-sermon__date body-text">{displayDate}</p>}
 
         {error && (
           <p className="latest-sermon__error">
@@ -76,7 +76,7 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
                 {loading ? (
                   "Loading video…"
                 ) : isFallback ? (
-                  <div className="latest-sermon__fallback">
+                  <div className="latest-sermon__fallback body-text">
                     <p>No recent sermon available yet.</p>
                     <Button
                       as="a"

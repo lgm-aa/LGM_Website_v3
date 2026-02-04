@@ -34,8 +34,8 @@ export default function Updates() {
     <section className="updates">
       <div id="bulletin" className="updates__container">
         <header className="updates__header">
-          <h2 className="updates__title">This Week at Living Grace Ministry</h2>
-          <p className="updates__subtitle">
+          <h2 className="section-h2">This Week at Living Grace Ministry</h2>
+          <p className="body-text">
             Stay updated on weekly announcements, sermon notes, and upcoming
             events.
           </p>

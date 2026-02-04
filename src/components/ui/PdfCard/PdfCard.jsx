@@ -33,7 +33,7 @@ export default function PdfCard({
           </svg>
         </span>
         <div>
-          <h3 className="pdf-card__title">
+          <h3 className="pdf-card__title body-text">
             {isUnavailable ? unavailableTitle : title}
           </h3>
         </div>
@@ -49,7 +49,7 @@ export default function PdfCard({
           ></iframe>
         </div>
       ) : (
-        <div className="pdf-card__placeholder">
+        <div className="pdf-card__placeholder body-text">
           <p>{isLoading ? loadingText : unavailableText}</p>
         </div>
       )}
@@ -80,7 +80,9 @@ export default function PdfCard({
             <path d="M18 6L7 17" />
           </svg>
         </span>
-        {isLoading ? "Loading..." : "Open PDF in New Tab"}
+        <span className="body-text">
+          {isLoading ? "Loading..." : "Open PDF in New Tab"}
+        </span>
       </Button>
 
       {/* Decorative Blobs */}

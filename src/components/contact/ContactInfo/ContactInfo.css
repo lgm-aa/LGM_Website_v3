@@ -1,6 +1,6 @@
 /* Contact Info Section */
 .contact-info {
-  background: linear-gradient(to bottom, #ffffff 0%, #e8eef5 50%, #d4dce8 100%);
+  background: #f4f6fa;
   padding: 3rem 2rem 6rem;
 }
 
@@ -10,11 +10,7 @@
 }
 
 .contact-info__header {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 600;
   text-align: center;
-  color: #1a1a1a;
   margin: 0 0 3rem 0;
   letter-spacing: 0.02em;
 }
@@ -27,8 +23,6 @@
 }
 
 .contact-info__cta-text {
-  font-size: 1.125rem;
-  color: #4a5568;
   margin: 0 0 1.5rem 0;
   line-height: 1.6;
 }
@@ -88,15 +82,6 @@
 }
 
 /* Name */
-.team-card__name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.3;
-  color: #000000;
-  margin: 0;
-  letter-spacing: 0.01em;
-}
 
 /* Role */
 .team-card__role {
