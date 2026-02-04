@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./ContactInfo.css";
 
+import Hero from "@/components/ministries/Hero/Hero";
+
 import youth_director from "@/assets/people/youth_director.jpg";
 import praise_leader from "@/assets/people/praise_leader.jpg";
 import praise_apprentice from "@/assets/people/praise_apprentice.jpg";
@@ -93,6 +95,7 @@ export default function ContactInfo() {
   ];
 
   return (
+<<<<<<< HEAD
     <section className="contact-info">
       <div className="contact-info__container">
         <h2 className="contact-info__header section-h3">Core Council Team</h2>
@@ -125,5 +128,52 @@ export default function ContactInfo() {
         </div>
       </div>
     </section>
+=======
+    <>
+
+      <section className="contact-info">
+        <div className="contact-info__container">
+          <h2 className="contact-info__header">Core Council Team</h2>
+
+          <div className="contact-info__grid">
+            {teamMembers.map((member) => (
+              <div key={member.id} className="team-card">
+                <div className="team-card__image-wrapper">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="team-card__image"
+                  />
+                </div>
+
+                <h3 className="team-card__name">{member.name}</h3>
+                <p className="team-card__role">{member.role}</p>
+
+                <button
+                  onClick={() => handleCopyEmail(member.email, member.id)}
+                  className="team-card__email"
+                  type="button"
+                >
+                  {copiedId === member.id ? "Copied!" : member.email}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="contact-info__cta-section">
+            <p className="contact-info__cta-text">
+              Have other comments or questions?
+            </p>
+            <a
+              href="mailto:livinggraceministry@gmail.com"
+              className="contact-info__cta-button"
+            >
+              Contact LGM
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+>>>>>>> origin/main
   );
 }
