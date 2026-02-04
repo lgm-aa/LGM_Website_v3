@@ -28,7 +28,9 @@ export default function Plan() {
     <div id="plan-section" className="plan-section">
       <div className="plan-container">
         {/* Header above both columns */}
-        <h1 className="plan-title">Plan Your Visit</h1>
+        <div className="title-container">
+          <h1 className="section-h2">Plan Your Visit</h1>
+        </div>
 
         {/* Two columns */}
         <div className="plan-columns">
@@ -52,15 +54,15 @@ export default function Plan() {
           {/* Right column - Content */}
           <div className="plan-right">
             <div className="content-section">
-              <h2 className="section-title">WHAT TO EXPECT</h2>
+              <h2 className="eyebrow">WHAT TO EXPECT</h2>
 
               <div className="info-item">
                 <div className="icon-circle">
                   <WelcomeIcon />
                 </div>
                 <div className="info-content">
-                  <h3 className="info-title">Location</h3>
-                  <p className="info-text">
+                  <h3 className="info-title body-text">Location</h3>
+                  <p className="info-text body-text">
                     1536 Franklin St<br />
                     Ann Arbor, MI 48103
                   </p>
@@ -72,9 +74,9 @@ export default function Plan() {
                   <ClockIcon />
                 </div>
                 <div className="info-content">
-                  <h3 className="info-title">Service Times</h3>
-                  <p className="info-text">Sunday Service at 1:30 PM</p>
-                  <p className="info-text">Fellowship begins at 12:45 PM</p>
+                  <h3 className="info-title body-text">Service Times</h3>
+                  <p className="info-text body-text">Sunday Service at 1:30 PM</p>
+                  <p className="info-text body-text">Fellowship begins at 12:45 PM</p>
                 </div>
               </div>
 
@@ -83,13 +85,13 @@ export default function Plan() {
                   <ContactIcon />
                 </div>
                 <div className="info-content">
-                  <h3 className="info-title">Contact</h3>
-                  <p className="info-text">Yubin Choi - Welcoming Team</p>
+                  <h3 className="info-title body-text">Contact</h3>
+                  <p className="info-text body-text">Yubin Choi - Welcoming Team</p>
                 </div>
               </div>
 
               <div className="notify-button-wrapper">
-                <a href="/contact" className="notify-button">
+                <a href="/contact" className="notify-button body-text">
                   Let Us Know You're Coming
                 </a>
               </div>

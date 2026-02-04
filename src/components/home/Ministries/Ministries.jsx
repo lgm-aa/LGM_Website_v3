@@ -24,10 +24,10 @@ export default function Ministries() {
     <section className="ministries" id="ministries">
       <div className="ministries__inner">
         <header className="ministries__header">
-          <h2 className="ministries__title">
+          <h2 className="section-h2">
             Find <em>your</em> place
           </h2>
-          <p className="ministries__subtitle">Check out our ministries</p>
+          <p className="body-text">Check out our ministries</p>
         </header>
 
         <div className="ministries__carousel">

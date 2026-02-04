@@ -15,8 +15,11 @@
 /* Header Spacing */
 .updates__header {
   text-align: center;
-  /* REMOVED: margin-bottom: 1rem; */
   margin-bottom: 0; 
+}
+
+.updates__header .section-h2 {
+  margin: 0 0 0.5rem 0;
 }
 
 /* Typography */

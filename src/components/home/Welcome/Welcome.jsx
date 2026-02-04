@@ -15,7 +15,7 @@ export default function Welcome() {
               className="welcome__image"
             />
             <div className="welcome__quote">
-              <p>
+              <p className="body-text">
                 The purpose of Living Grace Ministry is to nurture genuine
                 Christian discipleship through grace
               </p>
@@ -24,19 +24,21 @@ export default function Welcome() {
         </div>
 
         <div className="welcome__content">
-          <h2 className="welcome__title">Welcome to Living Grace Ministry</h2>
+          <h2 className="section-h3">Welcome to Living Grace Ministry</h2>
           <div className="welcome__underline" aria-hidden="true" />
-          <p className="welcome__text">
-            Making a community of Jesus’ disciples who love like Jesus through
-            God’s grace
-          </p>
+          <div className="welcome__text-container">
+            <p className="body-text">
+              Making a community of Jesus’ disciples who love like Jesus through
+              God’s grace
+            </p>
+          </div>
 
           <Button
             as="a"
             href="/about"
             variant="primary"
             size="lg"
-            className="welcome__button"
+            className="body-text"
           >
             Learn More
           </Button>

@@ -23,7 +23,7 @@ export default function Community() {
   return (
     <section className="community">
       <div className="community__inner">
-        <h2 className="community__title">OUR COMMUNITY</h2>
+        <h2 className="section-h2">Our Community</h2>
       </div>
 
       <div className="community__rail">

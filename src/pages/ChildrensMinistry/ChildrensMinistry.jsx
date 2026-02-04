@@ -1,6 +1,5 @@
 import Hero from "../../components/ministries/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
-import Image from "../../components/ministries/Image/Image";
 
 import heroImage from "@/assets/ministry_campus.webp";
 import sectionImage from "@/assets/ministry_campus.webp";
@@ -28,8 +27,7 @@ export default function ChildrensMinistry() {
   return (
     <>
       <Hero title={title} image={heroImage}/>
-      <Overview subtitle={subtitle} description={description} mission={mission}/>
-      <Image image={sectionImage} imageAlt="Children ministry"/>
+      <Overview subtitle={subtitle} description={description} mission={mission} image={sectionImage} imageAlt={'Children Ministry Image'}/>
     </>
   );
 }

@@ -70,16 +70,21 @@
 .lgm-nav__link {
   text-decoration: none;
   color: inherit;
-  font-size: 0.96rem;
-  font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.03em;
   opacity: 0.9;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, text-shadow 0.15s ease, text-decoration-color 0.15s ease;
   cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-color: transparent; 
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
 }
 
 .lgm-nav__link:hover {
   opacity: 1;
+  text-decoration-color: currentColor;
+  text-shadow: 0.35px 0 0 currentColor, -0.35px 0 0 currentColor;
 }
 
 /* --- DESKTOP DROPDOWN LOGIC --- */

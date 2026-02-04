@@ -11,7 +11,7 @@ export default function MinistryCard({ title, image, href = "#" }) {
         }}
       />
       <div className="ministry-card__label">
-        <span>{title}</span>
+        <span className="eyebrow">{title}</span>
       </div>
     </a>
   );
