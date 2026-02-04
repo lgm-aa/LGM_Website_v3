@@ -28,9 +28,9 @@ export default function Overview() {
           <h2 className="about-overview__title section-h3">
             We Are a Ministry <br />
             That Lives Out Grace <br />
-            <span className="about-overview__emphasis">Practically</span> in Ann{" "}
+            <span className="about-overview__emphasis">Practically</span> in{" "}
             <br />
-            Arbor
+            Ann Arbor
           </h2>
 
           {/* Accordion sections */}
