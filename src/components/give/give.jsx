@@ -24,13 +24,7 @@ export default function Give() {
 
     <div className="give-ways__grid">
       <div className="give-ways__item body-text">
-        <div className="give-ways__icon" />
-      <div className="give-ways__item">
-        <img
-          src={venmoIcon}
-          alt="Venmo"
-          className="give-ways__icon"
-        />
+        <img src={venmoIcon} alt="Venmo" className="give-ways__icon" />
         <p>
           Venmo to{" "}
           <a
@@ -44,36 +38,25 @@ export default function Give() {
         </p>
       </div>
 
-
-      <div className="give-ways__item">
-        <img
-          src={moneyIcon}
-          alt="Give in person"
-          className="give-ways__icon"
-        />
+      <div className="give-ways__item body-text">
+        <img src={moneyIcon} alt="Give in person" className="give-ways__icon" />
         <p>Give in person to the welcoming team</p>
       </div>
 
-
-      <div className="give-ways__item">
-        <img
-          src={zelleIcon}
-          alt="Zelle"
-          className="give-ways__icon"
-        />
+      <div className="give-ways__item body-text">
+        <img src={zelleIcon} alt="Zelle" className="give-ways__icon" />
         <p>
           Zelle to <br />
           livinggraceministry@gmail.com
         </p>
       </div>
-
     </div>
+
 
     <p className="give-ways__footer body-text">
       Thank you for considering a financial gift. Any of the payment <br />
       methods above can be used to make a donation.
     </p>
-  </div>
   </div>
 </section>
 
