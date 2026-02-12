@@ -1,10 +1,10 @@
 .give {
-  background: var(--page-bg, #e9eef4);
+  background: #E3E8EE;
   min-height: 100vh;
 }
 
 :root {
-  --give-light-bg: #eef2f6;
+  --give-light-bg: #E3E8EE;
 }
 
 .give-hero {
@@ -94,7 +94,7 @@
 }
 
 .give-ways {
-  background: #253b57;
+  background: #142844;
   color: rgba(255, 255, 255, 0.92);
   
 

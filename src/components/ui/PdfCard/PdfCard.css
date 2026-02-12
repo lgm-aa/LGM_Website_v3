@@ -11,12 +11,8 @@
 }
 
 .pdf-card--dark {
-  background: radial-gradient(
-      1200px 300px at 75% 0%,
-      rgba(255, 255, 255, 0.06),
-      transparent 60%
-    ),
-    #0f172a;
+  background: 
+    #142844;
   color: #e5e7eb;
 }
 

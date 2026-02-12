@@ -1,6 +1,6 @@
 /* Contact Info Section */
 .contact-info {
-  background: #f4f6fa;
+  background: #E3E8EE;
   padding: 3rem 2rem 6rem;
 }
 
@@ -29,7 +29,7 @@
 
 .contact-info__cta-button {
   display: inline-block;
-  background-color: #4a74b8;
+  background-color: #C2A878;
   color: #ffffff;
   font-size: 1.125rem;
   font-weight: 500;

@@ -1,5 +1,5 @@
 .ministries {
-  background: #f4f6fa;
+  background: #E3E8EE;
   padding: clamp(48px, 6vw, 80px) 24px;
 }
 
@@ -92,7 +92,7 @@
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(2, 6, 23, 0.1), 0 2px 6px rgba(2, 6, 23, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
-  background: #2b3443;
+  background: #142844;
   position: relative;
   z-index: 10;
 }
@@ -117,7 +117,7 @@
 }
 
 .ministry-card__label {
-  background: #0f1321;
+  background: #142844;
   color: #ffffff;
   padding: 20px;
   text-align: center;
