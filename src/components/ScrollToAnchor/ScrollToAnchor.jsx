@@ -7,7 +7,10 @@ export default function ScrollToAnchor() {
 
   useEffect(() => {
     // If there is no hash, do nothing
-    if (!hash) return;
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
 
     // Wait a tiny bit for the page to render fully
     const timeout = setTimeout(() => {
