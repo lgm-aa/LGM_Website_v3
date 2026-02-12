@@ -43,3 +43,14 @@
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.08);
 }
+
+.btn-hero {
+  background: #E3E8EE;
+  color: #0f172a;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-hero:hover {
+  background: #d6dce4;
+}
+

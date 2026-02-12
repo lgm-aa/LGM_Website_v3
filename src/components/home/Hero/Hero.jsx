@@ -47,10 +47,10 @@ export default function Hero() {
         {/* Buttons fade in 1s after the title */}
         <div className={getClassName(1)}>
           <div className="hero-actions">
-            <Button as="a" href="#plan-section" onClick={(e) => handleScroll(e, "updates__container")} variant="primary" size="lg" className="body-text">
+            <Button as="a" href="#plan-section" onClick={(e) => handleScroll(e, "updates__container")} variant="hero" size="lg" className="body-text">
               Plan Your Visit
             </Button>
-            <Button as="a" href="/sermons" variant="primary" size="lg" className="body-text">
+            <Button as="a" href="/sermons" variant="hero" size="lg" className="body-text">
               Watch Online
             </Button>
           </div>
