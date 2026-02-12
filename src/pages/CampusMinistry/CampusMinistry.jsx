@@ -2,10 +2,10 @@ import Hero from "../../components/ministries/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
 import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/campus_hero.webp";
-import img1 from "@/assets/community1.webp";
-import img2 from "@/assets/community2.webp";
-import img3 from "@/assets/community3.webp";
-import sectionImage from "@/assets/ministry_campus.webp";
+import img1 from "@/assets/campus-sg.webp";
+import img2 from "@/assets/campus-upcoming.webp";
+import img3 from "@/assets/campus-ride.webp";
+import sectionImage from "@/assets/campus-side.webp";
 
 const cards = [
         { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},

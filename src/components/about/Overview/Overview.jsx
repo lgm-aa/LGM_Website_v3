@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Overview.css";
-import about_overview from "@/assets/about_overview.webp";
+import about_overview from "@/assets/aboutus.webp";
 import useLatestBulletin from "@/hooks/useLatestBulletin";
 
 export default function Overview() {

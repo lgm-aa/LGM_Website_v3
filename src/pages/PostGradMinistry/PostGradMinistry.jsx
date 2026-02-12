@@ -2,13 +2,16 @@ import Hero from "../../components/ministries/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
 import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/postgrad_hero.webp";
-import img1 from "@/assets/people/postgrad_admin_2.jpg";
-import sectionImage from "@/assets/ministry_postgrad.webp";
+import img1 from "@/assets/postgrad-sg.webp";
+import img2 from "@/assets/postgrad-upcoming.webp";
+import img3 from "@/assets/community5.webp";
+
+import sectionImage from "@/assets/postgrad-side.webp";
 
 const cards = [
         { id: 1, img: img1, link: "/contact", text: "Post Grad Small Groups"},
-        { id: 2, img: img1, link: "/contact", text: "Upcoming Events"},
-        { id: 3, img: img1, link: "/contact", text: "Post Grad Message Chat"},
+        { id: 2, img: img2, link: "/contact", text: "Upcoming Events"},
+        { id: 3, img: img3, link: "/contact", text: "Post Grad Message Chat"},
       ]
 
 

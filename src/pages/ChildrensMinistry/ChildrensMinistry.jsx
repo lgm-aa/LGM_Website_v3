@@ -1,7 +1,7 @@
 import Hero from "../../components/ministries/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
 
-import heroImage from "@/assets/ministry_campus.webp";
+import heroImage from "@/assets/children-hero.webp";
 import sectionImage from "@/assets/ministry_campus.webp";
 
 const childrensMinistry = {

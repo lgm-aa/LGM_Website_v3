@@ -1,8 +1,8 @@
 import Hero from "../../components/ministries/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
 
-import heroImage from "@/assets/youth_group.webp";
-import sectionImage from "@/assets/ministry_campus.webp";
+import heroImage from "@/assets/adult-hero.webp";
+import sectionImage from "@/assets/adult-side.webp";
 
 const adultFamilyMinistry = {
   title: "ADULT/FAMILY",
