@@ -24,7 +24,7 @@ export default function Welcome() {
         </div>
 
         <div className="welcome__content">
-          <h2 className="section-h3">Welcome to Living Grace Ministry</h2>
+          <h2 className="section-h4">Welcome to Living Grace Ministry</h2>
           <div className="welcome__underline" aria-hidden="true" />
           <div className="welcome__text-container">
             <p className="body-text">

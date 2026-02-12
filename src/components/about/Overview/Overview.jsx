@@ -26,7 +26,7 @@ export default function Overview() {
 
         {/* Right side - Content */}
         <div className="about-overview__content">
-          <h2 className="about-overview__title section-h3">
+          <h2 className="about-overview__title section-h4">
             We Are a Ministry <br />
             That Lives Out Grace <br />
             <span className="circled-word">

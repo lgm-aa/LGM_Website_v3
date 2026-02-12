@@ -7,12 +7,12 @@ import sectionImage from "@/assets/ministry_campus.webp";
 const childrensMinistry = {
   title: "CHILDREN",
   subtitle: "Children Ministry",
-  description: "Our children’s ministry is a joyful community where kids (grades K-5) gather together to learn about God’s love, grow in faith, and build lasting friendships.",
-  mission: (
+  description: (
     <>
       Children are a heritage from the LORD, offspring a reward from him. <br/> <br/> Psalms 127:3
     </>
-  )
+  ),
+  mission: "Learning about God’s love, growing in faith, and building lasting friendships (Grades K-5).",
 };
 
 

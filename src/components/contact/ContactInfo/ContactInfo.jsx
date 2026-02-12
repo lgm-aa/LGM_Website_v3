@@ -97,7 +97,7 @@ export default function ContactInfo() {
   return (
     <section className="contact-info">
       <div className="contact-info__container">
-        <h2 className="contact-info__header section-h3">Core Council Team</h2>
+        <h2 className="contact-info__header section-h4">Core Council Team</h2>
         <div className="contact-info__grid">
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">

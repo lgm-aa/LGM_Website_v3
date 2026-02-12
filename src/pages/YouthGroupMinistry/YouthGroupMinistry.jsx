@@ -7,12 +7,12 @@ import sectionImage from "@/assets/youthgroup-side.webp";
 const youthMinistry = {
   title: "YOUTH",
   subtitle: "Youth Group",
-  description: "We’re a group of high school and middle school students (grades 6-12) who are passionate about having fun and learning about what it means to be a devoted follower of Christ who loves like Jesus, for life!",
-  mission: (
+  description: (
     <>
       Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. <br/> <br/> 1 Timothy 4:12
     </>
-  )
+  ),
+  mission: "Empowering students to become devoted followers of Christ (Grades 6-12).",
 };
 
 export default function YouthGroupMinistry() {

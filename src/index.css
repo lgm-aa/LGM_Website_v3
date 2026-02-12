@@ -52,13 +52,19 @@ body {
 
   .section-h3 {
     font-family: "Playfair Display", serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    line-height: 1.15;
+  }
+
+  .section-h4 {
+    font-family: "Playfair Display", serif;
     font-size: clamp(26px, 3.5vw, 30px);
     line-height: 1.15;
   }
 
   .eyebrow {
     font-family: "Lato", sans-serif;
-    font-size: clamp(14px, 1.6vw, 16px);
+    font-size: clamp(14px, 1.6vw, 18px);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 300;

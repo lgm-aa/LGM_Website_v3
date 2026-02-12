@@ -30,9 +30,23 @@
   overflow: hidden;
 }
 
-.overview__subtitle {
-    letter-spacing: 0.03em;
-    padding-bottom: 0.75rem;
+.overview__subtitle.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* The line */
+.overview__subtitle::after {
+  content: "";
+  height: 1px;
+  background: rgba(0, 0, 0, 1);
+
+  flex: 1;                /* line expands to fill remaining space */
+  margin-left: 8px;       /* extra padding if you want */
 }
 
 .overview__desc {
@@ -50,14 +64,13 @@
 .overview__contact-button {
     display: inline-flex;
     margin-top: 1rem;
-    border-width: 2px;
+    border-width: 1px;
     border-color: black;
     border-radius: 36px;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 10px 25px;
     width: fit-content;
     height: fit-content;
-    font-size: 24px;
 }
 
 .overview__contact-button:hover {

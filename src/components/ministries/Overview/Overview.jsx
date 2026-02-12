@@ -15,7 +15,7 @@ export default function Overview({
                     <p className="overview__subtitle eyebrow">{subtitle}</p>
                     <p className="overview__desc body-text">{description}</p>
                     <p className="overview__mission-text section-h3">{mission}</p>
-                    <a href="/contact" className="overview__contact-button">
+                    <a href="/contact" className="overview__contact-button body-text">
                         Contact Us
                     </a>
                 </div>
