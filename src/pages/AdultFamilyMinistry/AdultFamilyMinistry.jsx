@@ -7,10 +7,10 @@ import sectionImage from "@/assets/adult-side.webp";
 const adultFamilyMinistry = {
   title: "ADULT/FAMILY",
   subtitle: "Adult/Family",
-  description: "Through every stage of life, we need a community to journey with us. As we navigate life, we find that God desires to create a family that is not specific to one’s immediate family, but is bound together by the love of Christ. Life can be complicated and difficult at times—God never intended us to go through it alone. LGM Adult and Family Ministry strives to be a place where we can support, encourage, love, laugh, and cry with each other as we earnestly seek to build God’s kingdom within us and in this greater world. LGM Adult and Family Ministry is for mid-30s and up generally, but no one’s counting! Whether you are single, married, divorced, with kids or without, you are welcome to join us.",
+  description: "Through every stage of life, God invites us into a Christ-centered family where we walk together through both joy and difficulty. LGM Adult and Family Ministry is a welcoming community, generally for mid-30s and up, but open to all, where we support one another and seek to build God’s kingdom together.",
   mission: (
     <>
-      [Insert quote or mission]
+      So we, though many, are one body in Christ, and individually members one of another. <br/> <br/> Romans 12:5
     </>
   )
 };
@@ -30,3 +30,5 @@ export default function AdultFamilyMinistry() {
       </>
   );
 }
+
+

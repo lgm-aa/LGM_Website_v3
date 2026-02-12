@@ -114,6 +114,13 @@
   color: #2563eb;
 }
 
+
+.team-card__name {
+  font-weight: 900;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
 /* Mobile adjustments */
 @media (max-width: 968px) {
   .contact-info__grid {
@@ -149,10 +156,6 @@
   .team-card__image-wrapper {
     width: 160px;
     height: 160px;
-  }
-
-  .team-card__name {
-    font-size: 1.25rem;
   }
 
   .team-card__role {

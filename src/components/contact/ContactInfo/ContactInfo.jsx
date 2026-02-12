@@ -108,8 +108,8 @@ export default function ContactInfo() {
                   className="team-card__image"
                 />
               </div>
-              <h3 className="body-text">{member.name}</h3>
-              <p className="body-text">{member.role}</p>
+              <h3 className="team-card__name body-text">{member.name}</h3>
+              <p className="team-card__role body-text">{member.role}</p>
               <button
                 onClick={() => handleCopyEmail(member.email, member.id)}
                 className="team-card__email"
