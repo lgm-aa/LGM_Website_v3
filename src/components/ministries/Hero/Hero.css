@@ -35,3 +35,16 @@
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   margin: 0;
 }
+
+
+/* dark overlay so white text is readable */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      to top,                 /* gradient goes from bottom -> top */
+      rgba(20, 40, 68, 0.7),
+      rgba(20, 40, 68, 0)
+    );
+}
