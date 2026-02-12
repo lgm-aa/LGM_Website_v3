@@ -8,6 +8,11 @@ export default function ActionCards({
     
     return (
         <section className="action-cards">
+            <div className="action-cards__divider" aria-hidden="true">
+                <span className="action-cards__divider-line" />
+                <span className="body-text">Click on the cards to see more</span>
+                <span className="action-cards__divider-line" />
+            </div>
             <div className="action-cards-container">
                 {cards.map((card) => (
                     <a

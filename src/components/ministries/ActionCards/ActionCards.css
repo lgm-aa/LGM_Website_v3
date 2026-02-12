@@ -11,9 +11,26 @@
   padding: clamp(2rem, 5vw, 2rem) clamp(1.5rem, 18vw, 14rem) clamp(2rem, 10vw, 15rem);    
 }
 
+.action-cards__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 24px;
+  max-width: 1500px; 
+  padding: 0 clamp(1.5rem, 18vw, 14rem); 
+}
+
+.action-cards__divider-line {
+  flex: 1;
+  height: 1px;
+  background: black;
+  position: relative;
+  top: 2px;
+}
+
 .action-card {
   position: relative; 
-  flex: 1 1 30%;            /* grow, shrink, base width 30% */
+  flex: 1 1 30%;      
   aspect-ratio: 6/8;        /* keeps card proportional */
   background-size: cover;
   background-position: center;
@@ -27,7 +44,7 @@
   content: "";
   position: absolute;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background-color: rgba(20, 40, 68, 0.4); /* your blue tint */
+  background-color: rgba(20, 40, 68, 0.4); 
   z-index: 0; /* behind text */
   border-radius: 16px;
 }
