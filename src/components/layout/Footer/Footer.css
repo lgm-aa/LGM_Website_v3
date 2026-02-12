@@ -33,10 +33,10 @@
   padding: 6px;
 }
 .footer__name {
+  font-family: "Playfair Display", serif;
   font-size: 22px;
   line-height: 1.05;
   color: #e2e8f0;
-  font-weight: 600;
   margin-top: 5px;
 }
 
