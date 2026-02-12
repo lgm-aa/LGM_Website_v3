@@ -49,7 +49,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.45;
   letter-spacing: 0.056em;
   color: #000000;
   margin: 0;
@@ -57,6 +57,11 @@
   position: relative;
   top: -0.15em;
 }
+
+.about-overview__title.section-h3 {
+  line-height: 1.45;
+}
+
 
 .about-overview__emphasis {
   font-weight: 700;
@@ -183,6 +188,25 @@
   text-decoration-thickness: 2px;
 }
 
+
+.circled-word {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+
+.circle-overlay {
+  position: absolute;
+  left: -1%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140%;
+  height: auto;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
 /* Mobile adjustments */
 @media (max-width: 968px) {
   .about-overview__container {
@@ -209,3 +233,6 @@
     font-size: 1.75rem;
   }
 }
+
+
+

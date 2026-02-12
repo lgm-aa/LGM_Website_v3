@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Overview.css";
 import about_overview from "@/assets/aboutus.webp";
 import useLatestBulletin from "@/hooks/useLatestBulletin";
+import circle from "@/assets/circle.png"; 
 
 export default function Overview() {
   const [openSection, setOpenSection] = useState(null);
@@ -28,8 +29,11 @@ export default function Overview() {
           <h2 className="about-overview__title section-h3">
             We Are a Ministry <br />
             That Lives Out Grace <br />
-            <span className="about-overview__emphasis">Practically</span> in{" "}
-            <br />
+            <span className="circled-word">
+              Practically
+              <img src={circle} alt="" className="circle-overlay" />
+            </span>{" "} 
+            in <br />
             Ann Arbor
           </h2>
 
