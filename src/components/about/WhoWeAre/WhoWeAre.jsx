@@ -31,7 +31,7 @@ export default function WhoWeAre() {
 
           {/* Card 3: Open to all */}
           <div className="who-we-are__card">
-            <h3 className="who-we-are__card-title section-h4">Open to all</h3>
+            <h3 className="who-we-are__card-title section-h4">Open to All</h3>
             <p className="who-we-are__card-text body-text">
               LGM is not all Korean, and we do not expect anyone to fit a certain background or story. We welcome anyone to join us for worship, fellowship, and community life. At LGM, all are welcome.
             </p>
