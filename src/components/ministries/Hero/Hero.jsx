@@ -13,7 +13,6 @@ export default function Hero({
                 style={{ backgroundImage: `url(${image})` }}
         >
             <div className="ministry-card-hero__overlay" />
-            <div className="hero-overlay" />
 
             <div className="ministry-card-hero__content">
                 <h1 className="ministry-card-hero__title">{title}</h1>
