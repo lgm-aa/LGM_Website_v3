@@ -1,4 +1,4 @@
-import "./give.css";
+import "./Give.css";
 import venmoIcon from "@/assets/icons/imgvenmo.png";
 import zelleIcon from "@/assets/icons/imgzelle.png";
 import moneyIcon from "@/assets/icons/imgmoney.png";

@@ -1,4 +1,4 @@
-import Givecontent from "@/components/give/give";
+import Givecontent from "@/components/give/Give";
 import Hero from "@/components/layout/Hero/Hero";
 import contactHeroImage from "@/assets/lgm_easter.webp"; 
 

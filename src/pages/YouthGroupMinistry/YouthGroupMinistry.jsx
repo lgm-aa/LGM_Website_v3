@@ -1,5 +1,5 @@
 import Hero from "@/components/layout/Hero/Hero"
-import Overview from "../../components/ministries/Overview/Overview";
+import Overview from "@/components/ministries/Overview/Overview";
 
 import heroImage from "@/assets/youth_group.webp";
 import sectionImage from "@/assets/youthgroup-side.webp";

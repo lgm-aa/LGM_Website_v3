@@ -1,13 +1,11 @@
 // src/components/layout/Footer/Footer.jsx
 import React from "react";
-// 👇 REMOVED: useNavigate
 import { useLocation } from "react-router-dom";
 import "./Footer.css";
 import logo from "@/assets/lgm_logo_white.webp";
 
 export default function Footer() {
   const location = useLocation();
-  // 👇 REMOVED: const navigate = useNavigate();
 
   const handleScroll = (e, id) => {
     // Only intercept the click if we are ALREADY on the home page
