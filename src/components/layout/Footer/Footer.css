@@ -55,8 +55,10 @@
 }
 .social {
   width: 32px;
+  min-width: 32px;
   height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   display: grid;
   place-items: center;
@@ -102,7 +104,9 @@
   display: grid;
   place-items: center;
   width: 32px;
+  min-width: 32px;
   height: 32px;
+  flex-shrink: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   color: #cbd5e1;
