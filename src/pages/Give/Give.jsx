@@ -1,5 +1,5 @@
 import Givecontent from "@/components/give/give";
-import Hero from "@/components/ministries/Hero/Hero";
+import Hero from "@/components/layout/Hero/Hero";
 import contactHeroImage from "@/assets/lgm_easter.webp"; 
 
 

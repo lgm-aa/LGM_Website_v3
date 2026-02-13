@@ -1,4 +1,4 @@
-// src/components/ministries/Hero/Hero.jsx
+// src/components/layout/Hero/Hero.jsx
 
 import "./Hero.css";
 import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";

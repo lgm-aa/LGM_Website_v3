@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ContactInfo.css";
 
-import Hero from "@/components/ministries/Hero/Hero";
+import Hero from "@/components/layout/Hero/Hero";
 
 import youth_director from "@/assets/people/youth_director.jpg";
 import praise_leader from "@/assets/people/praise_leader.jpg";

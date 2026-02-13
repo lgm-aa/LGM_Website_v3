@@ -1,4 +1,4 @@
-import Hero from "@/components/ministries/Hero/Hero";
+import Hero from "@/components/layout/Hero/Hero";
 import ContactInfo from "@/components/contact/ContactInfo/ContactInfo";
 import contactHeroImage from "@/assets/contactpage.webp"; 
 

@@ -1,4 +1,4 @@
-import Hero from "../../components/ministries/Hero/Hero"
+import Hero from "@/components/layout/Hero/Hero"
 import Overview from "../../components/ministries/Overview/Overview";
 import ActionCards from "../../components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/campus_hero.webp";
