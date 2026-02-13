@@ -1,5 +1,5 @@
 .action-cards {
-    background-color: #E3E8EE;
+    background-color: var(--bg-light);
 }
 
 .action-cards-container {

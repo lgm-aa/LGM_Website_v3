@@ -1,6 +1,6 @@
 /* Contact Info Section */
 .contact-info {
-  background: #E3E8EE;
+  background: var(--bg-light);
   padding: 3rem 2rem 6rem;
 }
 

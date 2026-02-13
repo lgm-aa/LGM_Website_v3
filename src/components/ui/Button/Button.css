@@ -45,7 +45,7 @@
 }
 
 .btn-hero {
-  background: #E3E8EE;
+  background: var(--bg-light);
   color: #0f172a;
   border-color: rgba(255, 255, 255, 0.6);
 }

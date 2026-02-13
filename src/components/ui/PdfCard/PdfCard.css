@@ -12,7 +12,7 @@
 
 .pdf-card--dark {
   background: 
-    #142844;
+    var(--primary-dark);
   color: #e5e7eb;
 }
 

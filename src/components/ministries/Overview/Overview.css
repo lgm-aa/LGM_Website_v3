@@ -1,5 +1,5 @@
 .overview {
-  background-color: #E3E8EE;
+  background-color: var(--bg-light);
 }
 .overview__container {
   max-width: 1500px;

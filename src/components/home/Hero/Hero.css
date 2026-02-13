@@ -85,7 +85,7 @@
 
 /* Match your page background color behind the wave */
 :root {
-  --page-bg: #E3E8EE; /* light gray/blue tone */
+  --page-bg: var(--bg-light); /* light gray/blue tone */
 }
 .hero-wave path {
   fill: var(--page-bg);

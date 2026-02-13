@@ -1,5 +1,5 @@
 .plan-section {
-  background-color: #142844;
+  background-color: var(--primary-dark);
   padding: 4rem 1rem;
   color: white;
 }
@@ -94,8 +94,8 @@
 
 /* CTA Button */
 .notify-button {
-  background-color: #E3E8EE;
-  color: #142844;
+  background-color: var(--bg-light);
+  color: var(--primary-dark);
   border: none;
   width: min(100%, 360px);
   padding: 1rem 0rem;

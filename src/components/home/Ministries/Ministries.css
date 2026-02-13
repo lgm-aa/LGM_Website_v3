@@ -1,5 +1,5 @@
 .ministries {
-  background: #E3E8EE;
+  background: var(--bg-light);
   padding: clamp(48px, 6vw, 80px) 24px;
 }
 
@@ -54,14 +54,14 @@
 }
 
 .ministries__arrow:focus-visible {
-  outline: 2px solid #2b3443;
+  outline: 2px solid var(--text-color);
   outline-offset: 2px;
 }
 
 .ministries__arrow:active:not(:disabled) {
   transform: translateY(-50%) scale(0.95);
   background: rgba(43, 52, 67, 0.95);
-  color: #2b3443;
+  color: var(--text-color);
 }
 
 .ministries__arrow:hover:not(:disabled) {
@@ -92,7 +92,7 @@
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(2, 6, 23, 0.1), 0 2px 6px rgba(2, 6, 23, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
-  background: #142844;
+  background: var(--primary-dark);
   position: relative;
   z-index: 10;
 }
@@ -117,7 +117,7 @@
 }
 
 .ministry-card__label {
-  background: #142844;
+  background: var(--primary-dark);
   color: #ffffff;
   padding: 20px;
   text-align: center;
