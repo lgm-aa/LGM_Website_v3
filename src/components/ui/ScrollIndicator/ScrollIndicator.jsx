@@ -1,8 +1,8 @@
 import "./ScrollIndicator.css";
 
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ className = "" }) {
   return (
-    <div className="scroll-indicator">
+    <div className={`scroll-indicator ${className}`.trim()}>
       <div>scroll</div>
       <svg
         className="chevron"

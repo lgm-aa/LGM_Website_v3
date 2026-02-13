@@ -13,7 +13,7 @@ export default function PageHero({ title, backgroundImage }) {
         <h1 className="page-hero__title">{title}</h1>
       </div>
 
-      <ScrollIndicator />
+      <ScrollIndicator className="scroll-indicator--lower" />
     </section>
   );
 }

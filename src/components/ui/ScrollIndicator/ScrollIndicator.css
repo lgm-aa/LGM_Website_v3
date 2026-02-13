@@ -31,6 +31,11 @@
   }
 }
 
+/* Lower position for non-home pages */
+.scroll-indicator--lower {
+  bottom: 40px;
+}
+
 /* Hide on mobile */
 @media (max-width: 768px) {
   .scroll-indicator {

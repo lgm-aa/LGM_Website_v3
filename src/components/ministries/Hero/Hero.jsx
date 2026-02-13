@@ -17,7 +17,7 @@ export default function Hero({
             <div className="ministry-card-hero__content">
                 <h1 className="ministry-card-hero__title">{title}</h1>
             </div>
-            <ScrollIndicator />
+            <ScrollIndicator className="scroll-indicator--lower" />
         </section>
     )
 }
