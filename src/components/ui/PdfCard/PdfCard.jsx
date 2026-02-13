@@ -87,7 +87,6 @@ export default function PdfCard({
 
       {/* Decorative Blobs */}
       <span className="pdf-card__blob pdf-card__blob--tl" />
-      <span className="pdf-card__blob pdf-card__blob--br" />
     </article>
   );
 }

@@ -9,7 +9,7 @@ export default function Give() {
 
       <section className="give-quote">
         <blockquote>
-          <p className="section-h4">
+          <p className="section-h3">
             "Each one must give as he has decided in his<br />
             heart, not reluctantly or under compulsion,<br />
             for God loves a cheerful giver."

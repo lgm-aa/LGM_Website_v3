@@ -91,13 +91,6 @@
   left: -70px;
 }
 
-.pdf-card__blob--br {
-  width: 260px;
-  height: 260px;
-  right: -80px;
-  bottom: -80px;
-}
-
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .pdf-card__frame-container {
