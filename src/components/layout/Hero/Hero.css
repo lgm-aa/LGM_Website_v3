@@ -19,7 +19,7 @@
 .hero__content {
   position: absolute;
   bottom: 18%;               /* move it near the bottom */
-  right: 10%;                /* move it near the right edge */
+  right: 6%;                /* move it near the right edge */
   color: white;
   z-index: 1;
   text-align: right;        /* aligns text to the right side */
@@ -32,6 +32,6 @@
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 1);
   margin: 0;
 }
