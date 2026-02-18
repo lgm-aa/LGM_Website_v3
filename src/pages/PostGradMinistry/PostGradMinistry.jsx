@@ -18,8 +18,11 @@ const cards = [
 const postGradMinistry = {
   title: "POST GRAD",
   subtitle: "Post Grad Ministry",
-  description: "A community for early adulthood, including grad students, working professionals, and those in between.",
-  mission: (
+  description: (
+    <>
+      Whatever you do, work heartily, as for the Lord and not for men <br/> <br/> Colossians 3:23
+    </>
+  ),  mission: (
     <>
       Early adulthood is a season of transition and becoming. We create space to stay <strong>rooted</strong> in faith, <strong>connected</strong> in community, and <strong>grounded</strong> in purpose.
     </>
