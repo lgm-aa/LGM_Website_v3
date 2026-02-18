@@ -8,15 +8,11 @@ export default function Hero({
     image
 }) {
     return(
-        <section
-                id="hero"
-                className="ministry-card-hero"
-                style={{ backgroundImage: `url(${image})` }}
-        >
-            <div className="ministry-card-hero__overlay" />
+        <section id="hero" className="hero" style={{ backgroundImage: `url(${image})` }}>
+            <div className="hero__overlay" />
 
-            <div className="ministry-card-hero__content">
-                <h1 className="ministry-card-hero__title">{title}</h1>
+            <div className="hero__content">
+                <h1 className="hero__title">{title}</h1>
             </div>
             <ScrollIndicator className="scroll-indicator--lower" />
         </section>
