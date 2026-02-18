@@ -17,11 +17,15 @@ const cards = [
 const campusMinistry = {
   title: "CAMPUS",
   subtitle: "Campus Ministry",
-  description: "A Christ-centered campus community walking together through college life at the University of Michigan.",
-  mission: (
+  description: (
     <>
-      <strong>Identity is formed. Purpose is discovered.</strong> We walk with students as they grow in faith, community, and life rooted in Christ.
+      Therefore, as you received Christ Jesus the Lord, so walk in him, rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving. <br/> <br/> Colossians 2:6–7
     </>
+  ),
+  mission: (
+  <>
+    <strong>Identity is formed. Purpose is discovered.</strong> We walk with students as they grow in faith, community, and life rooted in Christ.
+  </>
   ),
   cards: cards
 };

@@ -62,7 +62,6 @@ export default function Footer() {
           >
             Plan Your Visit
           </a>
-          <a href="/small-groups">Small Groups</a>
           <a href="/#bulletin" onClick={(e) => handleScroll(e, "bulletin")}>
             Events
           </a>
