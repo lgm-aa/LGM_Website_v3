@@ -12,7 +12,7 @@ const childrensMinistry = {
       Children are a heritage from the LORD, offspring a reward from him. <br/> <br/> Psalms 127:3
     </>
   ),
-  mission: "Learning about God’s love, growing in faith, and building lasting friendships (Grades K-5).",
+  mission: "Learning about God’s love, growing in faith, and building friendships in a joyful environment together (Grades K–5).",
 };
 
 
