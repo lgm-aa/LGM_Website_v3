@@ -1,5 +1,6 @@
 import React from "react";
 import "./Plan.css";
+import Button from "@/components/ui/Button/Button";
 
 
 export const ClockIcon = () => (
@@ -91,9 +92,9 @@ export default function Plan() {
               </div>
 
               <div className="notify-button-wrapper">
-                <a href="/contact" className="notify-button body-text">
+                <Button variant="primary" href="/contact" className="notify-button body-text">
                   Let Us Know You're Coming
-                </a>
+                </Button>
               </div>
 
             </div>

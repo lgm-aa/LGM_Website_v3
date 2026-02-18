@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 16px; /* rounded-xl */
-  padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+  border-radius: 16px;
+  padding: 12px 24px;
   font-weight: 500;
   line-height: 1.2;
   border: 1px solid transparent;
@@ -14,43 +14,37 @@
   cursor: pointer;
 }
 
-/* Sizes */
-.btn-md {
-  font-size: 16px;
-} /* text-base */
-.btn-lg {
-  font-size: 16px;
-  padding: 0.75rem 1.5rem;
-} /* text-lg, px-6 py-3 */
 
-/* Variants */
-.btn-primary {
-  background: rgba(148, 163, 184, 0.6); /* slate-400/60 like your mock */
-  color: white;
-  border-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-}
-.btn-primary:hover {
-  background: rgba(148, 163, 184, 0.75);
+/* ------------------ VARIANTS ------------------ */
+
+.btn__primary {
+  background-color: #E3E8EE;
+  color: #142844;
 }
 
-.btn-ghost {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(6px);
-}
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
+.btn__primary:hover {
+  background-color: #C2A878;
+  color: #142844;
 }
 
-.btn-hero {
-  background: var(--bg-light);
-  color: #0f172a;
-  border-color: rgba(255, 255, 255, 0.6);
+.btn__secondary {
+  background-color: #142844;
+  color: #FFFFFF;
 }
 
-.btn-hero:hover {
-  background: #d6dce4;
+.btn__secondary:hover {
+  background-color: #C2A878;
+  color: #142844;
 }
 
+.btn__tertiary {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.btn__tertiary:hover {
+  background-color: #4A5D73;
+  color: #FFFFFF;
+  border-color: #4A5D73;
+}

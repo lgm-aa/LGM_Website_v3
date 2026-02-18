@@ -55,16 +55,14 @@ export default function PdfCard({
       )}
 
       <Button
-        as="a"
         href={downloadUrl || "#"}
-        target={!isDisabled ? "_blank" : undefined}
-        rel="noopener noreferrer"
+        newTab={!isDisabled}
         variant="primary"
-        size="lg"
-        className="pdf-card__cta"
-        style={{
-          pointerEvents: isDisabled ? "none" : "auto",
-          opacity: isDisabled ? 0.7 : 1,
+        className={`pdf-card__cta ${isDisabled ? "btn--disabled" : ""}`}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+        onClick={(e) => {
+          if (isDisabled) e.preventDefault();
         }}
       >
         <span className="btn-icon">
@@ -85,7 +83,7 @@ export default function PdfCard({
         </span>
       </Button>
 
-      {/* Decorative Blobs */}
+      {/* Decorative Blob */}
       <span className="pdf-card__blob pdf-card__blob--tl" />
     </article>
   );

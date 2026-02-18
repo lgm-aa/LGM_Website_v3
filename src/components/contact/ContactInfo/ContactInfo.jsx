@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ContactInfo.css";
 
-import Hero from "@/components/layout/Hero/Hero";
+import Button from "@/components/ui/Button/Button";
 
 import youth_director from "@/assets/people/youth_director.jpg";
 import praise_leader from "@/assets/people/praise_leader.jpg";
@@ -121,9 +121,9 @@ export default function ContactInfo() {
         </div>
         <div className="contact-info__cta-section">
           <p className="contact-info__cta-text body-text">Have other comments or questions?</p>
-          <a href="mailto:livinggraceministry@gmail.com" className="contact-info__cta-button body-text">
+          <Button variant="secondary" href="mailto:livinggraceministry@gmail.com" className="body-text">
             Contact LGM
-          </a>
+          </Button>
         </div>
       </div>
     </section>

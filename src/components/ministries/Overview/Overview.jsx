@@ -1,6 +1,7 @@
 // src/components/ministries/Overview/Overview.jsx
 
 import "./Overview.css";
+import Button from "@/components/ui/Button/Button";
 
 export default function Overview({
     subtitle,
@@ -15,9 +16,9 @@ export default function Overview({
                     <p className="overview__subtitle eyebrow">{subtitle}</p>
                     <p className="overview__desc body-text">{description}</p>
                     <p className="overview__mission-text section-h3">{mission}</p>
-                    <a href="/contact" className="overview__contact-button body-text">
+                    <Button variant="tertiary" href="/contact" className="body-text">
                         Contact Us
-                    </a>
+                    </Button>
                 </div>
                 <div className="overview__right">
                     <img

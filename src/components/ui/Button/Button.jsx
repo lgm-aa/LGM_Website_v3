@@ -1,30 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Button.css";
 
-/**
- * Props:
- * - as: "button" | "a" (default "button")
- * - href: string (when as="a")
- * - variant: "primary" | "ghost"
- * - size: "md" | "lg"
- */
 export default function Button({
-  as = "button",
+  variant = "primary",
   href,
   children,
-  variant = "primary",
-  size = "md",
   className = "",
+  newTab = false,
   ...rest
 }) {
-  const Cmp = as === "a" ? "a" : "button";
+  const classes = `btn btn__${variant} ${className}`.trim();
+
   return (
-    <Cmp
+    <a 
+      className={classes} 
+      href={href} 
+      target={newTab ? "_blank" : undefined}
+      rel={newTab ? "noreferrer" : undefined}
       {...rest}
-      href={as === "a" ? href ?? "#" : undefined}
-      className={`btn btn-${variant} btn-${size} ${className}`}
     >
       {children}
-    </Cmp>
-  );
+    </a>
+  )
+  
 }

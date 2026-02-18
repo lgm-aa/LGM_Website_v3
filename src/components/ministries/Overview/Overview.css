@@ -30,6 +30,10 @@
   overflow: hidden;
 }
 
+.overview__left .btn {
+  align-self: flex-start;
+}
+
 .overview__subtitle.eyebrow {
   display: flex;
   align-items: center;
@@ -59,18 +63,7 @@
     padding-bottom: 0.75rem;
     line-height: 1.5 !important;
     margin-top: auto;
-}
-
-.overview__contact-button {
-    display: inline-flex;
-    margin-top: 1rem;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 36px;
-    gap: 10px;
-    padding: 10px 25px;
-    width: fit-content;
-    height: fit-content;
+    margin-bottom: 1.5rem;
 }
 
 .overview__contact-button:hover {

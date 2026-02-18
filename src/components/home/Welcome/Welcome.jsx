@@ -34,10 +34,8 @@ export default function Welcome() {
           </div>
 
           <Button
-            as="a"
+            variant="secondary"
             href="/about"
-            variant="primary"
-            size="lg"
             className="body-text"
           >
             Learn More

@@ -107,9 +107,6 @@
   text-align: center;
 }
 
-.notify-button:hover {
-  background-color: #D6DDE6;
-}
 
 .notify-button-wrapper {
   display: flex;
