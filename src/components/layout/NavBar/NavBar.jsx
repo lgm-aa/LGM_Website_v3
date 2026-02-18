@@ -1,11 +1,13 @@
 // src/components/layout/NavBar/NavBar.jsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 
 export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const { pathname } = useLocation();
 
   const toggleDropdown = (dropdownName) => {
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
@@ -14,9 +16,29 @@ export default function NavBar() {
   const closeDropdown = () => {
     setOpenDropdown(null);
   };
+
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+
+    if (!hero) {
+      const onScroll = () => setScrolledPastHero(window.scrollY > 20);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => window.removeEventListener("scroll", onScroll);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolledPastHero(!entry.isIntersecting),
+      { threshold: 0}
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+
+  }, [pathname]);
   
   return (
-    <header className="lgm-nav">
+    <header className={`lgm-nav ${scrolledPastHero ? "lgm-nav__blur" : ""}`}>
       <div className="lgm-nav__inner">
         {/* Left: logo + title */}
         <Link to="/" className="lgm-nav__brand">

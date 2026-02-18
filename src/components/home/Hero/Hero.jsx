@@ -23,7 +23,7 @@ export default function Hero() {
   });
 
   return (
-    <>
+    <section id="hero">
       {/* Background image */}
       <section
         className="hero-section"
@@ -75,6 +75,6 @@ export default function Hero() {
           />
         </svg>
       </div>
-    </>
+    </section>
   );
 }

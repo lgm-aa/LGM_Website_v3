@@ -9,6 +9,7 @@ export default function Hero({
 }) {
     return(
         <section
+                id="hero"
                 className="ministry-card-hero"
                 style={{ backgroundImage: `url(${image})` }}
         >
