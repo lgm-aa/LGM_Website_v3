@@ -4,7 +4,7 @@ import ActionCards from "@/components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/postgrad_hero.webp";
 import img1 from "@/assets/postgrad-sg.webp";
 import img2 from "@/assets/postgrad-upcoming.webp";
-import img3 from "@/assets/community5.webp";
+import img3 from "@/assets/postgrad-gc.webp";
 
 import sectionImage from "@/assets/postgrad-side.webp";
 

@@ -12,11 +12,13 @@ import img4 from "@/assets/community4.webp";
 import img6 from "@/assets/community6.webp";
 import img7 from "@/assets/community7.webp";
 import img8 from "@/assets/community8.webp";
-import img9 from "@/assets/community10.webp";
+import img9 from "@/assets/community9.webp";
+import img10 from "@/assets/community10.webp";
+import img11 from "@/assets/community11.webp";
 
 import { useCommunityCarousel } from "@/hooks/useCommunityCarousel";
 
-const photos = [img1, img2, img3, img4, img6, img7, img8, img9];
+const photos = [img1, img11, img2, img3, img4, img6, img7, img8, img9, img10];
 const communityPhotos = [...photos, ...photos];
 
 export default function Community() {
