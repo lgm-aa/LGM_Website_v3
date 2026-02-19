@@ -78,7 +78,7 @@ export default function NavBar() {
                 Children's
               </Link>
               <Link to="/youth-group" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
-                Youth Group
+                Youth
               </Link>
               <Link to="/campus" className="lgm-nav__dropdown-link" onClick={closeDropdown}>
                 Campus

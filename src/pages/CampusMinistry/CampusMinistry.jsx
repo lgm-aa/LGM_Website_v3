@@ -19,7 +19,7 @@ const campusMinistry = {
   subtitle: "Campus Ministry",
   description: (
     <>
-      Therefore, as you received Christ Jesus the Lord, so walk in him, rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving. <br/> <span className="verse-ref">Colossians 2:6–7</span>
+      "Therefore, as you received Christ Jesus the Lord, so walk in him, rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." <br/> <span className="verse-ref">Colossians 2:6–7</span>
     </>
   ),
   mission: (

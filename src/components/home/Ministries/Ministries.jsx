@@ -18,7 +18,7 @@ export default function Ministries() {
     { id: 1, title: "CHILDREN'S", image: children, href: "/childrens" },
     { id: 2, title: "YOUTH GROUP", image: postgradImg, href: "/youth-group" },
     { id: 3, title: "CAMPUS", image: campusImg, href: "/campus" },
-    { id: 4, title: "POST-GRAD", image: postgradImg2, href: "/post-grad" },
+    { id: 4, title: "POST GRAD", image: postgradImg2, href: "/post-grad" },
     { id: 5, title: "ADULT/FAMILY", image: postgradImg, href: "/adult-family" },
   ];
 

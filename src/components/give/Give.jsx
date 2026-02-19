@@ -10,9 +10,9 @@ export default function Give() {
       <section className="give-quote">
         <blockquote>
           <p className="section-h3">
-            "Each one must give as he has decided in his<br />
+            “Each one must give as he has decided in his<br />
             heart, not reluctantly or under compulsion,<br />
-            for God loves a cheerful giver."
+            for God loves a cheerful giver.”
           </p>
           <span className="body-text">2 Corinthians 9:7</span>
         </blockquote>
