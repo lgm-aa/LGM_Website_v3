@@ -36,6 +36,27 @@
   margin: 0;
 }
 
-.hero__action--above {
-  margin-bottom: 0 rem;
+.hero__action--below {
+  margin-top: 1.5rem;
+}
+
+/* Mobile: center the title, shorter height */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero__content {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
 }

@@ -17,13 +17,13 @@ export default function Hero({
       <div className="hero__overlay" />
 
       <div className="hero__content">
+        <h1 className="hero__title">{title}</h1>
+
         {action && (
-          <div className="hero__action hero__action--above">
+          <div className="hero__action hero__action--below">
             {action}
           </div>
         )}
-
-        <h1 className="hero__title">{title}</h1>
       </div>
 
       <ScrollIndicator className="scroll-indicator--lower" />
