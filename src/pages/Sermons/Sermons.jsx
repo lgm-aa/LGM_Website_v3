@@ -1,14 +1,14 @@
 import Sermoncontent from "@/components/sermons/Video/Video";
 import Hero from "@/components/layout/Hero/Hero";
 import Button from "@/components/ui/Button/Button";
-import contactHeroImage from "@/assets/lgm_building.webp";
+import sermonsHeroImage from "@/assets/sanctuary.webp";
 
 export default function Sermon() {
   return (
     <div className="sermon-page">
       <Hero
         title="SERMONS"
-        image={contactHeroImage}
+        image={sermonsHeroImage}
         action={
           <Button
             variant="primary"
