@@ -24,7 +24,7 @@ const campusMinistry = {
   ),
   mission: (
   <>
-    <strong>Identity is formed. Purpose is discovered.</strong> We walk with students as they grow in faith, community, and life rooted in Christ.
+    <strong>Identity is formed. Purpose is discovered.</strong> We walk with students as they grow in faith, community, and life rooted in Christ through every season.
   </>
   ),
   cards: cards

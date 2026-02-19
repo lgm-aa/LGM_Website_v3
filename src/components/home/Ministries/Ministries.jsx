@@ -9,11 +9,13 @@ import campusImg from "@/assets/ministry_campus.webp";
 import postgradImg from "@/assets/ministry_postgrad.webp";
 import postgradImg2 from "@/assets/postgradimg.webp";
 
+import children from "@/assets/children.webp";
+
 export default function Ministries() {
   const swiperRef = useRef(null);
 
   const ministries = [
-    { id: 1, title: "CHILDREN'S", image: campusImg, href: "/childrens" },
+    { id: 1, title: "CHILDREN'S", image: children, href: "/childrens" },
     { id: 2, title: "YOUTH GROUP", image: postgradImg, href: "/youth-group" },
     { id: 3, title: "CAMPUS", image: campusImg, href: "/campus" },
     { id: 4, title: "POST-GRAD", image: postgradImg2, href: "/post-grad" },

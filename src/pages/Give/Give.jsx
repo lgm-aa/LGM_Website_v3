@@ -1,6 +1,6 @@
 import Givecontent from "@/components/give/Give";
 import Hero from "@/components/layout/Hero/Hero";
-import contactHeroImage from "@/assets/lgm_easter.webp"; 
+import contactHeroImage from "@/assets/give.webp"; 
 
 
 export default function Donate() {
