@@ -9,7 +9,7 @@ const youthMinistry = {
   subtitle: "Youth Group",
   description: (
     <>
-      Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. <br/> <br/> 1 Timothy 4:12
+      Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. <br/> <span className="verse-ref">1 Timothy 4:12</span>
     </>
   ),
   mission: "Empowering students to become devoted followers of Christ through faith, community, and intentional discipleship (Grades 6–12).",

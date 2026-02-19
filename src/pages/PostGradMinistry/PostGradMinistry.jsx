@@ -20,7 +20,7 @@ const postGradMinistry = {
   subtitle: "Post Grad Ministry",
   description: (
     <>
-      Whatever you do, work heartily, as for the Lord and not for men <br/> <br/> Colossians 3:23
+      Whatever you do, work heartily, as for the Lord and not for men <br/> <span className="verse-ref">Colossians 3:23</span>
     </>
   ),  mission: (
     <>
