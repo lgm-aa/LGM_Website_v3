@@ -187,7 +187,10 @@
 @media (max-width: 768px) {
   .give-ways {
     padding: 3rem 1.5rem;
-    border-radius: 22px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .give-ways__grid {
