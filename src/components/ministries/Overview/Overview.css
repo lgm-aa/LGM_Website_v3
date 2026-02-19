@@ -3,8 +3,8 @@
 }
 .overview__container {
   max-width: 1500px;
-  display: flex;            /* side-by-side layout */
-  gap: 4rem;                /* space between left and right */
+  display: flex; /* side-by-side layout */
+  gap: 4rem; /* space between left and right */
   align-items: flex-start;
   padding: clamp(3rem, 8vw, 10rem) clamp(1.5rem, 18vw, 14rem);
   align-items: stretch;
@@ -39,7 +39,7 @@
   align-items: center;
   gap: 1rem;
   letter-spacing: 0.03em;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
   font-weight: 500;
 }
 
@@ -49,21 +49,21 @@
   height: 1px;
   background: rgba(0, 0, 0, 1);
 
-  flex: 1;                /* line expands to fill remaining space */
-  margin-left: 8px;       /* extra padding if you want */
+  flex: 1; /* line expands to fill remaining space */
+  margin-left: 8px; /* extra padding if you want */
 }
 
 .overview__desc {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .overview__mission-text {
-    font-size: clamp(1.20rem, 2vw, 1.50rem);
-    padding-bottom: 0.75rem;
-    line-height: 1.5 !important;
-    margin-top: auto;
-    margin-bottom: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  padding-bottom: 0.75rem;
+  line-height: 1.5 !important;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
 }
 
 .overview__contact-button:hover {
@@ -75,7 +75,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  margin-left: auto;  /* pushes image to the right side */
+  margin-left: auto; /* pushes image to the right side */
   border-radius: 16px;
 }
 
@@ -83,6 +83,7 @@
   .overview__container {
     flex-direction: column;
     gap: 5rem;
+    padding-top: 2rem;
   }
 
   .overview__left,
@@ -92,12 +93,13 @@
   }
 
   .overview__mission-text {
-    margin-top: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .overview__desc {
     margin-top: 0;
-    padding-top: 2rem;
+    padding-top: 0;
   }
 
   .overview__right {
@@ -110,4 +112,3 @@
     height: auto;
   }
 }
-
