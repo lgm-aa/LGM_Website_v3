@@ -236,7 +236,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 12rem 2rem 2rem 0.5rem;
+    padding: 8rem 2rem 2rem 0.5rem;
   }
 
   .lgm-nav__mobile-drawer .eyebrow {
@@ -247,7 +247,6 @@
     display: inline-flex;
     gap: 1rem;
     margin-top: auto;
-    padding-bottom: 1rem;
   }
 
   .social-icon {

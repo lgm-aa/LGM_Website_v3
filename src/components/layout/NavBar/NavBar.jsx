@@ -153,7 +153,7 @@ export default function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFacebookF size={22}/>
+                <FaFacebookF size={20}/>
               </a>
               <a
                 href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="
@@ -162,7 +162,7 @@ export default function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaInstagram size={22}/>
+                <FaInstagram size={24}/>
               </a>
               <a
                 href="https://www.youtube.com/@LivingGraceMinistry"
@@ -171,7 +171,7 @@ export default function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaYoutube size={22}/>
+                <FaYoutube size={24}/>
               </a>
             </div>
           </div>
