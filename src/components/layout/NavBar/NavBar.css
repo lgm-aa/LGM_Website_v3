@@ -191,7 +191,7 @@
     display: inline;
     font-size: 34px;
     z-index: 3000;
-    padding-top: 6px;
+    padding-top: 14px;
   }
 
   .lgm-nav__mobile-overlay {
@@ -220,6 +220,34 @@
     flex-direction: column;
     transform: translateX(100%);
     transition: transform 0.15s linear;
+    overflow: hidden;
+  }
+
+  .lgm-nav__mobile-drawer--open {
+    transform: translateX(0);
+  }
+
+  .lgm-nav__mobile-drawer-inner {
+    flex: 1;
+    display: flex;
+    width: 220%;
+    height: 100%;
+    transition: transform 0.22s ease;
+  }
+
+  .lgm-nav__mobile-drawer-inner--root {
+    transform: translateX(0);
+  }
+
+  .lgm-nav__mobile-drawer-inner--ministries {
+    transform: translateX(-50%);
+  }
+
+  .lgm-nav__mobile-panel {
+    width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .lgm-nav__mobile-title {
@@ -228,15 +256,22 @@
     font-size: 18px;
   }
 
-  .lgm-nav__mobile-drawer--open {
-    transform: translateX(0);
-  }
-
   .lgm-nav__mobile-links {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 8rem 2rem 2rem 0.5rem;
+  }
+
+  .lgm-nav__mobile-link-button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .lgm-nav__mobile-link-button .eyebrow{
+    font-size: 24px;
   }
 
   .lgm-nav__mobile-drawer .eyebrow {

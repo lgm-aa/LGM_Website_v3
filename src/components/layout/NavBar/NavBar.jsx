@@ -1,7 +1,7 @@
 // src/components/layout/NavBar/NavBar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronRight } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
@@ -10,6 +10,7 @@ export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileMenuView, setMobileMenuView] = useState("root"); // "root" or "ministries"
   const { pathname } = useLocation();
 
   const toggleDropdown = (dropdownName) => {
@@ -117,7 +118,7 @@ export default function NavBar() {
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
-          {isMenuOpen ? <FiX /> : <FiMenu />}
+          {isMenuOpen ? <FiX size={24}/> : <FiMenu size={24}/>}
         </button>
 
         <div className={`lgm-nav__mobile-overlay ${isMenuOpen ? "lgm-nav__mobile-overlay--open": ""}`} onClick={() => setIsMenuOpen(false)}>
@@ -126,24 +127,82 @@ export default function NavBar() {
             onClick={(e) => e.stopPropagation()}
           >
             <span className="lgm-nav__mobile-title">Living Grace Ministry</span>
-            <nav className="lgm-nav__mobile-links eyebrow">
-              <Link to="/about" onClick={() => setIsMenuOpen(false)}>
-                About
-              </Link>
-              <Link to="/sermons" onClick={() => setIsMenuOpen(false)}>
-                Ministries
-              </Link>
-              <Link to="/sermons" onClick={() => setIsMenuOpen(false)}>
-                Sermons
-              </Link>
-              <Link to="/give" onClick={() => setIsMenuOpen(false)}>
-                Give
-              </Link>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                Contact
-              </Link>
+            <div className={
+              `lgm-nav__mobile-drawer-inner ${
+                  mobileMenuView === "ministries" 
+                  ? "lgm-nav__mobile-drawer-inner--ministries" 
+                  : "lgm-nav__mobile-drawer-inner--root"
+                }`}>
+              {/* panel 1 - root menu panel */}
+              <div className="lgm-nav__mobile-panel lgm-nav__mobile-panel--root">
+                <nav className="lgm-nav__mobile-links eyebrow">
+                  <Link to="/about" onClick={() => setIsMenuOpen(false)}>
+                    About
+                  </Link>
+                  <button
+                    type="button"
+                    className="lgm-nav__mobile-link-button eyebrow"
+                    onClick={() => setMobileMenuView("ministries")}
+                  >
+                    <span>Ministries</span>
+                    <FiChevronRight size={26}/>
+                  </button>
+                  <Link to="/sermons" onClick={() => setIsMenuOpen(false)}>
+                    Sermons
+                  </Link>
+                  <Link to="/give" onClick={() => setIsMenuOpen(false)}>
+                    Give
+                  </Link>
+                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                    Contact
+                  </Link>
 
-            </nav>
+                </nav>
+              </div>
+              
+              {/* panel 2 - ministries submenu panel */}
+              <div className="lgm-nav__mobile-panel lgm-nav__mobile-panel--ministries">
+                <nav className="lgm-nav__mobile-links eyebrow">
+                  <button
+                    type="button"
+                    className="lgm-nav__mobile-link-button eyebrow"
+                    onClick={() => setMobileMenuView("root")}
+                  >
+                    ← Back
+                  </button>
+                  <Link to="/childrens" onClick={() => {
+                      setIsMenuOpen(false);
+                      setMobileMenuView("root");
+                    }}>
+                    Children&apos;s
+                  </Link>
+                  <Link to="/youth-group" onClick={() => {
+                      setIsMenuOpen(false);
+                      setMobileMenuView("root");
+                    }}>
+                    Youth
+                  </Link>
+                  <Link to="/campus" onClick={() => {
+                      setIsMenuOpen(false);
+                      setMobileMenuView("root");
+                    }}>
+                    Campus
+                  </Link>
+                  <Link to="/post-grad" onClick={() => {
+                      setIsMenuOpen(false);
+                      setMobileMenuView("root");
+                    }}>
+                    Post Grad
+                  </Link>
+                  <Link to="/adult-family" onClick={() => {
+                      setIsMenuOpen(false);
+                      setMobileMenuView("root");
+                    }}>
+                    Adult / Family
+                  </Link>
+                </nav>
+              </div>
+            </div>
 
             <div className="lgm-nav__mobile-socials">
               <a
