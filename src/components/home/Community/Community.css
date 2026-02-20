@@ -53,7 +53,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--text-color);
+  background: rgba(43, 52, 67, 0.9);
   border: none;
   color: #ffffff;
   display: flex;
@@ -75,7 +75,7 @@
 
 .community__nav:focus {
   outline: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .community__nav:focus-visible {
