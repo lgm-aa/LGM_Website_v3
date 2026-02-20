@@ -82,7 +82,7 @@
 @media (max-width: 1200px) {
   .overview__container {
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
     padding-top: 2rem;
   }
 
@@ -104,7 +104,6 @@
 
   .overview__right {
     position: relative;
-    padding-top: 5rem;
     overflow: visible;
   }
 
