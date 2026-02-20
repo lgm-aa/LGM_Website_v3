@@ -1,0 +1,119 @@
+.card-carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-carousel__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-carousel__divider-line {
+  flex: 1;
+  height: 1px;
+  background: black;
+  position: relative;
+  top: 2px;
+}
+
+.card-carousel__wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.card-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(43, 52, 67, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: white;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.card-carousel__arrow:focus {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-carousel__arrow:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.card-carousel__arrow:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(43, 52, 67, 0.95);
+}
+
+.card-carousel__arrow:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.1);
+  background: rgba(43, 52, 67, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-carousel__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.card-carousel__arrow--left {
+  left: -24px;
+}
+
+.card-carousel__arrow--right {
+  right: -24px;
+}
+
+@media (max-width: 1024px) {
+  .card-carousel__arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .card-carousel__arrow--left {
+    left: -20px;
+  }
+
+  .card-carousel__arrow--right {
+    right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-carousel__arrow {
+    width: 46px;
+    height: 46px;
+    background: rgba(43, 52, 67, 0.85);
+  }
+
+  .card-carousel__arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card-carousel__arrow--left {
+    left: -12px;
+  }
+
+  .card-carousel__arrow--right {
+    right: -12px;
+  }
+
+  .card-carousel__arrow:active:not(:disabled) {
+    background: rgba(255, 255, 255, 0.9);
+    color: white;
+  }
+}
