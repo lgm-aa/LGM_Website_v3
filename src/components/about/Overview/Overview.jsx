@@ -101,7 +101,7 @@ export default function Overview() {
               <ul className="link-list">
                 <li>
                   <a
-                    href="https://linktr.ee/livinggraceministry#328264619"
+                    href="https://linktr.ee/livinggraceministry"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
