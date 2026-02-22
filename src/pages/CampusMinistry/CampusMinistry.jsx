@@ -1,4 +1,4 @@
-import Hero from "@/components/layout/Hero/Hero"
+import Hero from "@/components/layout/Hero/Hero";
 import Overview from "@/components/ministries/Overview/Overview";
 import ActionCards from "@/components/ministries/ActionCards/ActionCards";
 import heroImage from "@/assets/campus_hero.webp";
@@ -8,44 +8,61 @@ import img3 from "@/assets/campus-ride.webp";
 import sectionImage from "@/assets/campus-side.webp";
 
 const cards = [
-        { id: 1, img: img1, link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform", text: "Campus Small Groups"},
-        { id: 2, img: img2, link: "https://calendar.google.com/calendar/u/0/r?cid=Y18wOGRkM2QwNDhmNDNhNDVkNDY2MGNkODAzMjcyNzEwOTAyZTMwNzhhYWU3ODk2YmUwMTk4OTY4ZTc4ZmI5YjNiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20 ", text: "Upcoming Events"},
-        { id: 3, img: img3, link: "https://linktr.ee/livinggraceministry", text: "Campus Ride Info"},
-      ]
-
+  {
+    id: 1,
+    img: img1,
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform",
+    text: "Campus Small Groups",
+  },
+  {
+    id: 2,
+    img: img2,
+    link: "https://calendar.google.com/calendar/u/0/r?cid=Y18wOGRkM2QwNDhmNDNhNDVkNDY2MGNkODAzMjcyNzEwOTAyZTMwNzhhYWU3ODk2YmUwMTk4OTY4ZTc4ZmI5YjNiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+    text: "Upcoming Events",
+  },
+  {
+    id: 3,
+    img: img3,
+    link: "https://linktr.ee/livinggraceministry",
+    text: "Campus Ride Info",
+  },
+];
 
 const campusMinistry = {
   title: "CAMPUS",
   subtitle: "Campus Ministry",
   description: (
     <>
-      "Therefore, as you received Christ Jesus the Lord, so walk in him, rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." <br/> <span className="verse-ref">Colossians 2:6–7</span>
+      "Therefore, as you received Christ Jesus the Lord, so walk in him, rooted
+      and built up in him and established in the faith, just as you were taught,
+      abounding in thanksgiving." <br />{" "}
+      <span className="verse-ref">Colossians 2:6–7</span>
     </>
   ),
   mission: (
-  <>
-    <strong>Identity is formed. Purpose is discovered.</strong> We walk with students as they grow in faith, community, and life rooted in Christ through every season.
-  </>
+    <>
+      <strong>Identity is formed. Purpose is discovered.</strong> We walk with
+      students as they grow in faith, community, and life rooted in Christ
+      through every season.
+    </>
   ),
-  cards: cards
+  cards: cards,
 };
 
-
-
 export default function CampusMinistry() {
-  const {
-    title,
-    subtitle,
-    description,
-    mission,
-    cards,
-  } = campusMinistry;
+  const { title, subtitle, description, mission, cards } = campusMinistry;
 
-    return (
-        <>
-            <Hero title={title} image={heroImage}/>
-            <Overview subtitle={subtitle} description={description} mission={mission} image={sectionImage} imageAlt={'Campus Ministry Image'}/>
-            <ActionCards cards={cards}/>
-        </>
-    );
+  return (
+    <>
+      <Hero title={title} image={heroImage} />
+      <Overview
+        subtitle={subtitle}
+        description={description}
+        mission={mission}
+        image={sectionImage}
+        imageAlt={"Campus Ministry Image"}
+      />
+      <ActionCards cards={cards} />
+    </>
+  );
 }
