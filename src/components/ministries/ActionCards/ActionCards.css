@@ -8,3 +8,9 @@
     padding: 0 2rem 4rem;
   }
 }
+
+@media (min-width: 769px) {
+  .action-cards .card-carousel__arrow {
+    display: none;
+  }
+}
