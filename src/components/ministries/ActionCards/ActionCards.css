@@ -1,10 +1,96 @@
 .action-cards {
-  background-color: var(--bg-light);
-  padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 10vw, 7rem);
+  background-color: #e3e8ee;
 }
 
-@media (max-width: 768px) {
-  .action-cards {
+.action-cards__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1500px;
+  margin: 0 auto 24px;
+  padding: 0 clamp(1.5rem, 18vw, 14rem);
+}
+
+.action-cards__divider-line {
+  flex: 1;
+  height: 1px;
+  background: black;
+  position: relative;
+  top: 2px;
+}
+
+.action-cards-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 2rem) clamp(1.5rem, 18vw, 14rem)
+    clamp(2rem, 10vw, 15rem);
+}
+
+.action-card {
+  position: relative;
+  flex: 1 1 30%; /* grow, shrink, base width 30% */
+  aspect-ratio: 6/8; /* keeps card proportional */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  min-width: 100px; /* prevents shrinking too small */
+}
+
+.action-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(20, 40, 68, 0.4); /* your blue tint */
+  z-index: 0; /* behind text */
+  border-radius: 16px;
+}
+
+.action-card:hover {
+  transform: scale(1.01);
+  opacity: 0.95;
+}
+
+/* Text inside card */
+.action-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  justify-content: flex-start;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  box-sizing: border-box;
+}
+
+.action-card-text {
+  color: white;
+  font-size: clamp(1.1rem, 2.2vw, 2.5rem);
+  z-index: 1;
+}
+
+/* Mobile carousel layout — visually hidden on desktop but kept in layout so Swiper can measure widths */
+.action-cards-mobile {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  /* Hide desktop overlay layout */
+  .action-cards-container {
+    display: none;
+  }
+
+  /* Show swipeable Card carousel */
+  .action-cards-mobile {
+    visibility: visible;
+    height: auto;
+    overflow: visible;
     padding: 0 2rem 4rem;
   }
 }
