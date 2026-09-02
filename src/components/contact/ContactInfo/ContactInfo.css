@@ -1,77 +1,42 @@
-/* Contact Info Section */
+/* Contact — Core Council team */
 .contact-info {
-  background: var(--bg-light);
-  padding: 3rem 2rem 6rem;
+  background: var(--paper);
+  padding: clamp(64px, 10vw, 128px) var(--gutter);
+  border-top: 1px solid var(--line);
 }
 
 .contact-info__container {
-  max-width: 1400px;
+  max-width: var(--maxw);
   margin: 0 auto;
 }
 
 .contact-info__header {
-  text-align: center;
-  margin: 0 0 3rem 0;
-  letter-spacing: 0.02em;
-}
-
-/* CTA Section */
-.contact-info__cta-section {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 2rem;
-}
-
-.contact-info__cta-text {
-  margin: 0 0 1.5rem 0;
-  line-height: 1.6;
-}
-
-.contact-info__cta-button {
-  display: inline-block;
-  background-color: #C2A878;
-  color: #ffffff;
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 1rem 3rem;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info__cta-button:hover {
-  background-color: #3d5a8f;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
 }
 
 .contact-info__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 3rem 2rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem) 2rem;
 }
 
-/* Team Card */
 .team-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-  max-width: 250px;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.35rem;
   width: 100%;
 }
 
-/* Circular Image */
 .team-card__image-wrapper {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  margin-bottom: 0.5rem;
-  background-color: #e5ebf3;
+  margin-bottom: 0.9rem;
+  background-color: var(--paper-2);
+  border: 1px solid var(--line);
 }
 
 .team-card__image {
@@ -79,106 +44,65 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
+}
+.team-card:hover .team-card__image {
+  transform: scale(1.02);
 }
 
-/* Name */
-
-/* Role */
-.team-card__role {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: #666;
+.team-card__name {
+  font-family: var(--serif);
+  font-weight: 400;
   margin: 0;
-  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 
-/* Email Button */
+.team-card__role {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0.15rem 0 0.4rem;
+}
+
 .team-card__email {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: var(--mono);
+  font-size: 11px;
   letter-spacing: 0.02em;
-  color: #4a5568;
+  color: var(--ink);
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: color 0.2s ease;
-  margin-top: 0.25rem;
+  text-align: left;
+  transition: opacity 0.2s ease;
   word-break: break-all;
+  border-bottom: 1px solid var(--line);
 }
-
 .team-card__email:hover {
-  color: #2563eb;
+  opacity: 0.6;
 }
 
-
-.team-card__name {
-  font-weight: 900;
-  margin: 0;
-  font-size: 1.25rem;
+/* CTA */
+.contact-info__cta-section {
+  text-align: center;
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 7vw, 5rem);
+  border-top: 1px solid var(--line);
 }
 
-/* Mobile adjustments */
-@media (max-width: 968px) {
-  .contact-info__grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 2.5rem 1.5rem;
-  }
-
-  .team-card__image-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-info {
-    padding: 4rem 1.5rem;
-  }
-
-  .contact-info__email-section {
-    margin-top: 3rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .contact-info__email-link {
-    font-size: 1.25rem;
-  }
-
-  .contact-info__grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 2rem 1rem;
-  }
-
-  .team-card__image-wrapper {
-    width: 160px;
-    height: 160px;
-  }
-
-  .team-card__role {
-    font-size: 0.875rem;
-  }
-
-  .contact-info__cta-section {
-    margin-top: 2rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .contact-info__cta-text {
-    font-size: 1rem;
-  }
-
-  .contact-info__cta-button {
-    font-size: 1rem;
-    padding: 0.875rem 2.5rem;
-  }
+.contact-info__cta-text {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  color: var(--ink-soft);
 }
 
 @media (max-width: 480px) {
   .contact-info__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.25rem;
   }
 }

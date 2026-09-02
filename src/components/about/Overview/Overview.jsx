@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./Overview.css";
+import Reveal from "@/components/ui/Reveal/Reveal";
 import about_overview from "@/assets/aboutus.webp";
 import useLatestBulletin from "@/hooks/useLatestBulletin";
-import circle from "@/assets/circle.png"; 
+import circle from "@/assets/circle.png";
 
 export default function Overview() {
   const [openSection, setOpenSection] = useState(null);
@@ -16,16 +17,16 @@ export default function Overview() {
     <section className="about-overview">
       <div className="about-overview__container">
         {/* Left side - Image */}
-        <div className="about-overview__image-wrapper">
+        <Reveal className="about-overview__image-wrapper">
           <img
             src={about_overview}
             alt="Living Grace Ministry community"
             className="about-overview__image"
           />
-        </div>
+        </Reveal>
 
         {/* Right side - Content */}
-        <div className="about-overview__content">
+        <Reveal className="about-overview__content" delay={120}>
           <h2 className="about-overview__title section-h4">
             We Are a Ministry <br />
             That Lives Out Grace <br />
@@ -56,15 +57,6 @@ export default function Overview() {
               <ul className="link-list">
                 <li>
                   <a
-                    href="https://calendar.google.com/calendar/u/0/r?cid=Y184MGRlNGI1OGJjNmFiOWI1ODAwNjFiMDQ3MDM5ODJkNzI2NjlkMWE3MmUyODVhMzU2Zjk5YTMzMzNjYjUzMWU2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LGM Calendar
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="
                     target="_blank"
                     rel="noopener noreferrer"
@@ -74,11 +66,11 @@ export default function Overview() {
                 </li>
                 <li>
                   <a
-                    href="https://www.facebook.com/profile.php?id=100064729684652"
+                    href="https://discord.gg/zgny5dyxv4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Facebook
+                    Discord
                   </a>
                 </li>
               </ul>
@@ -94,18 +86,17 @@ export default function Overview() {
                 at 12:45 PM.
               </p>
               <p>
-                For those coming from campus at @umich, we recommend taking the
-                Blake Transit bus. Additional transportation details can be
-                found in our Google Doc:
+                Coming from campus? We give rides on Sundays. You can find ride
+                details and sign-ups on our Discord:
               </p>
               <ul className="link-list">
                 <li>
                   <a
-                    href="https://linktr.ee/livinggraceministry"
+                    href="https://discord.gg/zgny5dyxv4"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Linktree
+                    Discord
                   </a>
                 </li>
               </ul>
@@ -138,7 +129,7 @@ export default function Overview() {
             >
               <p>
                 Stay connected with our community by following us on Instagram
-                and Facebook for updates, announcements, and event reminders.
+                and Discord for updates, announcements, and event reminders.
               </p>
               <p>
                 You can also join one of our small groups (Post-Grad and Campus
@@ -160,7 +151,7 @@ export default function Overview() {
               </ul>
             </AccordionItem>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

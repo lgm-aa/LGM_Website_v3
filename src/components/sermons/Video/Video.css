@@ -1,48 +1,55 @@
 .latest-sermon {
-  background-color: var(--bg-light); /* light gray/blue like your mock */
-  padding: 4rem 1.5rem 5rem;
+  background-color: var(--paper);
+  padding: clamp(64px, 10vw, 128px) var(--gutter);
+  border-top: 1px solid var(--line);
 }
 
 .latest-sermon__inner {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
-/* "LATEST SERMON" label */
 .latest-sermon__eyebrow {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-/* Main title */
 .latest-sermon__title {
-  font-family: "Playfair Display SC", serif; /* same serif family */
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 400;
-  color: #111827;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
 }
 
-/* Date */
 .latest-sermon__date {
-  font-size: 0.95rem;
-  color: rgba(15, 23, 42, 0.65);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
   margin-bottom: 2rem;
 }
 
-/* Video card */
-.latest-sermon__video-card {
-  background-color: #ffffff;
-  border-radius: 24px;
-  padding: 1.5rem;
-  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+.latest-sermon__error {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
 }
 
-/* Keep YouTube embed 16:9 and responsive */
+.latest-sermon__video-card {
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0;
+}
+
 .latest-sermon__video-wrapper {
   position: relative;
   width: 100%;
-  border-radius: 18px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
 }
@@ -54,8 +61,6 @@
   height: 100%;
 }
 
-/* Add these styles to your existing Video.css */
-
 .latest-sermon__fallback {
   display: flex;
   flex-direction: column;
@@ -65,19 +70,19 @@
   padding: 3rem 1.5rem;
   text-align: center;
 }
-
 .latest-sermon__fallback p {
-  color: #4b5563;
+  color: var(--ink-soft);
   margin: 0;
 }
 
-/* Optional: Style the placeholder container better */
 .latest-sermon__placeholder {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f3f4f6;
-  border-radius: 8px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 13px;
 }

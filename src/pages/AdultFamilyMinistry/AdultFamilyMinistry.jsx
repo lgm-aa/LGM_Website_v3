@@ -12,7 +12,7 @@ const adultFamilyMinistry = {
       "So we, though many, are one body in Christ, and individually members one of another." <br/> <span className="verse-ref">Romans 12:5</span>
     </>
   ),
-  mission: "A community of adults, typically mid 30s and up but open to all, walking together through joy and hardship as we support one another and build God’s kingdom.",
+  mission: "A community of adults, typically mid 30s and up, walking together through joy and hardship as we support one another and build God’s kingdom.",
 };
 
 export default function AdultFamilyMinistry() {

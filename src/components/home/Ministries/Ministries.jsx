@@ -1,6 +1,7 @@
 import "./Ministries.css";
 import Card from "@/components/ui/Card/Card";
 import CardCarousel from "@/components/ui/CardCarousel/CardCarousel";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 import children from "@/assets/children.webp";
 import youthgroup from "@/assets/youth-ministry.webp";
@@ -25,14 +26,14 @@ export default function Ministries() {
   return (
     <section className="ministries" id="ministries">
       <div className="ministries__inner">
-        <header className="ministries__header">
+        <Reveal as="header" className="ministries__header">
           <h2 className="section-h2">
             Find <em>your</em> place
           </h2>
           <p className="body-text">Check out our ministries</p>
-        </header>
+        </Reveal>
 
-        <div className="ministries__carousel">
+        <Reveal className="ministries__carousel" delay={100}>
           <CardCarousel
             items={ministries}
             spaceBetween={32}
@@ -44,7 +45,7 @@ export default function Ministries() {
               />
             )}
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

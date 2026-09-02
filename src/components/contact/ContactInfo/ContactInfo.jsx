@@ -2,12 +2,14 @@ import { useState } from "react";
 import "./ContactInfo.css";
 
 import Button from "@/components/ui/Button/Button";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 import youth_director from "@/assets/people/youth_director.jpg";
 import praise_leader from "@/assets/people/praise_leader.jpg";
 import praise_apprentice from "@/assets/people/praise_apprentice.jpg";
-import campus_admin from "@/assets/people/campus_admin.jpg";
-import postgrad_admin_1 from "@/assets/people/postgrad_admin_1.jpg";
+import campus_admin_ohn from "@/assets/people/campus_admin_ohn.webp";
+import campus_admin_vanessa from "@/assets/people/campus_admin_vanessa.webp";
+import campus_admin_ryan from "@/assets/people/campus_admin_ryan.jpg";
 import postgrad_admin_2 from "@/assets/people/postgrad_admin_2.jpg";
 import finance_chair from "@/assets/people/finance_chair.jpg";
 import filler from "@/assets/lgm_logo.webp";
@@ -52,31 +54,31 @@ export default function ContactInfo() {
     },
     {
       id: 5,
-      name: "Sammy Kim",
+      name: "Ohn Yoo",
       role: "Campus Ministry Admin",
-      email: "samueki@umich.edu",
-      image: campus_admin,
+      email: "ohn@umich.edu",
+      image: campus_admin_ohn,
     },
     {
       id: 6,
-      name: "Ian Yu",
-      role: "Post-Grad Ministry Admin",
-      email: "9921ianyu@gmail.com",
-      image: postgrad_admin_1,
+      name: "Vanessa Kim",
+      role: "Campus Ministry Admin",
+      email: "vnessk@umich.edu",
+      image: campus_admin_vanessa,
     },
     {
       id: 7,
+      name: "Ryan Hong",
+      role: "Campus Ministry Admin",
+      email: "ryanhong@umich.edu",
+      image: campus_admin_ryan,
+    },
+    {
+      id: 8,
       name: "Yubin Choi",
       role: "Post-Grad Ministry Admin",
       email: "ychoi1276@gmail.com",
       image: postgrad_admin_2,
-    },
-    {
-      id: 8,
-      name: "TBD",
-      role: "Adult/Family Group",
-      email: "LGMAdultandFamilyMinistry@gmail.com",
-      image: filler,
     },
     {
       id: 9,
@@ -97,8 +99,8 @@ export default function ContactInfo() {
   return (
     <section className="contact-info">
       <div className="contact-info__container">
-        <h2 className="contact-info__header section-h4">Core Council Team</h2>
-        <div className="contact-info__grid">
+        <Reveal as="h2" className="contact-info__header section-h4">Core Council Team</Reveal>
+        <Reveal className="contact-info__grid" delay={80}>
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">
               <div className="team-card__image-wrapper">
@@ -118,7 +120,7 @@ export default function ContactInfo() {
               </button>
             </div>
           ))}
-        </div>
+        </Reveal>
         <div className="contact-info__cta-section">
           <p className="contact-info__cta-text body-text">Have other comments or questions?</p>
           <Button variant="secondary" href="mailto:livinggraceministry@gmail.com" className="body-text">

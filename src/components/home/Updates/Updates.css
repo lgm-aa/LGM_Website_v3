@@ -1,46 +1,35 @@
 /* src/components/Updates.css */
 
-/* Section wrapper */
 .updates {
-  background: var(--bg-light);
-  padding: clamp(3.5rem, 6vw, 5.5rem) 1rem;
+  background: var(--paper-2);
+  padding: clamp(64px, 10vw, 128px) var(--gutter);
+  border-top: 1px solid var(--line);
 }
 
 .updates__container {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   scroll-margin-top: 70px;
 }
 
-/* Header Spacing */
 .updates__header {
-  text-align: center;
-  margin-bottom: 0; 
+  text-align: left;
+  margin-bottom: 2.5rem;
 }
 
 .updates__header .section-h2 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
-/* Typography */
-.updates__title {
-  font-family: 'Playfair Display', serif;
-  color: var(--text-color);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  margin: 0 0 1.5rem; 
+.updates__subtitle,
+.updates__header .body-text {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 52ch;
 }
 
-.updates__subtitle {
-  color: #6b7280;
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
-  margin: 0; 
-}
-
-/* Grid Layout */
 .updates__content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 2rem; 
 }

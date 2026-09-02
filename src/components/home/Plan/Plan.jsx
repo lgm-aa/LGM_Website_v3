@@ -1,6 +1,7 @@
 import React from "react";
 import "./Plan.css";
 import Button from "@/components/ui/Button/Button";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 
 export const ClockIcon = () => (
@@ -29,18 +30,18 @@ export default function Plan() {
     <div id="plan-section" className="plan-section">
       <div className="plan-container">
         {/* Header above both columns */}
-        <div className="title-container">
+        <Reveal className="title-container">
           <h1 className="section-h2">Plan Your Visit</h1>
-        </div>
+        </Reveal>
 
         {/* Two columns */}
-        <div className="plan-columns">
+        <Reveal className="plan-columns" delay={100}>
           {/* Left column - Embedded Google Maps */}
 
           <div className="plan-left">
             <div className="map-container">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.2252306435407!2d-83.77847969999999!3d42.2950593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cb1f2052d3fe7%3A0x614e856e62cdff1f!2sKorean%20United%20Methodist%20Church%20of%20Ann%20Arbor!5e0!3m2!1sen!2sus!4v1764090019105!5m2!1sen!2sus"
+              <iframe
+                src="https://maps.google.com/maps?q=Living%20Grace%20Ministry%2C%201526%20Franklin%20St%2C%20Ann%20Arbor%2C%20MI%2048103&z=16&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -64,7 +65,7 @@ export default function Plan() {
                 <div className="info-content">
                   <h3 className="info-title body-text">Location</h3>
                   <p className="info-text body-text">
-                    1536 Franklin St<br />
+                    1526 Franklin St<br />
                     Ann Arbor, MI 48103
                   </p>
                 </div>
@@ -92,14 +93,14 @@ export default function Plan() {
               </div>
 
               <div className="notify-button-wrapper">
-                <Button variant="primary" href="/contact" className="notify-button body-text">
+                <Button variant="primary" href="/contact" className="notify-button btn--on-dark body-text">
                   Let Us Know You're Coming
                 </Button>
               </div>
 
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

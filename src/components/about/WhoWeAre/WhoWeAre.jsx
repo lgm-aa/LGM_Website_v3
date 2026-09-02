@@ -1,19 +1,14 @@
 import "./WhoWeAre.css";
-import aboutWhoweare from "@/assets/about-whoweare.webp";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 export default function WhoWeAre() {
   return (
-    <section
-      className="who-we-are"
-      style={{ backgroundImage: `url(${aboutWhoweare})` }}
-    >
-      <div className="who-we-are__overlay" />
-
+    <section className="who-we-are">
       <div className="who-we-are__container">
-        <h2 className="who-we-are__title section-h2">Who We Are</h2>
+        <Reveal as="h2" className="who-we-are__title section-h2">Who We Are</Reveal>
 
-        <div className="who-we-are__cards">
-          {/* Card 1: Christ-Centered */}
+        <Reveal className="who-we-are__cards" delay={100}>
+          {/* Christ-Centered */}
           <div className="who-we-are__card">
             <h3 className="who-we-are__card-title section-h4">Christ-Centered</h3>
             <p className="who-we-are__card-text body-text">
@@ -21,7 +16,7 @@ export default function WhoWeAre() {
             </p>
           </div>
 
-          {/* Card 2: Mission-Focused */}
+          {/* Mission-Focused */}
           <div className="who-we-are__card">
             <h3 className="who-we-are__card-title section-h4">Mission-Focused</h3>
             <p className="who-we-are__card-text body-text">
@@ -29,14 +24,14 @@ export default function WhoWeAre() {
             </p>
           </div>
 
-          {/* Card 3: Open to all */}
+          {/* Open to All */}
           <div className="who-we-are__card">
             <h3 className="who-we-are__card-title section-h4">Open to All</h3>
             <p className="who-we-are__card-text body-text">
-              LGM is not all Korean, and we do not expect anyone to fit a certain background or story. We welcome anyone to join us for worship, fellowship, and community life. At LGM, all are welcome.
+              LGM is a community made up of people from different backgrounds and walks of life. You don&rsquo;t need to be Korean or come from a particular background to belong here. We warmly welcome everyone to join us for worship, fellowship, and life together. At LGM, you are welcome.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

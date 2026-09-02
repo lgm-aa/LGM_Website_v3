@@ -5,6 +5,7 @@ import useLatestBulletin from "@/hooks/useLatestBulletin";
 import { getMostRecentSundayISOString } from "@/utils/timeNY";
 // Import the new component
 import PdfCard from "@/components/ui/PdfCard/PdfCard";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 export default function Updates() {
   const { data, loading, error } = useLatestBulletin();
@@ -33,15 +34,15 @@ export default function Updates() {
   return (
     <section className="updates">
       <div id="bulletin" className="updates__container">
-        <header className="updates__header">
+        <Reveal as="header" className="updates__header">
           <h2 className="section-h2">This Week at Living Grace Ministry</h2>
           <p className="body-text">
             Stay updated on weekly announcements, sermon notes, and upcoming
             events.
           </p>
-        </header>
+        </Reveal>
 
-        <div className="updates__content">
+        <Reveal className="updates__content" delay={100}>
           {/* Reusable Component */}
           <PdfCard
             title={displayTitle}
@@ -54,7 +55,7 @@ export default function Updates() {
             unavailableText="We haven't uploaded this week's bulletin yet. Please check back later!"
             loadingText="Loading..."
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

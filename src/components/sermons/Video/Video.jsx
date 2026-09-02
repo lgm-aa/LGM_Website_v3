@@ -2,6 +2,7 @@
 import "./Video.css";
 import useLatestSermon from "@/hooks/useLatestSermon";
 import Button from "@/components/ui/Button/Button";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
 const SERMON_TZ = "America/New_York";
@@ -46,7 +47,7 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
 
   return (
     <section className="latest-sermon">
-      <div className="latest-sermon__inner">
+      <Reveal className="latest-sermon__inner">
         {/* Only show eyebrow for recorded sermons */}
         {!isLive && <p className="latest-sermon__eyebrow eyebrow">LATEST SERMON</p>}
 
@@ -96,7 +97,7 @@ export default function Video({ titleLabel = "Latest Sermon" }) {
             )}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

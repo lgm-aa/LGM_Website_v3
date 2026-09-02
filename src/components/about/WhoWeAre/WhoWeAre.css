@@ -1,101 +1,56 @@
-/* Who We Are Section */
+/* About — Who We Are (three-column values, editorial) */
 .who-we-are {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 8rem 2rem;
-  min-height: 800px;
-}
-
-/* Dark gradient overlay for readability */
-.who-we-are__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  z-index: 0;
+  background: var(--paper);
+  padding: clamp(64px, 10vw, 128px) var(--gutter);
+  border-top: 1px solid var(--line);
 }
 
 .who-we-are__container {
-  position: relative;
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
-  z-index: 1;
 }
 
-/* Title */
 .who-we-are .who-we-are__title {
-  text-align: center;
-  margin: 0 0 4rem 0;
-  color: white;
+  margin: 0 0 clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--ink);
+  text-align: left;
 }
 
-/* Cards Container */
 .who-we-are__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
 }
 
-/* Individual Card */
 .who-we-are__card {
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  padding: 2.5rem 2rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  text-align: left;
 }
 
 .who-we-are__card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-  font-weight: 400;
-  color: white;
+  color: var(--ink);
   margin: 0;
-  letter-spacing: 0.02em;
 }
 
 .who-we-are__card-text {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.125rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--ink-soft);
   margin: 0;
+  line-height: 1.8;
 }
 
-/* Tablet adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .who-we-are__cards {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 600px;
+    gap: 0;
   }
-
-  .who-we-are {
-    padding: 5rem 2rem;
-  }
-
-  .who-we-are__title {
-    margin-bottom: 3rem;
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .who-we-are {
-    padding: 4rem 1.5rem;
-  }
-
   .who-we-are__card {
-    padding: 2rem 1.5rem;
+    padding-block: 1.75rem;
+  }
+  .who-we-are__card:last-child {
+    border-bottom: 1px solid var(--line);
   }
 }

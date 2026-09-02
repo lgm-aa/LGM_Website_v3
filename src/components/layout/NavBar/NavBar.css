@@ -1,53 +1,48 @@
-/* src/components/layout/NavBar/NavBar.css */
+/* src/components/layout/NavBar/NavBar.css — minimal editorial nav */
 
-/* --- 1. GLOBAL / DESKTOP STYLES --- */
-
-/* Fixed bar at the very top */
+/* --- 1. GLOBAL / DESKTOP --- */
 .lgm-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  color: #ffffff;
+  color: var(--ink-on-dark);
   padding-top: env(safe-area-inset-top);
-  transition: background-color 0.2s ease, backdrop-filter 0.2s ease;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-/* Subtle dark gradient for readability */
+/* faint top scrim so cream text stays legible over bright photos */
 .lgm-nav::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.14),
+    rgba(0, 0, 0, 0.28),
     rgba(0, 0, 0, 0)
   );
   pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
+/* solid state once past the hero */
+.lgm-nav__blur {
+  background-color: var(--paper);
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
 .lgm-nav__blur::before {
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  -webkit-mask-image: linear-gradient(
-    to bottom, 
-    rgba(0,0,0,1) 80%, 
-    rgba(0,0,0,0) 100%
-  );
-  mask-image: linear-gradient(
-    to bottom, 
-    rgba(0,0,0,1) 80%, 
-    rgba(0,0,0,0) 100%
-  );
+  opacity: 0;
 }
 
 .lgm-nav__inner {
   position: relative;
-  max-width: 1120px;
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 16px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,128 +52,116 @@
 .lgm-nav__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: inherit;
 }
 
 .lgm-nav__logo {
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
 }
 
 .lgm-nav__title {
-  font-family: "Playfair Display", serif;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  margin-top: 6px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
 }
 
-/* Links Container */
+/* Links */
 .lgm-nav__links {
   display: flex;
   align-items: center;
-  gap: 32px;
-  margin-top: 6px;
+  gap: 30px;
 }
 
 .lgm-nav__link {
   text-decoration: none;
   color: inherit;
-  font-size: 16px;
-  letter-spacing: 0.03em;
-  opacity: 0.9;
-  transition: opacity 0.15s ease, text-shadow 0.15s ease, text-decoration-color 0.15s ease;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   cursor: pointer;
-  text-decoration-line: underline;
-  text-decoration-color: transparent; 
-  text-underline-offset: 8px;
-  text-decoration-thickness: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.85;
 }
 
 .lgm-nav__link:hover {
   opacity: 1;
-  text-decoration-color: currentColor;
-  text-shadow: 0.35px 0 0 currentColor, -0.35px 0 0 currentColor;
+  border-bottom-color: currentColor;
 }
 
-/* --- DESKTOP DROPDOWN LOGIC --- */
-
-/* 1. Desktop Parent: Relative so the dropdown floats right under THIS word */
+/* --- DESKTOP DROPDOWN --- */
 .lgm-nav__item--dropdown {
   position: relative;
-  height: 100%;
 }
 
-/* 2. Desktop Dropdown: Floating box with glass effect via ::before */
 .lgm-nav__dropdown {
   position: absolute;
-  top: 100%; /* Push it down */
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%); /* Center it */
-  min-width: 180px;
-
-  /* Box styling */
-  padding: 0.5rem 0;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-
-  /* Layout */
+  transform: translateX(-50%);
+  min-width: 190px;
+  margin-top: 14px;
+  padding: 6px 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
   display: none;
   flex-direction: column;
-  overflow: hidden;      /* keep ::before clipped inside */
-  z-index: 1000;         /* above nav background */
+  z-index: 1000;
 }
 
-/* Glassy background layer */
+/* invisible bridge so the cursor can cross the gap
+   between the trigger and the panel without the panel closing */
 .lgm-nav__dropdown::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);  /* tint */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  z-index: -1; /* sit behind links */
+  left: 0;
+  right: 0;
+  top: -16px;
+  height: 16px;
 }
 
-/* 3. Desktop Hover Action */
-.lgm-nav__item--dropdown:hover .lgm-nav__dropdown {
+.lgm-nav__item--dropdown:hover .lgm-nav__dropdown,
+.lgm-nav__item--open .lgm-nav__dropdown {
   display: flex;
 }
 
-/* Desktop Links */
 .lgm-nav__dropdown-link {
-  position: relative; /* ensure above ::before */
   padding: 10px 20px;
-  color: #d4d4d4;
+  color: var(--ink);
   text-decoration: none;
-  font-size: 0.9rem;
-  white-space: nowrap; /* Prevent text wrapping */
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
 }
 
 .lgm-nav__dropdown-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background-color: var(--paper-2);
 }
 
 .lgm-nav__waffle {
   display: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
 }
 
-.lgm-nav__mobile-overlay {
-  display: none;
-}
-
+.lgm-nav__mobile-overlay,
 .lgm-nav__mobile-drawer {
   display: none;
 }
 
-
-/* --- 2. MOBILE OVERRIDES --- */
+/* --- 2. MOBILE --- */
 @media (max-width: 768px) {
-  
-  /* Hide Title */
   .lgm-nav__title {
     display: none;
   }
@@ -188,16 +171,15 @@
   }
 
   .lgm-nav__waffle {
-    display: inline;
-    font-size: 34px;
+    display: inline-flex;
+    align-items: center;
     z-index: 3000;
-    padding-top: 14px;
   }
 
   .lgm-nav__mobile-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(26, 26, 26, 0.35);
     display: flex;
     justify-content: flex-end;
     z-index: 2000;
@@ -212,14 +194,16 @@
   }
 
   .lgm-nav__mobile-drawer {
-    width: 85%;
+    width: 88%;
+    max-width: 420px;
     height: 100%;
-    padding: 1.5rem 2rem 2rem 2rem;
-    background-color: var(--primary-dark);
+    padding: 1.75rem 1.75rem 2rem;
+    background-color: var(--paper);
+    color: var(--ink);
     display: flex;
     flex-direction: column;
     transform: translateX(100%);
-    transition: transform 0.15s linear;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: hidden;
   }
 
@@ -230,9 +214,9 @@
   .lgm-nav__mobile-drawer-inner {
     flex: 1;
     display: flex;
-    width: 220%;
+    width: 200%;
     height: 100%;
-    transition: transform 0.22s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .lgm-nav__mobile-drawer-inner--root {
@@ -251,37 +235,54 @@
   }
 
   .lgm-nav__mobile-title {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 0.1em;
-    font-size: 18px;
+    font-family: var(--serif);
+    letter-spacing: 0.01em;
+    font-size: 22px;
   }
 
   .lgm-nav__mobile-links {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 8rem 2rem 2rem 0.5rem;
+    gap: 1.4rem;
+    padding: 5rem 1rem 2rem 0;
+  }
+
+  .lgm-nav__mobile-links a,
+  .lgm-nav__mobile-link-button {
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    background: none;
+    border: 0;
+    cursor: pointer;
   }
 
   .lgm-nav__mobile-link-button {
     text-align: left;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
+    width: 100%;
   }
 
-  .lgm-nav__mobile-link-button .eyebrow{
-    font-size: 24px;
-  }
-
+  .lgm-nav__mobile-link-button .eyebrow,
   .lgm-nav__mobile-drawer .eyebrow {
-    font-size: 24px;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .lgm-nav__mobile-links a {
+    font-size: 18px;
   }
 
   .lgm-nav__mobile-socials {
     display: inline-flex;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
   }
 
   .social-icon {
@@ -289,5 +290,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: var(--ink);
   }
 }

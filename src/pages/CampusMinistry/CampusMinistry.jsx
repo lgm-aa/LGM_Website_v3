@@ -11,19 +11,19 @@ const cards = [
   {
     id: 1,
     img: img1,
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSeSwAQ-r4aV1pYTZ-ALQvM0CF4n5e4W5B7SfD__8IBKrD4LmA/viewform",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLScIMlvICnBFDibjgFX3kbcKM9zXpRiBcd_PiJDqff3wPBMcIg/viewform",
     text: "Campus Small Groups",
   },
   {
     id: 2,
     img: img2,
-    link: "https://calendar.google.com/calendar/u/0/r?cid=Y18wOGRkM2QwNDhmNDNhNDVkNDY2MGNkODAzMjcyNzEwOTAyZTMwNzhhYWU3ODk2YmUwMTk4OTY4ZTc4ZmI5YjNiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+    link: "/#bulletin",
     text: "Upcoming Events",
   },
   {
     id: 3,
     img: img3,
-    link: "https://linktr.ee/livinggraceministry",
+    link: "https://discord.gg/zgny5dyxv4",
     text: "Campus Ride Info",
   },
 ];

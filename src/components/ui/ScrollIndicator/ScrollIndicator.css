@@ -1,29 +1,32 @@
-/* Scroll indicator */
+/* Scroll indicator — monospace label + hairline chevron */
 .scroll-indicator {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 80px; 
+  bottom: 42px;
   z-index: 2;
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
+  color: var(--ink-on-dark);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   pointer-events: none;
 }
 
 .scroll-indicator .chevron {
-  width: 22px;
-  height: 22px;
-  margin: 6px auto 0;
-  animation: scroll-bounce 1.4s infinite ease-in-out;
-  opacity: 0.95;
+  width: 18px;
+  height: 18px;
+  margin: 8px auto 0;
+  stroke-width: 1.25;
+  animation: scroll-bounce 1.6s infinite ease-in-out;
 }
 
 @keyframes scroll-bounce {
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.8;
+    opacity: 0.7;
   }
   50% {
     transform: translateY(6px);
@@ -31,12 +34,10 @@
   }
 }
 
-/* Lower position for non-home pages */
 .scroll-indicator--lower {
-  bottom: 40px;
+  bottom: 32px;
 }
 
-/* Hide on mobile */
 @media (max-width: 768px) {
   .scroll-indicator {
     display: none;

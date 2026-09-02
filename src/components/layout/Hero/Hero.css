@@ -1,62 +1,56 @@
-/* --- Hero Section ------------------------------------------------------ */
+/* --- Shared inner-page Hero ----------------------------------------- */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 78vh;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
 }
 
-/* Dark overlay so text is readable */
+/* gentle gradient scrim, heavier toward the bottom where the title sits */
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.12) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
 }
 
-/* Positions the content block */
 .hero__content {
-  position: absolute;
-  bottom: 18%;               /* move it near the bottom */
-  right: 6%;                /* move it near the right edge */
-  color: white;
+  position: relative;
   z-index: 1;
-  text-align: right;        /* aligns text to the right side */
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(48px, 9vw, 104px);
+  color: var(--ink-on-dark);
 }
 
-/* Typography */
 .hero__title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(5rem, 10vw, 8rem);
+  font-family: var(--serif);
+  font-size: clamp(3.25rem, 9vw, 7rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  text-shadow: 0 8px 20px rgba(0, 0, 0, 1);
+  letter-spacing: -0.01em;
+  line-height: 0.95;
   margin: 0;
 }
 
 .hero__action--below {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
-/* Mobile: center the title, shorter height */
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
-    aspect-ratio: 4 / 3;
-  }
-
-  .hero__content {
-    bottom: auto;
-    right: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    min-height: 62vh;
   }
 
   .hero__title {
-    font-size: clamp(3rem, 12vw, 5rem);
+    font-size: clamp(2.75rem, 15vw, 4.5rem);
   }
 }

@@ -1,7 +1,23 @@
 :root {
-  --nav-height: 72px;
-} /* adjust to your actual navbar height */
+  --nav-height: 64px;
+}
 
-section[id] {
-  scroll-margin-top: calc(var(--nav-height) + 12px); /* 12px breathing room */
+/* Offset every in-page anchor target so it clears the fixed navbar.
+   Covers <section id> (hero, ministries) and <div id> (plan-section, bulletin). */
+#hero,
+#ministries,
+#plan-section,
+#bulletin,
+#updates__container,
+section[id],
+main [id] {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+/* These sections have a large top padding; overshoot into it so an anchor
+   jump lands the section heading just below the navbar (small gap) instead
+   of far below all that padding. */
+#ministries,
+#plan-section {
+  scroll-margin-top: calc(var(--nav-height) + 24px - clamp(64px, 10vw, 128px));
 }
