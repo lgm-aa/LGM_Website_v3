@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX, FiChevronRight } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
 import "./NavBar.css";
 import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
+import logoDark from "@/assets/lgm_logo.webp";
 
 export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -47,7 +48,7 @@ export default function NavBar() {
         {/* Left: logo + title */}
         <Link to="/" className="lgm-nav__brand">
           <img
-            src={logoWhite}
+            src={scrolledPastHero ? logoDark : logoWhite}
             alt="Living Grace Ministry logo"
             className="lgm-nav__logo"
           />
@@ -102,13 +103,13 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="lgm-nav__item">
-            <Link to="/give" className="lgm-nav__link">
-              Give
+            <Link to="/contact" className="lgm-nav__link">
+              Contact
             </Link>
           </div>
           <div className="lgm-nav__item">
-            <Link to="/contact" className="lgm-nav__link">
-              Contact
+            <Link to="/give" className="lgm-nav__link">
+              Give
             </Link>
           </div>
         </nav>
@@ -150,11 +151,11 @@ export default function NavBar() {
                   <Link to="/sermons" onClick={() => setIsMenuOpen(false)}>
                     Sermons
                   </Link>
-                  <Link to="/give" onClick={() => setIsMenuOpen(false)}>
-                    Give
-                  </Link>
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                     Contact
+                  </Link>
+                  <Link to="/give" onClick={() => setIsMenuOpen(false)}>
+                    Give
                   </Link>
 
                 </nav>
@@ -206,13 +207,13 @@ export default function NavBar() {
 
             <div className="lgm-nav__mobile-socials">
               <a
-                href="https://www.facebook.com/profile.php?id=100064729684652"
-                aria-label="Facebook"
+                href="https://discord.gg/zgny5dyxv4"
+                aria-label="Discord"
                 className="social-icon"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFacebookF size={20}/>
+                <FaDiscord size={24}/>
               </a>
               <a
                 href="https://www.instagram.com/livinggraceministry?igsh=MW01ZWJlZ3hkNXQwOQ=="

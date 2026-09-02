@@ -12,19 +12,19 @@ const cards = [
   {
     id: 1,
     img: img1,
-    link: "https://www.facebook.com/messages/t/1813201472888392",
+    link: "https://discord.gg/zgny5dyxv4",
     text: "Post Grad Small Groups",
   },
   {
     id: 2,
     img: img2,
-    link: "https://calendar.google.com/calendar/u/0/r?cid=Y18wOGRkM2QwNDhmNDNhNDVkNDY2MGNkODAzMjcyNzEwOTAyZTMwNzhhYWU3ODk2YmUwMTk4OTY4ZTc4ZmI5YjNiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+    link: "/#bulletin",
     text: "Upcoming Events",
   },
   {
     id: 3,
     img: img3,
-    link: "https://www.facebook.com/messages/t/1813201472888392",
+    link: "https://discord.gg/zgny5dyxv4",
     text: "Post Grad Message Chat",
   },
 ];

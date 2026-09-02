@@ -1,93 +1,59 @@
-/* --- Hero Section ------------------------------------------------------ */
+/* --- Home Hero ------------------------------------------------------- */
+#hero {
+  position: relative;
+}
+
 .hero-section {
-  position: relative; /* was fixed */
+  position: relative;
   min-height: 100vh;
-  min-height: 100svh; /* small viewport height - stable on iOS Safari */
+  min-height: 100svh;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* no z-index needed now */
 }
 
-/* dark overlay so white text is readable */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(
-      to top,                 /* gradient goes from bottom -> top */
-      rgba(20, 40, 68, 0.7),
-      rgba(20, 40, 68, 0)
-    );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.32) 0%,
+    rgba(0, 0, 0, 0.15) 45%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }
 
-/* centers the content block */
 .hero-content {
   position: absolute;
-  top: 30vh;          /* move content down 25% of viewport height */
-  left: 0;
-  right: 0;
+  inset: 0;
   display: flex;
-  flex-direction: column;    /* 👈 stack children vertically */
-  align-items: center;       /* center horizontally */
-  justify-content: center;   /* center vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white;
-  padding: 0 1rem;
+  color: var(--ink-on-dark);
+  padding: 0 var(--gutter);
   z-index: 1;
-  gap: 2rem;                 /* nice space between title + buttons */
+  gap: 2.5rem;
 }
 
-
-/* typography */
 .hero-title-home {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  letter-spacing: 0.04em;
-  line-height: 0.85;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-  margin-bottom: 6rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 12vw, 9.5rem);
+  letter-spacing: -0.015em;
+  line-height: 0.9;
+  margin: 0;
 }
 
 .ministry-letter {
-  font-family: 'Tangerine', cursive;
-  font-size: 2em; /* adjust to taste */
-  display: inline-block;
-  vertical-align: text-bottom; /* aligns the bottom of the M to the text baseline */
-  position: relative;
-  top: 0.05em;
+  font-style: italic;
 }
 
-/* buttons group */
 .hero-actions {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
-
-/* --- Bottom wave ------------------------------------------------------ */
-.hero-wave {
-  position: absolute; /* was fixed */
-  left: 0;
-  right: 0;
-  bottom: -1px; /* tiny overlap to remove gap */
-  z-index: 1; /* above overlay, below content */
-  pointer-events: none;
-}
-
-.hero-wave svg {
-  display: block;
-  width: 100%;
-  height: 96px; /* tweak to taste */
-}
-
-/* Match your page background color behind the wave */
-:root {
-  --page-bg: var(--bg-light); /* light gray/blue tone */
-}
-.hero-wave path {
-  fill: var(--page-bg);
-}
-

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Community.css";
+import Reveal from "@/components/ui/Reveal/Reveal";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
@@ -22,13 +23,12 @@ const photos = [img1, img11, img2, img3, img4, img6, img7, img8, img9, img10];
 const communityPhotos = [...photos, ...photos];
 
 export default function Community() {
-  const { swiperRef, handlePrev, handleNext, handleUserTouch } =
-    useCommunityCarousel();
+  const { swiperRef, handlePrev, handleNext } = useCommunityCarousel();
 
   return (
     <section className="community">
       <div className="community__inner">
-        <h2 className="section-h2">Our Community</h2>
+        <Reveal as="h2" className="section-h2">Our Community</Reveal>
       </div>
 
       <div className="community__rail">
@@ -67,8 +67,8 @@ export default function Community() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          onTouchStart={handleUserTouch}
-          onTouchEnd={handleUserTouch}
+          allowTouchMove={false}
+          simulateTouch={false}
           className="community__swiper"
         >
           {communityPhotos.map((src, idx) => (

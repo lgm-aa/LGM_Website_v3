@@ -2,49 +2,91 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  border-radius: 16px;
-  padding: 12px 24px;
-  font-weight: 500;
-  line-height: 1.2;
-  border: 1px solid transparent;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    border-color 0.15s ease, box-shadow 0.15s ease;
+  gap: 0.6rem;
+  border-radius: 0;
+  padding: 15px 30px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid var(--ink);
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
 }
-
 
 /* ------------------ VARIANTS ------------------ */
 
+/* solid ink block → inverts to outline on hover */
 .btn__primary {
-  background-color: #E3E8EE;
-  color: #142844;
+  background-color: var(--ink);
+  color: var(--paper);
 }
-
 .btn__primary:hover {
-  background-color: #C2A878;
-  color: #142844;
+  background-color: transparent;
+  color: var(--ink);
 }
 
+/* outline / underline text → fills on hover */
 .btn__secondary {
-  background-color: #142844;
-  color: #FFFFFF;
+  background-color: transparent;
+  color: var(--ink);
 }
-
 .btn__secondary:hover {
-  background-color: #C2A878;
-  color: #142844;
+  background-color: var(--ink);
+  color: var(--paper);
 }
 
+/* minimal text link with trailing arrow */
 .btn__tertiary {
   background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 8px 2px;
+}
+.btn__tertiary::after {
+  content: "\2192";
+  transition: transform 0.25s ease;
+}
+.btn__tertiary:hover::after {
+  transform: translateX(4px);
 }
 
-.btn__tertiary:hover {
-  background-color: #4A5D73;
-  color: #FFFFFF;
-  border-color: #4A5D73;
+/* on dark sections */
+.btn--on-dark.btn__primary {
+  background-color: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+.btn--on-dark.btn__primary:hover {
+  background-color: transparent;
+  color: var(--paper);
+}
+.btn--on-dark.btn__secondary {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.btn--on-dark.btn__secondary:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+.btn--on-dark.btn__tertiary {
+  color: var(--paper);
+  border-bottom-color: var(--paper);
+}
+
+.btn--disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
 }

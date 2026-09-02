@@ -2,6 +2,7 @@
 
 import Card from "@/components/ui/Card/Card";
 import CardCarousel from "@/components/ui/CardCarousel/CardCarousel";
+import Reveal from "@/components/ui/Reveal/Reveal";
 import "./ActionCards.css";
 
 export default function ActionCards({ cards }) {
@@ -15,22 +16,26 @@ export default function ActionCards({ cards }) {
       </div>
 
       {/* Desktop: overlay design */}
-      <div className="action-cards-container">
-        {cards.map((card) => (
-          <a
-            key={card.id}
-            href={card.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="action-card"
-            style={{ backgroundImage: `url(${card.img})` }}
-          >
-            <div className="action-card-content">
-              <p className="action-card-text">{card.text}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+      <Reveal className="action-cards-container">
+        {cards.map((card) => {
+          const isInternal = card.link.startsWith("/");
+          return (
+            <a
+              key={card.id}
+              href={card.link}
+              {...(isInternal
+                ? {}
+                : { target: "_blank", rel: "noopener noreferrer" })}
+              className="action-card"
+              style={{ backgroundImage: `url(${card.img})` }}
+            >
+              <div className="action-card-content">
+                <p className="action-card-text">{card.text}</p>
+              </div>
+            </a>
+          );
+        })}
+      </Reveal>
 
       {/* Mobile: swipeable CardCarousel with Card components (image + navy label below) */}
       <div className="action-cards-mobile">
@@ -41,7 +46,7 @@ export default function ActionCards({ cards }) {
               title={card.text}
               image={card.img}
               href={card.link}
-              external={true}
+              external={!card.link.startsWith("/")}
             />
           )}
         />

@@ -1,19 +1,23 @@
-/* Quote Section */
+/* About — opening statement */
 .about-quote {
-  background-color: #e5ebf3;
-  padding: 6rem 2rem;
+  background-color: var(--paper);
+  padding: clamp(80px, 14vw, 180px) var(--gutter);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .about-quote__content {
-  max-width: 1000px;
+  max-width: 900px;
   text-align: center;
 }
 
+.about-quote__content .section-h2 {
+  font-size: clamp(28px, 4.2vw, 52px);
+  line-height: 1.22;
+}
+
 .about-quote__emphasis {
-  font-weight: 700;
+  font-style: italic;
 }
 
 .about-quote__grace {
@@ -21,23 +25,8 @@
 }
 
 .about-quote__divider {
-  width: 300px;
-  height: 2px;
-  background-color: #1a1a1a;
-  margin: 7rem auto 0;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .about-quote {
-    padding: 5rem 1.5rem;
-  }
-
-  .about-quote__text {
-    margin: 0 0 2rem 0;
-  }
-
-  .about-quote__divider {
-    width: 200px;
-  }
+  width: 64px;
+  height: 1px;
+  background-color: var(--ink);
+  margin: clamp(3rem, 8vw, 6rem) auto 0;
 }
