@@ -4,6 +4,7 @@ import "./ContactInfo.css";
 import Button from "@/components/ui/Button/Button";
 import Reveal from "@/components/ui/Reveal/Reveal";
 
+import pastor_zach from "@/assets/people/pastor_zach.jpg";
 import youth_director from "@/assets/people/youth_director.jpg";
 import praise_leader from "@/assets/people/praise_leader.jpg";
 import praise_apprentice from "@/assets/people/praise_apprentice.jpg";
@@ -26,10 +27,10 @@ export default function ContactInfo() {
   const teamMembers = [
     {
       id: 1,
-      name: "Currently Searching",
+      name: "Zach Betthauser",
       role: "Pastor",
       email: "livinggraceministry@gmail.com",
-      image: filler,
+      image: pastor_zach,
     },
     {
       id: 2,

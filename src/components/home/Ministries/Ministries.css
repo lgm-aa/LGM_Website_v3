@@ -26,3 +26,9 @@
   margin-top: clamp(20px, 3vw, 32px);
   overflow: visible;
 }
+
+/* Bigger ministry card titles in the "Find your place" section */
+.ministries .card__label {
+  font-size: clamp(1.7rem, 3.3vw, 2.6rem);
+  line-height: 1.1;
+}

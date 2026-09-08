@@ -108,8 +108,7 @@ export default function Overview() {
               onToggle={() => toggleSection("team")}
             >
               <p>
-                LGM is currently searching for a new pastor. If you have any
-                questions, please contact{" "}
+                Got questions about LGM? Reach out to us at{" "}
                 <a href="mailto:livinggraceministry@gmail.com">
                   livinggraceministry@gmail.com
                 </a>
