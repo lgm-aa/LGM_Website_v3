@@ -8,11 +8,13 @@ import logoWhite from "@/assets/lgm_logo_white.webp"; // adjust path if needed
 import logoDark from "@/assets/lgm_logo.webp";
 
 export default function NavBar() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  // solid nav everywhere except over the homepage photo hero
+  const [scrolledPastHero, setScrolledPastHero] = useState(!isHome);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileMenuView, setMobileMenuView] = useState("root"); // "root" or "ministries"
-  const { pathname } = useLocation();
 
   const toggleDropdown = (dropdownName) => {
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
@@ -23,8 +25,13 @@ export default function NavBar() {
   };
 
   useEffect(() => {
-    const hero = document.getElementById("hero");
+    // Only the homepage has a full-bleed photo hero the nav sits over.
+    if (!isHome) {
+      setScrolledPastHero(true);
+      return;
+    }
 
+    const hero = document.getElementById("hero");
     if (!hero) {
       const onScroll = () => setScrolledPastHero(window.scrollY > 20);
       onScroll();
@@ -34,13 +41,12 @@ export default function NavBar() {
 
     const observer = new IntersectionObserver(
       ([entry]) => setScrolledPastHero(!entry.isIntersecting),
-      { threshold: 0}
+      { threshold: 0 }
     );
 
     observer.observe(hero);
     return () => observer.disconnect();
-
-  }, [pathname]);
+  }, [pathname, isHome]);
   
   return (
     <header className={`lgm-nav ${scrolledPastHero ? "lgm-nav__blur" : ""}`}>

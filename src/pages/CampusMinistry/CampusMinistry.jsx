@@ -1,32 +1,8 @@
 import Hero from "@/components/layout/Hero/Hero";
 import Overview from "@/components/ministries/Overview/Overview";
-import ActionCards from "@/components/ministries/ActionCards/ActionCards";
+import CampusInfo from "@/components/campus/CampusInfo/CampusInfo";
 import heroImage from "@/assets/campus_hero.webp";
-import img1 from "@/assets/campus-sg.webp";
-import img2 from "@/assets/campus-upcoming.webp";
-import img3 from "@/assets/campus-ride.webp";
 import sectionImage from "@/assets/campus-side.webp";
-
-const cards = [
-  {
-    id: 1,
-    img: img1,
-    link: "https://docs.google.com/forms/d/e/1FAIpQLScIMlvICnBFDibjgFX3kbcKM9zXpRiBcd_PiJDqff3wPBMcIg/viewform",
-    text: "Campus Small Groups",
-  },
-  {
-    id: 2,
-    img: img2,
-    link: "/#bulletin",
-    text: "Upcoming Events",
-  },
-  {
-    id: 3,
-    img: img3,
-    link: "https://discord.gg/zgny5dyxv4",
-    text: "Campus Ride Info",
-  },
-];
 
 const campusMinistry = {
   title: "CAMPUS",
@@ -41,16 +17,15 @@ const campusMinistry = {
   ),
   mission: (
     <>
-      <strong>Identity is formed. Purpose is discovered.</strong> We walk with
-      students as they grow in faith, community, and life rooted in Christ
-      through every season.
+      We walk with students as they grow in{" "}
+      <strong>faith, community, and life</strong>,{" "}
+      <strong>rooted in Christ</strong> through every season.
     </>
   ),
-  cards: cards,
 };
 
 export default function CampusMinistry() {
-  const { title, subtitle, description, mission, cards } = campusMinistry;
+  const { title, subtitle, description, mission } = campusMinistry;
 
   return (
     <>
@@ -62,7 +37,7 @@ export default function CampusMinistry() {
         image={sectionImage}
         imageAlt={"Campus Ministry Image"}
       />
-      <ActionCards cards={cards} />
+      <CampusInfo />
     </>
   );
 }

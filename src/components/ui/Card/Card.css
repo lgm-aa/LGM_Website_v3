@@ -1,10 +1,10 @@
 .card {
   display: block;
+  position: relative;
   width: 100%;
   overflow: hidden;
   text-decoration: none;
   background: transparent;
-  position: relative;
   z-index: 10;
 }
 
@@ -14,6 +14,7 @@
 }
 
 .card__media {
+  position: relative;
   aspect-ratio: 4 / 5;
   width: 100%;
   background-size: cover;
@@ -24,19 +25,37 @@
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
+/* subtle scrim so the title stays legible over any photo */
+.card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.26) 42%,
+    rgba(0, 0, 0, 0.24) 100%
+  );
+}
+
 .card:hover .card__media {
   filter: grayscale(0%);
   transform: scale(1.015);
 }
 
+/* title sits on the card, top-left */
 .card__label {
-  background: transparent;
-  color: var(--ink);
-  padding: 16px 2px 0;
-  text-align: left;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-family: var(--mono);
-  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1rem, 2.4vw, 1.9rem);
+  color: #fff;
+  font-family: var(--serif);
   font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-align: left;
+  text-transform: none;
 }

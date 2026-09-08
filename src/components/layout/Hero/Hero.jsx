@@ -1,7 +1,5 @@
 // src/components/layout/Hero/Hero.jsx
-
 import "./Hero.css";
-import ScrollIndicator from "@/components/ui/ScrollIndicator/ScrollIndicator";
 
 export default function Hero({
   title,
@@ -9,24 +7,16 @@ export default function Hero({
   action, // optional CTA slot
 }) {
   return (
-    <section
-      id="hero"
-      className="hero"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      <div className="hero__overlay" />
-
-      <div className="hero__content">
+    <section id="hero" className="hero">
+      <div className="hero__inner">
         <h1 className="hero__title">{title}</h1>
 
-        {action && (
-          <div className="hero__action hero__action--below">
-            {action}
-          </div>
-        )}
-      </div>
+        {action && <div className="hero__action">{action}</div>}
 
-      <ScrollIndicator className="scroll-indicator--lower" />
+        <figure className="hero__figure">
+          <img src={image} alt="" className="hero__image" loading="eager" />
+        </figure>
+      </div>
     </section>
   );
 }

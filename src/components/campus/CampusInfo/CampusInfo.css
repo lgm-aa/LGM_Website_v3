@@ -1,0 +1,112 @@
+/* Campus — overlapping photos + info blocks */
+.campus-info {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding: clamp(64px, 10vw, 128px) var(--gutter);
+}
+
+.campus-info__container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+/* ---- left: two overlapping photos ---- */
+.campus-info__media {
+  position: relative;
+  /* aspect box tall enough to hold both freely-placed photos */
+  padding-top: 143%;
+}
+
+.campus-info__photo {
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  filter: grayscale(10%);
+}
+
+.campus-info__photo--1 {
+  position: absolute;
+  left: -1.2%;
+  top: 0;
+  width: 61.2%;
+  aspect-ratio: 3 / 4;
+  z-index: 1;
+}
+
+.campus-info__photo--2 {
+  position: absolute;
+  left: 32.1%;
+  top: 41.4%;
+  width: 62.7%;
+  aspect-ratio: 3 / 4;
+  z-index: 2;
+  /* cream gap so the two frames read as separate */
+  box-shadow: 0 0 0 8px var(--paper);
+}
+
+/* ---- right: stacked, hairline-ruled blocks ---- */
+.campus-info__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.campus-info__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line);
+}
+.campus-info__block:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.campus-info__title {
+  margin: 0;
+  color: var(--ink);
+}
+
+.campus-info__text {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+.campus-info__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s ease;
+}
+.campus-info__link::after {
+  content: "\2192";
+  transition: transform 0.25s ease;
+}
+.campus-info__link:hover {
+  opacity: 0.6;
+}
+.campus-info__link:hover::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 860px) {
+  .campus-info__container {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 8vw, 4rem);
+  }
+  .campus-info__media {
+    max-width: 460px;
+  }
+}

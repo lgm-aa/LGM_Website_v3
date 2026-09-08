@@ -43,6 +43,8 @@
   margin: 0 0 auto;
   color: var(--ink-soft);
   padding-bottom: 2rem;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.7;
 }
 
 .overview__mission-text {

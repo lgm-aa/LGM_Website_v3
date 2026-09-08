@@ -18,7 +18,7 @@
   transform: translateX(-50%);
 }
 
-/* Cards — desktop: fixed 300px slide, image fills (cover) */
+/* Cards — desktop: fixed slide, image fills (cover) */
 .community__card {
   width: 100%;
   height: clamp(260px, 34vw, 360px);
@@ -88,7 +88,7 @@
 @media (max-width: 768px) {
   .community__card {
     width: auto;
-    height: clamp(240px, 44vw, 360px);
+    height: clamp(280px, 54vw, 430px);
     line-height: 0;
   }
   .community__card img {

@@ -11,7 +11,7 @@ import img2 from "@/assets/community2.webp";
 import img3 from "@/assets/community3.webp";
 import img4 from "@/assets/community4.webp";
 import img6 from "@/assets/community6.webp";
-import img7 from "@/assets/community7.webp";
+import img7 from "@/assets/campus-ride.webp";
 import img8 from "@/assets/community8.webp";
 import img9 from "@/assets/community9.webp";
 import img10 from "@/assets/community10.webp";
@@ -57,7 +57,7 @@ export default function Community() {
           loop={true}
           freeMode={true}
           freeModeMomentum={false}
-          spaceBetween={24}
+          spaceBetween={14}
           slidesPerView={"auto"}
           speed={14000}
           autoplay={{

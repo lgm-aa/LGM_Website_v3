@@ -57,3 +57,11 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* Keep the default (white fill / dark text) look, but make the hover
+   state readable against the dark hero image instead of going invisible. */
+.hero-actions .btn__primary:hover {
+  background-color: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}

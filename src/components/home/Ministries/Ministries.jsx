@@ -11,13 +11,13 @@ import adultFamilyImg from "@/assets/ministry_adult_family.webp";
 
 export default function Ministries() {
   const ministries = [
-    { id: 1, title: "CHILDREN'S", image: children, href: "/childrens" },
-    { id: 2, title: "YOUTH GROUP", image: youthgroup, href: "/youth-group" },
-    { id: 3, title: "CAMPUS", image: campusImg, href: "/campus" },
-    { id: 4, title: "POST GRAD", image: postgradImg, href: "/post-grad" },
+    { id: 1, title: "Children's", image: children, href: "/childrens" },
+    { id: 2, title: "Youth Group", image: youthgroup, href: "/youth-group" },
+    { id: 3, title: "Campus", image: campusImg, href: "/campus" },
+    { id: 4, title: "Post Grad", image: postgradImg, href: "/post-grad" },
     {
       id: 5,
-      title: "ADULT/FAMILY",
+      title: "Adult / Family",
       image: adultFamilyImg,
       href: "/adult-family",
     },
